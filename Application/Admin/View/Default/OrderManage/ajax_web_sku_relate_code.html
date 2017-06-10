@@ -1,0 +1,73 @@
+{__NOLAYOUT__}
+<switch name="style">
+
+<case value="fetch">
+<div style="padding-left:14px;padding-right:14px;">
+
+	<p>
+		<span>SKU:　</span>
+		<span style="font-weight:bold;">{$sku}</span>
+		<input type="hidden" id="sku_id" name="sku_id" value="{$sku_id}"/>
+		<input type="hidden" id="order_id" name="order_id" value="{$order_id}"/>
+		<input type="hidden" id="order_product_id" name="order_product_id" value="{$order_product_id}"/>
+		<input type="hidden" id="type" name="type" value="{$type}"/>
+		<input type="hidden" id="original_set_id" name="original_set_id" value="{$original_set_id}"/>
+		<span id="sku_name_container" style="margin-left:20px;display:none;">
+			<span>套件名称: </span>
+			<input id="sku_name" name="sku_name" value="{$sku_name}"/>
+			<span style="color:red;font-weight:bold;">*</span>
+		</span>
+	</p>
+	<p>
+		<span>分类：</span>
+		<select onchange="relate_select_change(this.value,'catalog')" name="relate_catalog" id="relate_catalog">
+			<option value="0">--请选择--</option>
+			<volist name="catalog_list" id="catalog_vo"> 
+				<option value="{$key}">{$catalog_vo}</option>
+			</volist>
+		</select>
+	</p>
+	<p>
+		<span>产品：</span>
+		<select onchange="relate_select_change(this.value,'product')" name="relate_product" id="relate_product" style="width:400px;">
+			<option value="0">--请选择--</option>
+		</select>
+	</p>
+	<p>
+		<span>颜色：</span>
+		<select onchange="relate_select_change(this.value,'color')" name="relate_color" id="relate_color">
+			<option value="0">--请选择--</option>
+		</select>
+		
+		<span style="margin-left:5px;">尺码：</span>
+		<select onchange="relate_select_change(this.value,'size')" name="relate_size" id="relate_size">
+			<option value="0">--请选择--</option>
+		</select>
+	</p>
+	
+	<p>
+		<span>code：</span>
+		<span id="relate_code"> - </span>
+	</p>
+	
+	<button onclick="return web_relate_submit();" style="position:fixed;bottom:15px;right:15px;">提交</button>
+	
+</div>
+</case>
+
+<case value="select">
+	<option value="0">--请选择--</option>
+	<volist name="list" id="vo">
+		<option <eq name="old_value" value="$key">selected="selected"</eq> value="{$key}">{$vo}</option>
+	</volist>
+</case>
+
+<case value="radio">
+	<volist name="list" id="vo">
+		<span style="display:inline-block;">
+			<input type="radio" name="relate_code" value="{$key}" code_name="{$vo}" style="margin-left:5px;"/>{$vo}
+		</span>
+	</volist>
+</case>
+
+</switch>

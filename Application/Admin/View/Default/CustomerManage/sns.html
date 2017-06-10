@@ -1,0 +1,13 @@
+<notempty name="sns">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>SNS</strong></div>
+      <table class="table">
+          <tr><th width="110">邮箱</th><th width="110">主页</th></tr>
+          <for start="0" end="$sns_num" name="i">
+          <tr><td>{$sns.sns_id.$i}</td><td>{$sns.url.$i}</td></tr>
+          </for>
+      </table>
+</div>
+<else />
+<div class="prompt">没有SNS数据记录</div>
+</notempty>

@@ -1,0 +1,33 @@
+<div class="admin">
+	<table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+			<tr>
+			<td colspan="7" class="table_title tab_title">
+				<span class="fl icon-align-justify"> 库存产品申请记录</span>
+                         
+			</td>
+			<tr class="list_head ct">
+				<td align='left' width="200">产品名称</td>
+				<td align='left' width="70">数量</td>
+                <!--<td align='center' width="70">库存类型</td>
+                <td align='center' width="60">开始时间</td>
+                <td align='center' width="60">结束时间</td>-->
+                <td align='left' width="50">操作人</td> 
+                <td align='center' width="60">状态</td>
+               
+			</tr>
+	    <volist name="info" id="vo">
+			<tr class='<eq name="mod" value="1">tr<else/>ji</eq>'>
+				<td class="td_cc">{$vo.code_name}</td>
+				<td style="color: red; font-weight:bold;"><if condition='$vo.number neq "-1"'>{$vo.number}<else />未改变</if></td>
+               <!-- <td >{$vo.sty}</td>
+                <td ><if condition='$vo.begin_time neq "0"'>{$vo.begin_time|date="Y-m-d",###}</if></td>
+                <td ><if condition='$vo.end_time neq "0"'>{$vo.end_time|date="Y-m-d",###}</if></td>-->
+                <td >{:username_name($vo['inspector'])}</td> 
+                <td align="center" class="td_ff">{$vo.sta} ({$vo.date_time|date="Y-m-d H:i:s",###})
+                </td>
+				
+			</tr>
+	    </volist>
+		</table>
+        <div class="list-page"> {$page}</div>
+</div>

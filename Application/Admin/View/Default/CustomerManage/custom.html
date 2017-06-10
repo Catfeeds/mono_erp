@@ -1,0 +1,63 @@
+<if condition="$custom neq 'No'">
+<notempty name="gift_box_array">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>礼品盒</strong></div>
+      <table class="table">
+          <tr><td><strong>订单号</strong></td><td><strong>商品</strong></td><td><strong>颜色</strong></td><td><strong>尺码</strong></td><td><strong>留言</strong></td><td><strong>礼品盒</strong></td><td><strong>单价(礼品盒)</strong></td></tr>
+          <volist name="gift_box_array" id="vo">
+          <tr>
+          <td>{$vo.order_number}</td>
+          <td>{$vo.product_name}</td>
+          <td>{$vo.color_name}</td>
+          <td>{$vo.size_name}</td>
+          <td>{$vo.message}</td>
+          <td><img src="{:C('DOMAIN_HTTPS')}/mono_images/new_poster/{$vo.gift_image}" style="max-width:120px;"></td>
+          <td>{$vo.gift_price}</td>
+          </tr>
+          </volist>
+      </table>
+</div>
+</notempty>
+
+<notempty name="gramming_array">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>绣字</strong></div>
+      <table class="table">
+          <tr><td><strong>订单号</strong></td><td><strong>商品</strong></td><td><strong>颜色</strong></td><td><strong>尺码</strong></td><td><strong>绣字内容</strong></td><td><strong>绣字字体</strong></td><td><strong>绣字颜色</strong></td></tr>
+          <volist name="gramming_array" id="vo">
+          <tr>
+          <td>{$vo.order_number}</td>
+          <td>{$vo.product_name}</td>
+          <td>{$vo.color_name}</td>
+          <td>{$vo.size_name}</td>
+          <td>{$vo.font_name}</td>
+          <td><img src="{:C('DOMAIN_HTTPS')}/mono_images/common/{$vo.font_style}" style="max-width:120px;"></td>
+          <td>{$vo.font_color}</td>
+          </tr>
+          </volist>
+      </table>
+</div>
+</notempty>
+
+<notempty name="customization_array">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>睡衣定制</strong></div>
+      <table class="table">
+          <tr><td><strong>订单号</strong></td><td><strong>商品</strong></td><td><strong>颜色</strong></td><td><strong>尺码</strong></td><td><strong>定制信息</strong></td><td><strong>定制描述</strong></td></tr>
+          <volist name="customization_array" id="vo">
+          <tr>
+          <td>{$vo.order_number}</td>
+          <td>{$vo.product_name}</td>
+          <td>{$vo.color_name}</td>
+          <td>{$vo.size_name}</td>
+          <td>{$vo.customization}</td>
+          <td><if condition="$vo.description eq ''">暂无描述 <else />{$vo.description}</if></td>
+          </tr>
+          </volist>
+      </table>
+</div>
+</notempty>
+<else />
+<div class="prompt">没有数据记录</div>
+</if>
+

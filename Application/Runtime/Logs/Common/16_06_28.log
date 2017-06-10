@@ -1,0 +1,24 @@
+[ 2016-06-28T08:32:04+08:00 ] 127.0.0.1 /erptest/index.php/images/index.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000616s ]
+ERR: 无法加载模块:Images
+
+[ 2016-06-28T08:32:04+08:00 ] 127.0.0.1 /erptest/index.php/images/login.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000587s ]
+ERR: 无法加载模块:Images
+
+[ 2016-06-28T08:32:04+08:00 ] 127.0.0.1 /erptest/index.php/images/index.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+ERR: 无法加载模块:Images
+
+[ 2016-06-28T08:32:04+08:00 ] 127.0.0.1 /erptest/index.php/images/login.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+ERR: 无法加载模块:Images
+

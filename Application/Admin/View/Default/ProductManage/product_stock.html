@@ -1,0 +1,40 @@
+<div class="admin">
+	<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr>
+			<td colspan="9" class="table_title">
+				<span class="fl">产品库存管理</span>
+				<span class="fr">
+					<a href="{:U('/Admin/ProductManage/product_stock_add')}">添加产品库存</a>
+				</span>
+			</td>
+		</tr>
+		<tr class="list_head ct">
+			<td width="350">产品名称</td>
+            <td width="70">产品code</td>
+            <td width="180">产品总数量</td>
+            <td width="150">产品卖出数量</td>
+            <td width="130">产品剩余数量</td>
+            <td width="130">产品添加日期</td>
+			<td width="180">操作</td>
+		</tr>
+	<volist name="product_stock_list" id="vo">
+		<tr>
+			<td>{$vo.product_chinese_name}</td>
+			<td>{$vo.code}</td>
+			<td>{$vo.total_num}</td>
+			<td>{$vo.sale_num}</td>
+			<td>{$vo.num}</td>
+			<td>{$vo.date}</td>
+			<td>
+				<a onclick="return confirm('确定要删除吗?')" <if href="{:U('/Admin/ProductManage/product_stock_del/',array('id'=>$vo['id']))}">删除</a> |
+				<a href="{:U('/Admin/ProductManage/product_stock_add/',array('id'=>$vo['id'] ))}">修改</a>
+			</td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

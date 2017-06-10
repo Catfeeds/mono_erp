@@ -1,0 +1,134 @@
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<script src="__JS__/CodeManage/main.js"></script>
+<div class="admin">
+
+<h1>添加Code</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label class="label">分类：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="catalog_id" onchange="get_product_of_catalog(this.value)">
+				<option value="-1">--请选择--</option>
+				<volist name="catalog_list" id="catalog_vo">
+				<option value="{$key}" <if condition="$key eq $row['catalog_id']">selected="selected"</if> >{$catalog_vo}</option>
+				</volist>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label class="label">产品：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="product_id" id="product_id">
+				<option value="0">--请选择--</option>
+				<notempty  name="product_option_html">{$product_option_html}</notempty>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label class="label">尺寸：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="size_id">
+			<option value="0">--请选择--</option>
+			<volist name="size_list" id="size_vo">
+				<option value="{$key}" <if condition="$key eq $row['size_id']">selected="selected"</if> >{$size_vo}</option>
+			</volist>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label class="label">颜色：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="color_id">
+			<option value="0">--请选择--</option>
+			<volist name="color_list" id="color_vo">
+			<option value="{$key}" <if condition="$key eq $row['color_id']">selected="selected"</if> >{$color_vo}</option>
+			</volist>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">Code：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="code" name="code" size="30" value="{$row['code']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">名称：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="name" name="name" size="30" value="{$row['name']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">重量：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="weight" name="weight" size="30" value="{$row['weight']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">价格：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id"price" name="price" size="30" value="{$row['price']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">工厂：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="factory_id">
+				<volist name="factory_list" id="factory_vo">
+				<option value="{$factory_vo.id}" <if condition="$factory_vo.id eq $row['factory_id']">selected="selected"</if> >{$factory_vo.name}</option>
+				</volist>
+			</select>
+		</div>
+		
+		
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">排序：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="sort_id" name="sort_id" size="30" value="{$row['sort_id']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="is_work">生效：</label>
+		</div>
+		<div class="field">
+			<div class="button-group radio">
+				<label class="button <if condition="$row['is_work'] eq 1">active</if> ">
+					<input name="is_work" value="1" <if condition="$row['is_work'] eq 1">checked="checked"</if> type="radio"><span class="icon icon-check"></span>是
+				</label>
+				<label class="button <if condition="$row['is_work'] eq 0">active</if> ">
+					<input name="is_work" value="0" <if condition="$row['is_work'] eq 0">checked="checked"</if> type="radio"><span class="icon icon-times"></span>否
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

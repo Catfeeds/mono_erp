@@ -1,0 +1,34 @@
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>添加属性</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label class="label">属性名称：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="name">
+				<option value="size" <if condition="$row['name'] eq 'size' ">selected="selected"</if> >尺寸</option>
+				<option value="color" <if condition="$row['name'] eq 'color' ">selected="selected"</if> >颜色</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">属性值：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="value" name="value" size="30" value="{$row['value']}"/>
+		</div>
+	</div>
+	
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

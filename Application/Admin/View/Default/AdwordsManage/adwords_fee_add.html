@@ -1,0 +1,59 @@
+<div class="admin">
+	<gt name="info.id" value="0">
+			<form action="{:U('/Admin/AdwordsManage/adwords_fee_edit')}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+		<else />
+			<form action="{:U('/Admin/AdwordsManage/adwords_fee_add')}" method="post" name="form" id="myform">
+		</gt>
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 广告费</td>
+				</tr>
+
+				<tr class="tr rt">
+					<td width="100">广告费来源：</td>
+					<td colspan="3" class="lt">
+						<select name="come_from" class="admin_input">
+							<option value="google" <eq name="info.come_from" value="google"> selected</eq>>google</option>
+							<option value="bing" <eq name="info.come_from" value="bing"> selected</eq>>bing</option>
+							<option value="yahoo" <eq name="info.come_from" value="yahoo"> selected</eq>>yahoo</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">费用（$）：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="fee" id="name" class="admin_input" value="{$info.fee}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">广告费添加人：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="operate" id="name" class="admin_input" value="{$info.operate}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">国家（平台）来源：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="country" id="name" class="admin_input" value="{$info.country}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">日期：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="fee_date" id="btime" class="admin_input" onClick="WdatePicker()" <if condition="$fee_date neq 0">value="{:date('Y-m-d',$fee_date)}"<else />value="{:date('Y-m-d',time())}"</if>>
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="button border-main" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="button border-main" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="button border-main" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

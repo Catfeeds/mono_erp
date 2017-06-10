@@ -1,0 +1,345 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">var ue_t0=ue_t0||+new Date();</script>
+<style>
+.fenye{page-break-after: always}
+</style>
+<title>Manage Orders</title>
+</head><body><div id="ap_container"></div>
+
+<style type="text/css">
+	body, p, span, td, a {font-size:9pt;font-family: Arial, Helvetica, sans-serif;}
+    body{padding:2em;}
+	div.printbucket {margin-top:10pt;}
+
+    .content-area {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+	.printedtable {
+		border:1px solid #000000;
+		}
+	.printedtable th.leftcolumn, .printedtable td.leftcolumn{
+		background-color:#ffffff;
+		padding:7px;
+		vertical-align:top;
+		border-left:0px solid #aaaaaa;
+
+		}
+	.printedtable td, .printedtable th {
+		background-color:#ffffff;
+		padding:7px;
+		vertical-align:top;
+		border-left:1px solid #aaaaaa;
+		}
+	.printedtable th {
+		font-weight:bold;
+		vertical-align:middle;
+		font-size:8pt;
+		}
+	.printedtable tr.shippeditem td {
+		border-top:1px solid #000000;
+		}
+
+	.printedsubtext {font-size:8pt;}
+	.printednormaltext {font-size:9pt;}
+	.printedlargetext {font-size:12pt;}
+	.printedlargesttext {font-size:16pt;}
+
+    .printedpageline {
+        padding:0;
+        margin:40px 0;
+        border:2px solid #000;
+    }
+
+    .printedpagebreak {
+        page-break-after:always;
+    }
+
+    .printedtable tr.shippeditem .printedtotal td {
+            border:0px;
+            padding:0px 3px 3px 3px;
+            }
+</style>
+
+<style type="text/css" media="print">
+    .printedpageline { display:none; }
+</style>
+<volist name="info" id="vo" >
+<?php
+$ship_to_word="Ship To";
+$order_id_word="Order ID";
+$thank_word="Thank you for buying from LILYSILK on Amazon Marketplace.";
+$shipping_adress_word="Shipping Address";
+$order_date_word="Order Date";
+$shipping_service_word="Shipping Service";
+$buyer_name_word="Buyer Name";
+$seller_name_word="Seller Name";
+$quantity_word="Quantity";
+$product_details_word="Product Details";
+$price_word="Price";
+$total_word="Total";
+$total_td_word=$total_word;
+$sku_word="SKU";
+$asin_word="ASIN";
+$listing_id_word="Listing ID";
+$order_item_id_word="Order Item ID";
+$condition_word="Condition";
+$subtotal_word="Subtotal";
+$promotions_word="Promotions";
+$order_total_word="ORDER TOTAL";
+$thanks_line='<b>Thanks for buying on Amazon Marketplace</b>. To provide feedback for the seller please visit www.amazon.com/feedback. To contact the seller, go to Your Orders in Your Account. Click the seller\'s name under the appropriate product. Then, in the "Further Information" section, click "Contact the Seller."';
+?>
+<if condition="$vo[come_from_id] eq 2">
+<?php
+//加拿大
+$thanks_line='<b>Thanks for buying on Amazon Marketplace</b>. To provide feedback for the seller please visit www.amazon.ca/feedback. To contact the seller, go to Your Orders in Your Account. Click the seller\'s name under the appropriate product. Then, in the "Further Information" section, click "Contact the Seller." ';
+?>
+<elseif condition="$vo[come_from_id] eq 23"/>
+<?php
+//英国
+$ship_to_word="Dispatch to";
+$thank_word="Thank you for buying from LilySilkUK on Amazon Marketplace.";
+$shipping_adress_word="Delivery address";
+$shipping_service_word="Delivery Service";
+$thanks_line='<b>Thanks for buying on Amazon Marketplace</b>. To provide feedback for the seller please visit www.amazon.co.uk/feedback. To contact the seller, go to Your Orders in Your Account. Click the seller\'s name under the appropriate product. Then, in the "Further Information" section, click "Contact the Seller." ';
+?>
+<elseif condition="$vo[come_from_id] eq 27"/>
+<?php
+$ship_to_word="Spedire a";
+$order_id_word="Numero dell'ordine";
+$thank_word="Ti ringraziamo per aver acquistato da LilySilkUK su Amazon. ";
+$shipping_adress_word="Indirizzo di spedizione";
+$order_date_word="Data ordine";
+$shipping_service_word="Tipo di spedizione";
+$buyer_name_word="Nome acquirente";
+$seller_name_word="Nome venditore";
+$quantity_word="Quantità";
+$product_details_word="Dettagli prodotto";
+$price_word="Prezzo";
+$total_word="Totale";
+$total_td_word=$total_word;
+$sku_word="SKU";
+$asin_word="ASIN";
+$listing_id_word="Numero offerta";
+$order_item_id_word="Numero articolo ordine";
+$condition_word="Condizione";
+$subtotal_word="Subtotale";
+$promotions_word="Promozioni";
+$order_total_word="Totale ordine";
+$thanks_line='<b>Grazie per aver comprato nel Marketplace di Amazon</b>. Per fornire il tuo feedback sul venditore, visita la pagina seguente: www.amazon.it/feedback. Se desideri contattare il venditore, seleziona il link “Il mio account”, che trovi in alto a destra su ogni pagina di Amazon.it, e accedi alla sezione “I miei ordini”. Individua l\'ordine in questione e clicca su “Contatta il venditore”. ';
+?>
+<elseif condition="$vo[come_from_id] eq 26"/>
+<?php
+$ship_to_word="Adresse d'expédition";
+$order_id_word="Numéro de la commande";
+$thank_word="Merci pour votre achat avec le vendeur LilySilkFR sur Amazon.fr ";
+$shipping_adress_word="Adresse d'expédition";
+$order_date_word="Date de commande";
+$shipping_service_word="Service de livraison";
+$buyer_name_word="Nom de l'acheteur";
+$seller_name_word="Nom du vendeur";
+$quantity_word="Quantité";
+$product_details_word="Détails sur le produit";
+$price_word="Prix";
+$total_word="Total";
+$total_td_word=$total_word;
+$sku_word="SKU";
+$asin_word="ASIN";
+$listing_id_word="Référence de l'offre";
+$order_item_id_word="ID commande-article";
+$condition_word="Etat";
+$subtotal_word="Sous-total";
+$promotions_word="les promotions";
+$order_total_word="TOTAL COMMANDE";
+$thanks_line='<b>Merci de votre achat sur Amazon Marketplace</b>. Pour évaluer votre vendeur, veuillez vous rendre sur www.amazon.fr/feedback. Pour contacter votre vendeur, veuillez cliquez sur « Votre compte » puis « Vos commandes ». Localisez la commande puis cliquez sur « Contactez le vendeur » à droite du produit. ';
+?>
+<elseif condition="$vo[come_from_id] eq 24"/>
+<?php
+$ship_to_word="Liefern an";
+$order_id_word="Bestellnummer";
+$thank_word="Vielen Dank für Ihren Einkauf bei LilySilkUK auf Amazon.de Marketplace. ";
+$shipping_adress_word="Lieferanschrift";
+$order_date_word="Bestellt am";
+$shipping_service_word="Versandart";
+$buyer_name_word="Name des Käufers";
+$seller_name_word="Name des Verkäufers";
+$quantity_word="Menge";
+$product_details_word="Produktdetails";
+$price_word="Preis";
+$total_word="Gesamt";
+$total_td_word="Summe";
+$sku_word="SKU";
+$asin_word="ASIN";
+$listing_id_word="Angebotsnummer";
+$order_item_id_word="Auftrags-Artikelnr.";
+$condition_word="Zustand";
+$subtotal_word="Zwischensumme";
+$promotions_word="beförderungen";
+$order_total_word="SUMME DER BESTELLUNG";
+$thanks_line='<b>Vielen Dank für Ihren Einkauf bei Amazon Marketplace</b>! Unter www.amazon.de/feedback können Sie Ihre Bewertung für diesen Verkäufer abgeben. Wenn Sie den Verkäufer kontaktieren möchten, gehen Sie über "Mein Konto" auf "Meine Bestellungen". Suchen Sie die Bestellung und klicken Sie dort bitte auf die Schaltfläche "Verkäufer kontaktieren" um zum Kontaktformular zu gelangen.';
+?>
+</if>
+<div class="printedpackingslip">
+<div style="margin: 0 auto 25pt auto;">
+  <table border="0" cellpadding="1" cellspacing="0" width="100%" align="center">
+    <tbody><tr>
+      <td align="left" valign="top" width="10%" class="printednormaltext" style="padding-top:3pt;">
+        {$ship_to_word}:
+      </td>
+    </tr>
+    <tr>
+      <td align="left" width="65%" class="printedlargesttext">
+          <strong>
+          {$vo['shipping_info']['name']}<br>
+                {$vo['shipping_info']['address1']}&nbsp;{$vo['shipping_info']['address2']}&nbsp;{$vo['shipping_info']['address3']}<br>	
+                {$vo['shipping_info']['city']}<br>	
+                {$vo['shipping_info']['state']}<br>	
+                {$vo['shipping_info']['country']}<br>	
+                {$vo['shipping_info']['post']}<br>
+                </strong>
+      </td>
+    </tr>
+  </tbody></table>
+</div>
+<!-- Dashed separator -->
+<div style="border-top: 1px dashed rgb(0, 0, 0); margin: 20px 0pt; width: 100%;"></div>
+<strong class="printedlargetext">
+<div id="_myo_OrderID">
+    {$order_id_word}: {$vo.order_number}
+</div>
+</strong>
+{$thank_word}
+<div class="bucketcontainer" style="margin:20pt 0; border: 1px solid #000000">
+  <table border="0" cellpadding="0" cellspacing="0" style="padding: 5px;" width="100%">
+   <tbody><tr>
+      <td width="50%" class="printednormaltext"><strong>{$shipping_adress_word}:</strong><br>
+      {$vo['shipping_info']['name']}<br>
+                {$vo['shipping_info']['address1']}&nbsp;{$vo['shipping_info']['address2']}&nbsp;{$vo['shipping_info']['address3']}<br>	
+                {$vo['shipping_info']['city']}<br>	
+                {$vo['shipping_info']['state']}<br>	
+                {$vo['shipping_info']['country']}<br>	
+                {$vo['shipping_info']['post']}<br>
+      </td>
+      <td align="right"><table cellpadding="0" cellspacing="0" width="100%">
+        <tbody>
+        <tr>
+          <td align="left" nowrap="nowrap" width="10%" class="printednormaltext">{$order_date_word}:</td>
+          <td width="20"></td>
+          <td align="left" nowrap="nowrap" class="printednormaltext">{:date("Y-M-d",strtotime($vo[date_time]))}</td>
+        </tr>
+        <tr>
+          <td align="left" nowrap="nowrap" width="10%" class="printednormaltext">{$shipping_service_word}:</td>
+          <td>&nbsp;</td>
+          <td align="left" nowrap="nowrap" class="printednormaltext">{$vo[ship_service_level]}</td>
+        </tr>
+        <tr>
+          <td align="left" nowrap="nowrap" width="10%" class="printednormaltext">{$buyer_name_word}:</td>
+          <td>&nbsp;</td>
+          <td align="left" nowrap="nowrap" class="printednormaltext">{$vo['shipping_info']['name']}</td>
+        </tr>
+        <tr>
+          <td align="left" nowrap="nowrap" width="10%" class="printednormaltext">{$seller_name_word}:</td>
+          <td>&nbsp;</td>
+          <td align="left" nowrap="nowrap" class="printednormaltext">LILYSILK</td>
+        </tr>
+      </tbody></table></td>
+    </tr>
+  </tbody></table>
+</div>
+<div class="printbucket">
+  <table class="printedtable" border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tbody><tr>
+    <th class="leftcolumn" width="10%">{$quantity_word}</th>
+    <th width="55%" align="left">{$product_details_word}</th>
+    <th width="10%">{$price_word}</th>
+    <th width="25%">{$total_word}</th>
+    </tr>
+     <volist name="vo['product_info']" id="product_list">
+    <tr class="shippeditem">
+    <td align="center" width="10%" class="printednormaltext leftcolumn">{$product_list.number}</td>
+    <td width="55%" class="printednormaltext">
+    <strong>{$product_list.name}</strong>
+    <div class="printedsubtext" style="margin-top: 10px;">
+    <strong>{$sku_word}:</strong> {$product_list.sku}<br>
+    <strong>{$asin_word}:</strong> {$product_list.extra_amazon_info.asin}<br>
+    <strong>{$order_item_id_word}:</strong> {$product_list.extra_amazon_info.orderitemid}<br>
+    <strong>{$condition_word}:</strong> {$product_list.extra_amazon_info.conditionid}<br>
+    </div>
+    </td>
+    <td align="center" width="10%" class="printednormaltext" nowrap="">{$product_list.extra_amazon_info.currencycode} {$product_list.extra_amazon_info.itemprice}</td>
+    <td align="center" width="25%" class="printednormaltext">
+		<table width="100%" border="0" cellspacing="0" cellpadding="1" class="printedtotal"><tbody>
+		  <tr>
+		    <td class="smaller" align="right" width="60%">{$subtotal_word}:</td>
+		    <td class="smaller" align="right" nowrap="">{$product_list.extra_amazon_info.currencycode} {$product_list.extra_amazon_info.itemprice}</td>
+		  </tr>
+		  <if condition="$product_list[extra_amazon_info][shippingprice] gt 0">
+		  <tr>
+		    <td class="smaller" align="right" width="60%">Shipping:</td>
+		    <td class="smaller" align="right" width="40%" nowrap="">{$product_list.extra_amazon_info.currencycode} {$product_list.extra_amazon_info.shippingprice}</td>
+		  </tr>
+		  </if>
+		  <if condition="$product_list[extra_amazon_info][promotiondiscount] gt 0">
+		  <tr>
+		    <td class="smaller" align="right" width="60%">{$promotions_word}:</td>
+		    <td class="smaller" align="right" width="40%" nowrap="">({$product_list.extra_amazon_info.currencycode} {$product_list.extra_amazon_info.promotiondiscount})</td>
+		  </tr>
+		   </if>
+		  <tr>
+		    <td colspan="2"><hr color="#cccccc" noshade="noshade" size="1"></td>
+		  </tr>
+		  <tr>
+		    <td class="small" align="right">{$total_td_word}:</td>
+		    <td class="small" align="right" nowrap="">
+			      {$product_list.extra_amazon_info.currencycode} {$product_list[extra_amazon_info][itemprice]+$product_list[extra_amazon_info][shippingprice]-$product_list[extra_amazon_info][promotiondiscount]}
+		    </td>
+		  </tr>
+		  <tr>
+		    <td colspan="2"><hr color="#cccccc" noshade="noshade" size="1"></td>
+		  </tr>
+		</tbody></table>
+    </td>
+    </tr>
+	</volist>
+
+    <tr class="shippeditem">
+      <td colspan="4/8" align="right" class="printednormaltext">
+        <strong>
+          {$order_total_word}: &nbsp;{$vo[currency]} {$vo[price]}
+        </strong>
+      </td>
+    </tr>
+
+  </tbody></table>
+</div>
+
+
+<br>
+<div class="printbucket printednormaltext">
+    {$thanks_line}
+</div>
+
+
+
+
+<br>
+<br>
+
+</div>
+
+<p class="fenye" style="text-align:right;font-size:25px;width:1200px;margin:auto;">&nbsp;</p>
+</volist>
+
+<script type="text/javascript">
+    window.print();
+</script>
+
+
+
+
+
+
+
+</body></html>

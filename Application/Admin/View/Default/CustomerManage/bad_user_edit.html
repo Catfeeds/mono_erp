@@ -1,0 +1,65 @@
+<div class="admin">
+	<form action="{:U('/Admin/CustomerManage/customer_bad_user/act/edit/id/'.$user[id])}" method="post" id="myform">
+		<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+			<tr class="table_title">
+				<td colspan="2">修改黑名单</td>
+			</tr>
+			<tr class="tr rt">
+				<td width="100">邮箱：</td>
+				<td class="lt">
+				<input type="text" name="email" value="{$user.email}" style="width:200px;padding: 4px 5px;">
+				</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">First Name：</td>
+					<td class="lt">
+						<input type="text" name="first_name" value="{$user.first_name}" style="padding: 3px 5px;">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">Last Name：</td>
+					<td class="lt">
+						<input type="text" name="last_name" value="{$user.last_name}" style="padding: 3px 5px;" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >电话：</td>
+					<td class="lt">
+						<input type="text" name="telephone" value="{$user.telephone}" style="padding: 3px 5px;" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">IP地址：</td>
+					<td class="lt">
+						<input type="text" name="custome_ip" value="{$user.custome_ip}" style="padding: 3px 5px;">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">时间：</td>
+					<td class="lt">
+						<input type="text" name="time" value="{$user.datetime|date='Y-m-d',###}" style="padding: 3px 5px;" onclick="WdatePicker()">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >备注：</td>
+					<td class="lt">
+						<textarea name="remark" cols="25" rows="3" >{$user.remark}</textarea>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >生效：</td>
+					<td class="lt">
+						<select name="is_work">
+						<option value="1">是</option>
+						<option value="0">否</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr lt">
+					<td colspan="4">
+					<input class="bginput" type="submit" value="修 改">
+					<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+				</tr>
+</table>
+</form>
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lilysilk - ERP</title>
+</head>
+
+<!-- 加载js css -->
+<link rel="stylesheet" href="__CSS__/pintuer.css">
+<link rel="stylesheet" href="__CSS__/admin.css">
+<script src="__JS__/jquery.min.js"></script>
+<script src="__JS__/pintuer.js"></script>
+<script src="__JS__/respond.js"></script>
+<script src="__JS__/admin.js"></script>
+<script src="__JS__/layer/layer.js"></script>
+<script src="__Theme__/Public/KindEditor/kindeditor-min.js"></script>
+<script src="__Theme__/Public/KindEditor/lang/zh_CN.js"></script>
+<script src="__JS__/function.js?v={:time()}"></script><!-- 公共js函数文件 -->
+<script>
+	KindEditor.ready(function(K) {
+		editor = K.create('textarea[name="content"]', {
+			allowFileManager: true,
+			afterBlur: function(){this.sync();},
+		});
+	});
+</script>
+<script language="javascript" type="text/javascript" src="__Theme__/Public/wdatepicker/WdatePicker.js"></script>
+<script>//定义需要的“常量”
+var _CONTROLLER_ = '__CONTROLLER__';
+var _ACTION_  = '__ACTION__';
+var _PUBLIC_ = '__PUBLIC__';
+var _TIMESTAMP_ = {:time()};
+var _SELF_ = '__SELF__';
+var _APP_='__APP__';
+var _MODULE_ = '__MODULE__';
+var _ROOT_ = '__ROOT__';
+
+</script>
+
+
+<link type="image/x-icon" href="http://www.pintuer.com/favicon.ico" rel="shortcut icon" />
+<link href="http://www.pintuer.com/favicon.ico" rel="bookmark icon" />
+<body>

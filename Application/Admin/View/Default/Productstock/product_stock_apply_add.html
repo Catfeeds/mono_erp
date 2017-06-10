@@ -1,0 +1,123 @@
+<script src="__JS__/CodeManage/main.js?v={:time()}"></script>
+<div class="admin">
+<gt name="info.id" value="0">
+    <form action="{:U('/Admin/productstock/product_stock_edit')}" method="post" name="form" id="myform">
+    <input type="hidden" name="id" value="{$info.id}">
+<else />
+    <form action="{:U('/Admin/productstock/product_stock_apply_add')}" method="post" name="form" id="myform">
+</gt>
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 库存申请</td>
+				</tr>
+				
+			<empty name="info">
+				<tr class="tr rt">
+					<td width="100">分类：</td>
+					<td colspan="3" class="lt">
+						<select name="catalog" onchange="get_product_of_catalog(this.value)"  <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> > 
+			                  <option value="-1">--请选择--</option>
+			                  <volist name="catalog" id="vo">
+			                 	 <option value='{$vo.id}' <eq name="row['code_info'][catalog_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+			                  </volist>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">产品：</td>
+					<td colspan="3" class="lt">
+						<select  name="product_id" id="product_id" onchange="get_product_of_code_option(this.value)"  <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+			                  <option value="-1">--请选择--</option>
+			                  <volist name="product_list" id="vo">
+			                 	 <option value='{$vo.id}' <eq name="row['code_info'][product_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+			                  </volist>
+			            </select>
+					</td>
+				</tr>
+			    <tr class="tr rt">
+					<td width="100">code：</td>
+					<td colspan="3" class="lt">
+						<select check="-1" msg="必须选择code！" name="code_name" id="product_code_id" <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+							<option value="-1" >--请选择--</option>
+							<volist name="code_list" id="code_vo">
+							<option value="{$code_vo.id}" <if condition="$code_vo.id eq $row['product_code_id']">selected="selected"</if> >{$code_vo['code']} ( name: {$code_vo['name']} ) </option>
+							</volist>
+						</select>
+					</td>
+				</tr>
+			<else/>
+				<tr class="tr rt">
+					<td width="100">C o d e&nbsp;&nbsp;：</td>
+					<td colspan="3" class="lt">
+						<span>{$info.code_code} - {$info.code_name}</span>
+						<input type="hidden" name="code_name" value="{$info.code_id}" readOnly="readOnly"/>
+					</td>
+				</tr>
+			</empty>
+			
+				
+                <tr class="tr rt">
+					<td width="100">数　　量：</td>
+					<td colspan="3" class="lt">
+						<input check="number" msg="数量必须填写数字！" type="text" name="number" id="number" style="width:200px" value="{$info.number}">
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">库存类型：</td>
+					<td colspan="3" class="lt">
+						<select name="style" style="min-width:100px">
+                        	<volist name="style" id="vo">
+                           		 <option value="{$key}" <eq name="info.style" value="$key">selected</eq> >{$vo}</option>
+                            </volist>
+						</select>
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">开始时间：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="Wdate bd" onClick="WdatePicker()" value="<if condition='$info.begin_time neq ""'>{$info.begin_time|date="Y-m-d",###}<else />{:date('Y-m-d', time())}</if>"  />
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">结束时间：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="end_time" id="btime" class="Wdate bd" onClick="WdatePicker()" value="<if condition='$info.end_time neq ""'>{$info.end_time|date="Y-m-d",###}<else />{:date('Y-m-d', time())}</if>"  />
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >申请状态：</td>
+					<td colspan="3" class="lt">
+                        <div class="field">
+                        <div class="button-group radio">
+                        <if condition='$info'>
+                       	    <label class="button <if condition="$info.status neq 8">active </if>">
+                                <input name="status" value="0"  <if condition="$info.status neq 8"> checked="" </if> type="radio"><span class="icon icon-check"></span> 启用
+                            </label>
+                            <label class="button <if condition="$info.status eq 8"> active </if>">
+                                <input name="status" value="8"  <if condition="$info.status eq 8"> checked="" </if> type="radio"><span class="icon icon-times"></span> 关闭
+                            </label>
+                        <else />
+                        	<label class="button active">
+                                <input name="status" value="0"  checked="" type="radio"><span class="icon icon-check"></span> 启用
+                            </label>
+                            <label class="button">
+                                <input name="status" value="8" type="radio"><span class="icon icon-times"></span> 关闭
+                            </label>
+                        
+                        </if>
+                            </div>
+                        </div>    
+					</td>
+               </tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" onclick="return check_form('myform')">
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加" onclick="return check_form('myform')"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>

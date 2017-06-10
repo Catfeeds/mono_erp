@@ -1,0 +1,34 @@
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>导入订单地址</h1>
+<form method="post" action="" class="form-x margin-large-top" enctype="multipart/form-data">
+	<div class="form-group">
+		<div class="label">
+			<label>上传文件：</label>
+		</div>
+		<div class="field">
+			<a class="button input-file">
+				+ 浏览文件
+				<input size="100" type="file" name="file" id="file">
+				<span id="file_name" style="margin-left:10px;">&nbsp;&nbsp;</span>
+			</a>
+		</div>
+	</div>
+	<div class="form-group">
+			<div class="field">
+			<select class="input" name="style">
+				<option value="web">网站</option>
+				<option value="plat">平台</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">导入</button>
+	</div>
+</form>
+
+</div>

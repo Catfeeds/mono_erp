@@ -1,0 +1,44 @@
+<script src="__JS__/serviceManage/refund_add.js"></script>
+<div class="admin">
+    <form action="{:U('/Admin/ServiceManage/refund_add')}" method="post" name="form" id="myform">
+    <input type="hidden" name="id" value="{$info.id}">
+    <input type="hidden" name="data" value="{$data}">
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4"  class="fw">{$tpltitle} 退款申请</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">产品单号：</td>
+					<td colspan="3" class="lt">
+						<if condition="$info.order_number ">
+                        	{$info.order_number}
+                        <else />
+                            <input type="text" id='order_number' name="order_number" style=" width:300px;"/>
+                         </if>
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">退款金额：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="price" style=" width:100px;" />
+					</td>
+				</tr>
+                
+				<tr class="tr rt">
+					<td width="100">备　　注：</td>
+					<td colspan="3" class="lt">
+						<textarea name="message" style="height:100px; width:400px;"></textarea>
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>

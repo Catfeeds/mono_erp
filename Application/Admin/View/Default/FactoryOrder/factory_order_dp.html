@@ -1,0 +1,73 @@
+<div class="admin">
+<table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+    <tr>
+        <td colspan="10" class="table_title tab_title">
+            <span class="fl icon-align-justify"> 工厂单品订单管理</span>
+        </td>
+        <tr class="list_head ct">
+            <td width="50" align="left">ID</td>
+            <td width="100"  align="left">产品名称</td>
+            <td width="70"  align="left">申请人</td>
+            <td width="70"  align="left">申请数量</td>
+            <td width="70"  align="left">库存类型</td>
+            <td width="150"  align="center">接收时间</td>
+            <td width="150"  align="center">管理操作</td>
+        </tr>
+    <volist name="list" id="vo">
+        <tr class='<eq name="mod" value="1">tr<else/>ji</eq>'>
+            <td align='left' class="td_number">{$vo.id}</td>
+            <td class="td_cc">{$vo.code_name}</td>
+            <td >{$vo.apply}</td>
+            <td class="td_ff">{$vo.number}</td>
+            <td >{$vo.sty}</td>
+            <td align="center">{$vo.change_time|date="Y-m-d H:i:s ",###}</td>
+            <td align="center"><a href="{:U('/Admin/FactoryOrder/factory_order_start',array('id'=>$vo['id']))}" class="icon-check-square-o" title="确认接单">&nbsp;接单</a>
+            </td>
+        </tr>
+    </volist>
+</table>
+    <br /><br /><br />
+    
+<!-- 已接单列表-->
+<table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" id="dpdd">
+    <tr>
+        <td colspan="10" class="table_title tab_title">
+            <span class="flfl icon-align-justify"> 已接受工厂订单管理</span>
+        </td>
+    </tr>    
+    <tr class="list_head ct">
+        <td width="50" align="left">ID</td>
+        <td width="100"align="left">产品名称</td>
+        <td width="50" align="left">申请人</td>
+        <td width="50" align="left">申请数量</td>
+        <td width="70" align="left">库存类型</td>
+        <td width="80" align="center">开始时间</td>
+        <td width="80" align="center">预计结束时间</td>
+        <td width="100" align="center">实际结束时间</td>
+        <td width="70" align="center">状态</td>
+        <td width="70" align="center">管理操作</td>
+    </tr>
+<volist name="prostockcome_dp" id="in">
+    <tr>
+        <td class="td_number">{$in.fac_id}</td>
+        <td class="td_cc">{$in.name}</td>
+        <td >{$in.apply}</td>
+        <td >{$in.number}</td>
+        <td >{$in.sty}</td>
+        <td align="center">{$in.begin_time|date="Y-m-d",###}</td>
+        <td align="center">{$in.end_time|date="Y-m-d",###}</td>
+        <td align="center"><if condition="$in.status gt 2">{$in.actual_end_time|date="Y-m-d H:i:s",###}</if></td>
+        <td align="center" class="td_ff"> <if condition="$in.status eq 2">未完成<elseif condition="$in.status eq 3"/>已提交<elseif condition="$in.status eq 4"/>对方已收货</if></td>
+        <td align='center'><a <if condition="$in.status lt '3'"> href="{:U('/Admin/FactoryOrder/factory_order_end',array('id'=>$in['fac_id']))}"<else/>style="color:#ccc" </if>>完成</a>
+        </td>
+    </tr>
+</volist>
+<tr>
+    <td colspan="10" class="page"  align="center">
+        <if condition="$page neq ''"> {$page}<else />暂时没有记录</if>
+    </td>
+ </tr>
+</table>
+
+
+</div>

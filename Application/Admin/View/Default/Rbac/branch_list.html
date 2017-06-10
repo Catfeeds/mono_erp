@@ -1,0 +1,58 @@
+<div class="admin">
+	<table class="table  table-striped table-hover table-condensed">
+		<tr>
+			<td colspan="4" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-align-justify"> 部门管理</span>
+				<span class="fr">
+					<a href="{:U('/Admin/Rbac/branchAdd/type/add')}" class="icon-square"> 添加部门</a>
+				</span>
+			</td>
+			<tr class="list_head">
+           		<td width="10">ID</td>
+				<td>部门名称</td>
+				<td width="100">状态</td>
+				<td width="200">管理操作</td>
+			</tr>
+	    <volist name="list" id="vo">
+			<tr >
+            	<td align="center">{$vo.id}</td>
+				<td style='color:#03c; font-size:14px;'>{$vo.branch_name}</td>
+				<td align='center'>
+                	<eq name="vo.is_work" value="1">
+                    	<font color="red" class="icon-check"></font>
+                    <else/>
+                    	<font color="blue" class="icon-times"></font>
+                    </eq> 
+				</td>
+				
+				<td align="center">
+                    <a href="/index.php/Admin/Rbac/branchAdd/id/{$vo.id}/type/add.html" class="icon-th-large" title="添加子菜单"></a> &nbsp;&nbsp; 
+                    <a href="/index.php/Admin/Rbac/branchAdd/id/{$vo.id}/type/update.html" class="icon-pencil" title="修改"></a> &nbsp;&nbsp; 
+                    <a href="javascript:" onclick="layer.confirm('你确定删除该用户？', {btn: ['确定','取消']}, function(){location.href='/index.php/Admin/Rbac/branchDel/id/{$vo.id}.html');" class="icon-trash-o" title="删除"></a>
+                </td>
+			</tr>
+            <if condition="$vo['detail'] ">
+                <volist name="vo.detail" id="vo_detail">
+                    <tr >
+                        <td align="center">{$vo_detail.id}</td>
+                        <td style='color:#03c; font-size:14px; '>&nbsp;&nbsp;&nbsp; ├─ {$vo_detail.branch_name}</td>
+                        <td align='center'>
+                            <eq name="vo_detail.is_work" value="1">
+                                <font color="red" class="icon-check"></font>
+                            <else/>
+                                <font color="blue" class="icon-times"></font>
+                            </eq> 
+                        </td>
+                        
+                        <td align="center">
+                        
+							<!--<a href="/index.php/Admin/Rbac/branchAdd/id/{$vo_detail.id}/add/son.html" class="icon-th-large" title="添加子菜单"></a> -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                            <a href="/index.php/Admin/Rbac/branchAdd/id/{$vo_detail.id}/pid/{$vo.id}/type/update.html" class="icon-pencil" title="修改"></a> &nbsp;&nbsp; 
+                            <a href="javascript:" onclick="layer.confirm('你确定删除该用户？', {btn: ['确定','取消']}, function(){location.href='/index.php/Admin/Rbac/branchDel/id/{$vo_detail.id}.html');" class="icon-trash-o" title="删除"></a>
+						</td>
+                    </tr>
+                </volist>
+            </if>
+	    </volist>
+		</table>
+</div>

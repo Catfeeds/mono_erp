@@ -1,0 +1,45 @@
+<div class="admin">
+		<form action="{:U('/Admin/Rbac/system_parameters_add')}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4" class="fw">{$tpltitle} 系统参数</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="150">参数名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="name" id="name" class="admin_input" value="{$info.name}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="150">参数数值(int)：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="value_int" id="value_int" class="admin_input" value="{$info.value_int}" >
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="150">参数数值(varchar)：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="value_var" id="value_var" class="admin_input" value="{$info.value_var}" >
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="150">参数描述：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="message" id="message" class="admin_input" value="{$info.message}" >
+					</td>
+				</tr>
+                
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="button border-main" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="button border-main" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="button border-main" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

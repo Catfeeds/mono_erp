@@ -1,0 +1,52 @@
+<div class="admin">
+    <form action="{:U('/Admin/productstock/product_warn_edit')}" method="post" name="form" id="myform">
+    <input type="hidden" name="id" value="{$info.id}">
+    <input type="hidden" name="data" value="{$info.data}">
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 库存预警</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">产品名称：</td>
+					<td colspan="3" class="lt">
+						{$info.code_name}{$info.sku_name}
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">当前数量：</td>
+					<td colspan="3" class="lt">
+						{$info.number}
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">库存类型：</td>
+					<td colspan="3" class="lt">
+						{$info.sty}
+                    </td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">最大库存：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="maximum" id="minimum" style="width:200px" value="{$info.maximum}">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">最小库存：</td>
+					<td colspan="3" class="lt">
+                    	<if condition="$info.minimum ">
+							<input type="text" name="minimum" id="maximum" style="width:200px" value="{$info.minimum}">
+                        <else />
+                       	    <input type="text" name="minimum" id="maximum" style="width:200px" value="{$info.minimun}">
+                        </if>
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

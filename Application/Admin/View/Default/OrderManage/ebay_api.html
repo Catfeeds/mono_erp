@@ -1,0 +1,8 @@
+<script src="__JS__/OrderManage/main.js"></script>
+<div class="admin">
+	<form action="" method="post">
+	<button onclick="return get_ebay('ebay.us')" <if condition="$_GET['platform'] eq 'ebay.us' || !$_GET['platform']"> class="button"<else />class="button bg-main"</if>>ebay.us</button>
+	<button onclick="return get_ebay('ebay.uk')" <if condition="$_GET['platform'] eq 'ebay.uk'"> class="button"<else />class="button bg-main"</if>>ebay.uk</button>
+	<input type="submit" name="sub" value="更新最近24小时内订单" class="button bg-main">
+	</form>
+</div>

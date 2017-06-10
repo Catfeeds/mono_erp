@@ -1,0 +1,22 @@
+{
+  "name": "pipl/piplapis-php",
+  "description": "Client library for use with the Pipl search API",
+  "license": "APACHE2",
+  "homepage": "https://pipl.com/dev",
+  "require": {
+    "php": ">=5.2.17",
+    "ext-curl": "*"
+  },
+  "suggest": {
+    "ext-mbstring": "*"
+  },
+  "authors": [
+    {
+      "name": "Josh Liberty",
+      "email": "josh.liberty@pipl.com"
+    }
+  ],
+  "autoload": {
+      "classmap": ["src/piplapis/", "src/piplapis/data/"]
+  }
+}

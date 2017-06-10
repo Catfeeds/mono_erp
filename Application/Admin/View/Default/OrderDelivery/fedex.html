@@ -1,0 +1,508 @@
+<style>
+table 
+{
+width:100%;
+border-collapse:collapse;
+}
+table tr td
+{
+border-bottom:2px solid #000000;
+padding:5px;
+font-size:12px;
+}
+</style>
+<table>
+<tr>
+<td style="text-align:right; width:50%;"><span style="font-size:18px; font-weight:bold;">COMMERCIAL INVOICE</span></td>
+<td style="border-left:2px solid #000000;border-top:2px solid #000000;">INTERNATIONAL AIR WAYBILL NUMBER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:16px; font-weight:bold;">{$order_detail.trackingNumber_str}</span></td>
+</tr>
+<tr>
+<td>DATE OF EXPORTATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+<td style="border-left:2px solid #000000;">EXPORT REFERENCES</td>
+</tr>
+<tr>
+<td>INVOICE NUMBER</td>
+<td style="border-left:2px solid #000000;">INVOICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+</tr>
+<tr>
+<td>
+<div>
+<p style="margin:0;">SHIPPER/EXPORTER</p>
+<p style="margin:10px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">373 laiyinda road</p>
+<p style="margin:0px 0 0 5px;">jiangning district</p>
+<p style="margin:0px 0 0 5px;">Nanjing</p>
+<p style="margin:0px 0 0 5px;">211100 CN 15850574562</p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+<div>
+<p style="margin:0;">CONSIGNEE</p>
+<p style="margin:10px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.streetline}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.city}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.state}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.code} {$order_detail.country} {$order_detail.phone}</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S TAX NUMBER
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE OR IMPORTER'S TAX NUMBER
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S EMAIL CONTACT
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE'S EMAIL CONTACT
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p><span style="margin:0 40px 0 0;">PURPOSE OF SHIPMENT</span> <span style="">(CHECK ONE)</span></p>
+<p style="width:100%; float:left; margin:0 0 10px 0;">
+<span style="width:100px; float:left;">SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">PERSONAL EFFECTS</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">NOT SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">RETURN AND REPAIR</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">GIFT</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">SAMPLE</span><input style="float:left;" checked="checked" type="checkbox" value="" />
+</p>
+<p><span style="float:left;font-size:13px; margin:0 0 0 0;">ITHER</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+IMPORTER
+</td>
+</tr>
+
+<tr>
+<td style="border-bottom:none;">
+<p style="float:left; width:100%; margin:0 0 10px 0; width:400px;"><span style="float:left;">RETURN REASON TYPE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p><br>
+<p style="float:left; width:100%; margin:0; width:400px;"><span style="float:left;">RETURN OYHER REASON</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</td>
+<td style="border-left:2px solid #000000;border-bottom:none;">
+IMPORTER'S EMAIL CONTACT
+</td>
+</tr>
+</table>
+
+<table style="margin:5px 0 5px 0; border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;">
+<tr>
+<td style="border-right:2px solid #000000;">
+COUNTRY OF MANUFACTURE
+</td>
+<td style="border-right:2px solid #000000;">
+FULL DESCRIPTION OF GOODS
+</td>
+<td style="border-right:2px solid #000000;">
+QTY
+</td>
+<td style="border-right:2px solid #000000;">
+UNIT VALUE
+</td>
+<td>
+TOTAL VALUE
+</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">CHINA</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_name}<br>HS CODE{$order_detail.hs_bm}</td>
+<td style="border-right:2px solid #000000;">1 Piece</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+<td>{$order_detail.hs_price}</td>
+</tr>
+</table>
+<table style="border-top:2px solid #000000;">
+<tr>
+<td style="border-left:2px solid #000000;">TERMS OF SALE: DDP</td>
+<td style="border-left:2px solid #000000;">CURRENCY</td>
+<td style="border-left:2px solid #000000;border-right:2px solid #000000;">USD</td>
+</tr>
+<tr>
+<td rowspan="7" style="border-right:2px solid #000000;">
+100% cotton woven mfg same as sender
+</td>
+<td style="border-right:2px solid #000000;">TOTAL FREIGHT CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INSURANCE CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">OTHER COSTS</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TAX AMOUNT</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INVOICE VALUES</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL NUMBER OF PACKAGES</td>
+<td style="border-right:2px solid #000000;">1</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL WEIGHT</td>
+<td style="border-right:2px solid #000000;">{$order_detail.weight} KGS</td>
+</tr>
+</table>
+
+<p style="font-size:13px;">
+I DECLARE ALL THE INFORMATION CONTAINED IN THIS INVOICE IS TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE<br>
+(SIGNATURE REQUIREMENTS MAY VARY PER COUNTRY)
+</p>
+
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">DATE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">{$order_detail.date_time}</span>
+</p>
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">NAME</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">SIGNATURE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">TITLE</span><span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span>
+</p>
+
+<div  style="page-break-before:always;"><br /></div>
+
+<table>
+<tr>
+<td style="text-align:right; width:50%;"><span style="font-size:18px; font-weight:bold;">COMMERCIAL INVOICE</span></td>
+<td style="border-left:2px solid #000000;border-top:2px solid #000000;">INTERNATIONAL AIR WAYBILL NUMBER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:16px; font-weight:bold;">{$order_detail.trackingNumber_str}</span></td>
+</tr>
+<tr>
+<td>DATE OF EXPORTATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+<td style="border-left:2px solid #000000;">EXPORT REFERENCES</td>
+</tr>
+<tr>
+<td>INVOICE NUMBER</td>
+<td style="border-left:2px solid #000000;">INVOICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+</tr>
+<tr>
+<td>
+<div>
+<p style="margin:0;">SHIPPER/EXPORTER</p>
+<p style="margin:10px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">373 laiyinda road</p>
+<p style="margin:0px 0 0 5px;">jiangning district</p>
+<p style="margin:0px 0 0 5px;">Nanjing</p>
+<p style="margin:0px 0 0 5px;">211100 CN 15850574562</p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+<div>
+<p style="margin:0;">CONSIGNEE</p>
+<p style="margin:10px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.streetline}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.city}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.state}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.code} {$order_detail.counrty} {$order_detail.phone}</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S TAX NUMBER
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE OR IMPORTER'S TAX NUMBER
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S EMAIL CONTACT
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE'S EMAIL CONTACT
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p><span style="margin:0 40px 0 0;">PURPOSE OF SHIPMENT</span> <span style="">(CHECK ONE)</span></p>
+<p style="width:100%; float:left; margin:0 0 10px 0;">
+<span style="width:100px; float:left;">SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">PERSONAL EFFECTS</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">NOT SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">RETURN AND REPAIR</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">GIFT</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">SAMPLE</span><input style="float:left;" checked="checked" type="checkbox" value="" />
+</p>
+<p><span style="float:left;font-size:13px; margin:0 0 0 0;">ITHER</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+IMPORTER
+</td>
+</tr>
+
+<tr>
+<td style="border-bottom:none;">
+<p style="float:left; width:100%; margin:0 0 10px 0; width:400px;"><span style="float:left;">RETURN REASON TYPE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p><br>
+<p style="float:left; width:100%; margin:0; width:400px;"><span style="float:left;">RETURN OYHER REASON</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</td>
+<td style="border-left:2px solid #000000;border-bottom:none;">
+IMPORTER'S EMAIL CONTACT
+</td>
+</tr>
+</table>
+
+<table style="margin:5px 0 5px 0; border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;">
+<tr>
+<td style="border-right:2px solid #000000;">
+COUNTRY OF MANUFACTURE
+</td>
+<td style="border-right:2px solid #000000;">
+FULL DESCRIPTION OF GOODS
+</td>
+<td style="border-right:2px solid #000000;">
+QTY
+</td>
+<td style="border-right:2px solid #000000;">
+UNIT VALUE
+</td>
+<td>
+TOTAL VALUE
+</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">CHINA</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_name}<br>HS CODE{$order_detail.hs_bm}</td>
+<td style="border-right:2px solid #000000;">1 Piece</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+<td>{$order_detail.hs_price}</td>
+</tr>
+</table>
+<table style="border-top:2px solid #000000;">
+<tr>
+<td style="border-left:2px solid #000000;">TERMS OF SALE: DDP</td>
+<td style="border-left:2px solid #000000;">CURRENCY</td>
+<td style="border-left:2px solid #000000;border-right:2px solid #000000;">USD</td>
+</tr>
+<tr>
+<td rowspan="7" style="border-right:2px solid #000000;">
+100% cotton woven mfg same as sender
+</td>
+<td style="border-right:2px solid #000000;">TOTAL FREIGHT CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INSURANCE CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">OTHER COSTS</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TAX AMOUNT</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INVOICE VALUES</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL NUMBER OF PACKAGES</td>
+<td style="border-right:2px solid #000000;">1</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL WEIGHT</td>
+<td style="border-right:2px solid #000000;">{$order_detail.weight} KGS</td>
+</tr>
+</table>
+
+<p style="font-size:13px;">
+I DECLARE ALL THE INFORMATION CONTAINED IN THIS INVOICE IS TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE<br>
+(SIGNATURE REQUIREMENTS MAY VARY PER COUNTRY)
+</p>
+
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">DATE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">{$order_detail.date_time}</span>
+</p>
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">NAME</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">SIGNATURE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">TITLE</span><span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span>
+</p>
+
+<div  style="page-break-before:always;"><br /></div>
+
+<table>
+<tr>
+<td style="text-align:right; width:50%;"><span style="font-size:18px; font-weight:bold;">COMMERCIAL INVOICE</span></td>
+<td style="border-left:2px solid #000000;border-top:2px solid #000000;">INTERNATIONAL AIR WAYBILL NUMBER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-size:16px; font-weight:bold;">{$order_detail.trackingNumber_str}</span></td>
+</tr>
+<tr>
+<td>DATE OF EXPORTATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+<td style="border-left:2px solid #000000;">EXPORT REFERENCES</td>
+</tr>
+<tr>
+<td>INVOICE NUMBER</td>
+<td style="border-left:2px solid #000000;">INVOICE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span>{$order_detail.date_time}</span></td>
+</tr>
+<tr>
+<td>
+<div>
+<p style="margin:0;">SHIPPER/EXPORTER</p>
+<p style="margin:10px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">Jia Lv</p>
+<p style="margin:0px 0 0 5px;">373 laiyinda road</p>
+<p style="margin:0px 0 0 5px;">jiangning district</p>
+<p style="margin:0px 0 0 5px;">Nanjing</p>
+<p style="margin:0px 0 0 5px;">211100 CN 15850574562</p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+<div>
+<p style="margin:0;">CONSIGNEE</p>
+<p style="margin:10px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.name}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.streetline}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.city}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.state}</p>
+<p style="margin:0px 0 0 5px;">{$order_detail.code} {$order_detail.country} {$order_detail.phone}</p>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S TAX NUMBER
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE OR IMPORTER'S TAX NUMBER
+</td>
+</tr>
+<tr>
+<td>
+SHIPPER'S EMAIL CONTACT
+</td>
+<td style="border-left:2px solid #000000;">
+CONSIGNEE'S EMAIL CONTACT
+</td>
+</tr>
+
+<tr>
+<td>
+<div>
+<p><span style="margin:0 40px 0 0;">PURPOSE OF SHIPMENT</span> <span style="">(CHECK ONE)</span></p>
+<p style="width:100%; float:left; margin:0 0 10px 0;">
+<span style="width:100px; float:left;">SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">PERSONAL EFFECTS</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">NOT SOLD</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">RETURN AND REPAIR</span><input style="float:left;" type="checkbox" value="" />
+</p>
+<p style="width:100%; float:left;margin:0 0 10px 0;">
+<span style="width:100px; float:left;">GIFT</span> <input style="float:left;margin-right:50px;" type="checkbox" value="" />  <span style="width:130px;float:left;margin-right:50px;">SAMPLE</span><input style="float:left;" checked="checked" type="checkbox" value="" />
+</p>
+<p><span style="float:left;font-size:13px; margin:0 0 0 0;">ITHER</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</div>
+</td>
+<td style="border-left:2px solid #000000;">
+IMPORTER
+</td>
+</tr>
+
+<tr>
+<td style="border-bottom:none;">
+<p style="float:left; width:100%; margin:0 0 10px 0; width:400px;"><span style="float:left;">RETURN REASON TYPE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p><br>
+<p style="float:left; width:100%; margin:0; width:400px;"><span style="float:left;">RETURN OYHER REASON</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span></p>
+</td>
+<td style="border-left:2px solid #000000;border-bottom:none;">
+IMPORTER'S EMAIL CONTACT
+</td>
+</tr>
+</table>
+
+<table style="margin:5px 0 5px 0; border-top:2px solid #000000;border-left:2px solid #000000;border-right:2px solid #000000;">
+<tr>
+<td style="border-right:2px solid #000000;">
+COUNTRY OF MANUFACTURE
+</td>
+<td style="border-right:2px solid #000000;">
+FULL DESCRIPTION OF GOODS
+</td>
+<td style="border-right:2px solid #000000;">
+QTY
+</td>
+<td style="border-right:2px solid #000000;">
+UNIT VALUE
+</td>
+<td>
+TOTAL VALUE
+</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">CHINA</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_name}<br>HS CODE{$order_detail.hs_bm}</td>
+<td style="border-right:2px solid #000000;">1 Piece</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+<td>{$order_detail.hs_price}</td>
+</tr>
+</table>
+<table style="border-top:2px solid #000000;">
+<tr>
+<td style="border-left:2px solid #000000;">TERMS OF SALE: DDP</td>
+<td style="border-left:2px solid #000000;">CURRENCY</td>
+<td style="border-left:2px solid #000000;border-right:2px solid #000000;">USD</td>
+</tr>
+<tr>
+<td rowspan="7" style="border-right:2px solid #000000;">
+100% cotton woven mfg same as sender
+</td>
+<td style="border-right:2px solid #000000;">TOTAL FREIGHT CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INSURANCE CHARGES</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">OTHER COSTS</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TAX AMOUNT</td>
+<td style="border-right:2px solid #000000;">0.00</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL INVOICE VALUES</td>
+<td style="border-right:2px solid #000000;">{$order_detail.hs_price}</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL NUMBER OF PACKAGES</td>
+<td style="border-right:2px solid #000000;">1</td>
+</tr>
+<tr>
+<td style="border-right:2px solid #000000;">TOTAL WEIGHT</td>
+<td style="border-right:2px solid #000000;">{$order_detail.weight} KGS</td>
+</tr>
+</table>
+
+<p style="font-size:13px;">
+I DECLARE ALL THE INFORMATION CONTAINED IN THIS INVOICE IS TRUE AND CORRECT TO THE BEST OF MY KNOWLEDGE<br>
+(SIGNATURE REQUIREMENTS MAY VARY PER COUNTRY)
+</p>
+
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">DATE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">{$order_detail.date_time}</span>
+</p>
+<p style="float:left; width:100%; margin:10px 0 10px 0;">
+<span style="float:left;font-size:13px;">NAME</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">SIGNATURE</span> <span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;">Jia Lv</span> <span style="float:left;font-size:13px; margin:0 0 0 20px;">TITLE</span><span style="float:left;font-size:13px;margin:0 0 0 20px; padding:0 0 0 10px; border-bottom:2px solid #000000; width:200px;height:17px;"></span>
+</p>
+<script>
+window.print();
+</script>

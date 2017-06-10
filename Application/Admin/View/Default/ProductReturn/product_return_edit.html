@@ -1,0 +1,55 @@
+<div class="admin">
+<form action="{:U('/Admin/ProductReturn/product_return_act/act/edit/id/'.$product_return_one_list[id])}" method="post">
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+	<tr class="table_title">
+		<td colspan="4">修改记录</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">订单ID</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="order_id" style="width:200px;background:white;" readonly="readonly" value="{$product_return_one_list.order_id}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">交易ID</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="transaction_id" style="width:200px;background:white;" readonly="readonly" value="{$product_return_one_list.transaction_id}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">状态</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="status" style="width:200px;" value="{$product_return_one_list.status}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">退回到</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="place" style="width:200px;" value="{$product_return_one_list.place}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">是否取消</td>
+		<td colspan="3" class="lt">
+		<select name="is_cancel">
+			<option value="0" <eq name="product_return_one_list.is_cancel" value="0">selected</eq> >未取消</option>
+			<option value="1" <eq name="product_return_one_list.is_cancel" value="1">selected</eq> >已取消</option>
+		</select>
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">操作人</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="operator" style="width:200px;background:white;" readonly="readonly" value="{$username}">
+		</td>
+	</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+		<input class="bginput" type="submit" value="修 改">
+		&nbsp;
+		<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+		</td>
+	</tr>
+</table>
+</form>
+</div>

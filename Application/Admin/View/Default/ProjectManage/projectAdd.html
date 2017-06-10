@@ -1,0 +1,65 @@
+<div class="admin">
+<gt name="info.id" value="0">
+			<form action="{:U('/Admin/ProjectManage/projectEdit')}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+		<else />
+			<form action="{:U('/Admin/ProjectManage/projectAdd')}" method="post" name="form" id="myform">
+		</gt>
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 任务申请</td>
+				</tr>
+
+				<tr class="tr rt">
+					<td width="100">任务名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="name" id="name" style="width:200px" value="{$info.name}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">任务描述：</td>
+					<td colspan="3" class="lt">
+						<textarea name="content" style="width:800px;height:300px;visibility:hidden;">{$info.message}</textarea>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">申请人：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="proposer" id="name" style="width:200px" value="{$info.proposer}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">预计开始：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$begin_time neq 0">value="{:date('Y-m-d',$begin_time)}"<else />value="{:date('Y-m-d',time())}"</if>>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">截止日期：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="end_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$end_time neq 0">value="{:date('Y-m-d',$end_time)}"<else />value="{:date('Y-m-d',time())}"</if>>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">状态：</td>
+					<td colspan="3" class="lt">
+						<select name="status">
+							<option value="0" <eq name="info.status" value="0"> selected</eq>>未开始</option>
+							<option value="1" <eq name="info.status" value="1"> selected</eq>>进行中</option>
+							<option value="2" <eq name="info.status" value="2"> selected</eq>>已完成</option>
+						</select>
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

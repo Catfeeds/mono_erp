@@ -1,0 +1,15 @@
+<div class="admin">
+
+<script type="text/javascript" src="__JS__/ServiceManage/logistics_information.js"></script>
+	<div class="txtURL">
+      <P><a href="{:U('Admin/ServiceManage/logistics_update')}" class="button button-small border-green">更新全部物流信息</a></P>
+      <br />
+      <p>快递公司:
+      <input name="expressid" type="text" id="expressid" value="FEDEX"/> 
+      快递单号：<input name="expressno" type="text" id="expressno" value="663611478882"/>
+      </p>
+      <p>说明：查询时需要发送两个参数：公司名（拼音或英文）；快递单号</p>
+    <div class="txtButton"><input type="submit" value="查询" id="btnSnap" class="btnSnap" 	onclick="btnSnap('FEDEX','783236890859')"/></div>
+    <div id="retData"></div>
+
+</div>

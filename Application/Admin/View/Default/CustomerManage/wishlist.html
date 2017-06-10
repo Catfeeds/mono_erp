@@ -1,0 +1,129 @@
+<style>
+.customer_wish_lsit .wish_line {
+    width: 100%;
+    clear: both;
+    float: right;
+    font-size: 14px;
+    color: #555;
+    padding: 10px 10px;
+    border-bottom: 1px solid #ccc;
+}
+.customer_wish_lsit .product_img_div {
+    float: left;
+    width:100%;
+	max-width:100px;
+}
+.customer_wish_lsit .product_img_div img {
+    width: 100%;
+}
+.customer_wish_lsit .product_name_m {
+    color: #525252;
+    font-family: Perpetua,PerpetuaFont;
+    font-size: 16px;
+    font-weight: bold;
+}
+.product_color {
+    margin: 5px 0 5px 0;
+    font-size: 13px;
+    color: #333333;
+}
+.product_size {
+    margin: 5px 0 5px 0;
+    font-size: 13px;
+    color: #333333;
+}
+.customer_wish_lsit .product_detail {
+    float: left;
+    width: 36%;
+    text-align: left;
+    padding: 0 2%;
+    font-size: 13px;
+}
+.product_num {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px 0 0 0;
+	float:left;
+}
+.customer_wish_lsit .product_price {
+    float: left;
+    width: 15%;
+    font-weight: normal;
+}
+.product_price {
+    font-size: 14px;
+    color: #111111;
+    font-weight: bold;
+	margin-left:100px;
+}
+.product_one_attribute {
+    margin: 0 0 5px;
+    padding: 0;
+}
+.product_one_name, .product_one_size, .product_one_price {
+    color: #333333;
+    font-size: 12px;
+    margin: 0 7px 0 0;
+}
+.product_customization span {
+    color: #333333;
+    float: left;
+    font-size: 11px;
+    margin-top: 3px;
+    text-align: left;
+    width: 100%;
+}
+.customer_wish_lsit .product_detail .product_customization span {
+    display: block;
+    font-size: 12px;
+    margin: 5px 0;
+}
+</style>
+<if condition="$wishlist_array neq No">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>WISHLIST</strong></div>
+    <div class="customer_wish_lsit">
+    <volist name="wishlist_array" id="vo">
+    <div class="wish_line">
+    	<div class="product_img_div">
+    	<img src="{:C('IMAGE_URL')}{$vo.image_url}/100-{$vo.image}">
+    	</div>
+    	<div class="product_detail">
+    		<span class="product_name_m">{$vo.name}</span>
+    		<p class="product_color">{$vo.color}</p>
+    		<empty name="vo.customization">
+    		<p class="product_size">{$vo.size}</p>
+    		</empty>
+    		<volist name="vo.product_array" id="one">
+    		<p class="product_one_attribute">
+    		<span class="product_one_name">{$one.product_one_name}</span>
+    		<span class="product_one_size">{$one.product_one_size}</span>
+    		<span class="product_one_size"><strong>Qty: </strong>{$one.product_one_num}</span>
+    		<span>{:C('CURRENCY_CODE')}: {$one.product_one_price}</span>
+    		</p>
+    		</volist>
+    		<notempty name="vo.customization">
+    		<p class="product_customization">
+    		<span>HEIGHT: {$vo.customization.height}</span>
+    		<span>WEIGHT: {$vo.customization.weight}</span>
+    		<span>BUST: {$vo.customization.bust}</span>
+    		<span>WAIST: {$vo.customization.waist}</span>
+    		<span>HIPS: {$vo.customization.hips}</span>
+    		<span>SLEEVE: {$vo.customization.sleeve}</span>
+    		<span>LENGTH: {$vo.customization.length}</span>
+    		</p>
+    		</notempty>
+    	</div>
+    	<div class="product_num">
+    	<span class="shopbag_product_number">{$vo.num}</span>
+    	</div>
+    	<div class="product_price">
+    	<p class="product_price">{:C('CURRENCY_CODE')}{$vo.price}</p>
+    	</div>
+    </div>
+    </volist>
+    </div>
+</div>
+<else />
+<div class="prompt">没有数据记录</div>
+</if>

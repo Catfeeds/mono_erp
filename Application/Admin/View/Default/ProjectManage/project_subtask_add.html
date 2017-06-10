@@ -1,0 +1,48 @@
+<div class="admin">
+			<form action="{:U('/Admin/ProjectManage/project_subtask_edit/',array('id'=>$_GET['id'] ))}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+		
+			<table class="table  table-striped table-hover table-condensed">
+
+				<tr class="table_title">
+					<td colspan="4">修改子任务</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">任务描述：</td>
+					<td colspan="3" class="lt">
+						<textarea name="content" style="width:800px;height:300px;visibility:hidden;">{$info.message}</textarea>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">操作人：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="operator" id="name" class="admin_input" value="{$info.operator}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">预计开始：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="admin_input" onClick="WdatePicker()" value="{:date('Y-m-d',$begin_time)}">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">截止日期：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="end_time" id="btime" class="admin_input" onClick="WdatePicker()" value="{:date('Y-m-d',$end_time)}">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">任务等级：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="level" id="name" class="admin_input" value="{$info.level}" >
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<input class="button border-main" type="submit" name="dosubmit" value="修 改" >
+			&nbsp;
+			<input class="button border-main" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

@@ -1,0 +1,56 @@
+{__NOLAYOUT__}
+<script src="__JS__/OrderManage/order_manual.js"></script>
+<switch name="style">
+
+<case value="fetch">
+<div style="padding-left:14px;padding-right:14px;margin:15px;">
+	<p>
+		<input type="hidden" id="order_manual_id" name="order_manual_id" value="{$order_manual_id}">
+		<span>分类：</span>
+		<select onchange="order_manual_select_change('catalog')" name="relate_catalog" id="relate_catalog">
+			<option value="0">--请选择--</option>
+			<volist name="catalog_list" id="catalog_vo"> 
+				<option value="{$key}">{$catalog_vo}</option>
+			</volist>
+		</select>
+	</p>
+	<p>
+		<span>产品：</span>
+		<select onchange="order_manual_select_change('product')" name="relate_product" id="relate_product" style="width:400px;">
+			<option value="0">--请选择--</option>
+		</select>
+	</p>
+	<p>
+		<span>颜色：</span>
+		<select onchange="order_manual_select_change('color')" name="relate_color" id="relate_color">
+			<option value="0">--请选择--</option>
+		</select>
+	</p>
+	<p>
+		<span>尺码：</span>
+		<select onchange="order_manual_select_change('size')" name="relate_size" id="relate_size">
+			<option value="0">--请选择--</option>
+		</select>
+		<button onclick="customization();">定制</button>
+		<textarea  id="order_customization" style="width:500px; height:200px;display:none;margin-top: 10px;" name="order_customization"></textarea>
+	</p>
+	<p>
+		<span>价格：</span>
+		<input type="text" name="price" style="width:100px;" id="price" value="">
+	</p>
+	<p>
+		<span>数量：</span>
+		<input type="text" name="number" style="width:100px;" id="number" value="">
+	</p>
+	<p>
+	<button onclick="return order_manual_submit();" style="bottom:15px;right:15px;">提交</button>
+	</p>
+</div>
+</case>
+<case value="select">
+	<option value="0">--请选择--</option>
+	<volist name="list" id="vo">
+		<option <eq name="old_value" value="$key">selected="selected"</eq> value="{$key}">{$vo}</option>
+	</volist>
+</case>
+</switch>

@@ -1,0 +1,21 @@
+<include file="Messages/messages_head" />
+<style>
+.middle{ padding:30px; overflow:auto; text-align:center;}
+.value{ text-align:left; text-indent:2em ; }
+P{ margin:5px;}
+</style>
+<div class="middle">
+	<h3>
+	  <empty name="info['theme']"> 
+      	{:nomsubstr(strip_tags(htmlspecialchars_decode($info['content'])),0,30)}
+      <else />
+      	{$info.theme}
+      </empty>
+    </h3>
+    <P><span>发送人：{$info.operator}</span> <span>时间 : {$info.date_time}</span></P>
+	<div class="value">
+    	{$info.content}
+    </div>	
+</div>
+   
+<include file="Messages/messages_right_foot" />    

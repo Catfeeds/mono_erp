@@ -1,0 +1,41 @@
+<include file="Messages/messages_head" />
+
+<style>
+.two_left{ height:100%; width:100%; float:left;}
+.left_tab{margin:0 auto; margin-top:5%;}
+.left_tab tr{ height:50px; width:100%; line-height:50px;}
+.left_tab tr td{height:50px;line-height:50px;vertical-align: top;}
+.left_tab .text { width:100%; height:30px; line-height:30px;}
+.left_tab .name{ padding-right: 10px;}
+
+.fixed_foot{bottom:1px; height:50px; width:65%; background:#999; position:fixed; z-index:20;line-height:50px; padding-left:30px;}
+
+</style>
+
+<div class="middle">
+	<form method="post" name="form" id="myform">
+    <div class="two_left">
+        <table class="left_tab">
+            <tr >
+                <td class="name">收件人 </td>
+                <td ><input type="text" name="name"  class="text username" value="{$name}"/></td>
+            </tr>
+            <tr >
+                <td class="name">主 题 </td>
+                <td ><input type="text" name="theme"  class="text theme" /></td>
+            </tr>
+            <tr style=" height:30%;overflow:hidden;">
+                <td class="name" >正 文 </td>
+                <td ><textarea name="content" style="width:100%;height:300px;" ></textarea></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+    <!--提交按钮-->    
+    <div class="fixed_foot">
+        <input type="button"  class="button" onclick="but_sub()" value="提交" />
+    </div>
+</div>    
+
+
+<include file="Messages/messages_right_foot" />

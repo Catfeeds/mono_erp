@@ -1,0 +1,79 @@
+<style>
+.form-x .form-group .label{width:160px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>修改地址   <button class="button border-black padding-small" onclick="history.go(-1);" style="float:right;">返回</button></h1>
+<form method="post" action="{:U('/Admin/OrderManage/address_edit/',array('address_id'=>$address[id]))}" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label for="name">First Name：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" name="first_name" size="30" value="{$address.first_name}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="name">Last Name：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" name="last_name" size="30" value="{$address.last_name}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="country">国家：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="country" name="country" size="30" value="{$address.country}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="state">省：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="state" name="province" size="30" value="{$address.province}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="city">市：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="city" name="city" size="30" value="{$address.city}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="address1">地址：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="address1" name="address" size="30" value="{$address.address}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="post">邮编：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="post" name="code" size="30" value="{$address.code}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="telephone">电话：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="telephone" name="telephone" size="30" value="{$address.telephone}"/>
+		</div>
+	</div>
+	
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

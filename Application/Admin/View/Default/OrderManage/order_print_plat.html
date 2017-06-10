@@ -1,0 +1,165 @@
+<HTML>
+<object id="WebBrowser" width=0 height=0 classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2">
+</object>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="en" http-equiv="Content-Language">
+<style>
+.fenye{page-break-after: always}
+tr{border-bottom:5px solid red;}
+td{padding-left:10px;padding-top:30px;padding-bottom:10px;}
+p{font-size:20px;}
+</style>
+</head>
+<body>
+<volist name="info" id="vo" >
+<php>
+    if($vo['come_from_info']['id']=="26")
+    {
+    	$word_chenhu="Chère cliente, cher client,";
+    	$word_xieci="Merci beaucoup de votre achat chez Lilysilk! Pour évaluer nos produits et services, veuillez vous rendre sur notre site.";
+    	$word_shipping="Adresse de Livraison:";
+    	$word_chakan="Nous vous remercions par avance pour votre retour.";
+    	$word_o_num="Numéro de la commande";
+    	$word_num="Quantité";
+    	$word_name="Détails sur le produit";
+    	$word_model="modèle";
+    }
+    elseif($vo['come_from_info']['id']=="24")
+	{
+		$word_chenhu="Lieber Kunde,";
+		$word_xieci="Vielen Dank für Ihren Einkauf bei Lilysilk. Wir hoffen, dass Sie damit zufrieden sind. Es wäre sehr nett, wenn Sie Ihre Bestellung Liste wie folgen überprüfen:";
+		$word_shipping="Lieferanschrift:";
+		$word_chakan="Wir freuen uns auf Ihren nächsten Einkauf.";
+		$word_o_num="Bestellnummer";
+		$word_num="Menge";
+		$word_name="Produktdetails";
+		$word_model="Artikelnummer";
+	}
+	elseif($vo['come_from']=="nl")
+	{
+		$word_xieci="BedankT voor uw aankoop op Lilysilk. We hopen dat u tevreden met onze producten en service bent. Controleer de volgende bestellijst alstublieft.";
+		$word_shipping="Verzendingadres:";
+		$word_chakan="Verwacht uw volgende bezoek.";
+		$word_o_num="Bestelnummer";
+		$word_num="AANTAL";
+		$word_name="Productnaam";
+		$word_model="Artikelnummer";
+	}
+	elseif($vo['come_from_info']['id']=="28" || $vo['come_from_info']['id']=="20")
+	{
+	    $word_chenhu="様  ".":";
+	    $word_xieci="LilySilkでお買い上げいただき、誠にありがとうございます。お客様の注文が完了いたしましたのでご連絡申し上げます。注文内容：";
+	    $word_shipping="送付先住所:";
+	    $word_chakan="またのご利用を心よりお待ちしております。";
+	    $word_o_num="注文番号";
+	    $word_num="数量";
+	    $word_name="商品名";
+	    $word_model="model";
+	}
+	else
+	{
+    	if($vo['shipping_info'])
+        {
+        	$word_chenhu="Dear ".$vo['shipping_info']['name'].":";
+        }
+        else
+        {
+			$word_chenhu="Dear ".$vo['customer_info']['first_name']."&nbsp;".$vo['customer_info']['last_name'].":";
+        }
+		$word_xieci="Thank you for your purchase from Lilysilk. We do hope you will be satisfied with our products and service. Please check the following order list.";
+		$word_shipping="Shipping Address:";
+		$word_chakan="Looking forward for your next visit.";
+		$word_o_num="Order Number";
+		$word_num="QTY";
+		$word_name="Product Name";
+		$word_model="model";
+	}
+</php>
+	<div style="padding:10px; width:1200px;margin:auto;height:auto;">
+        <p style="margin:0;">
+        <img style="border:none; width:340px;" src="http://www.lilysilk.com/mono_images/common/logo.png" title="lilysilk" alt="lilysilk">
+        </p>	
+        <div style="width:100%; float:left;">	
+            <div style="font-size:30px; color:#000; width:45%;text-align:left; float:left; margin-right:20px;">	
+                <p style="font-size:30px;"><span style="">{$word_chenhu} </span></p>	
+                <p style="font-size:30px;">	
+                    {$word_xieci}	
+                </p>	
+            </div>	
+            <div style="font-size:30px; text-align:left; width:30%; float:right; padding-top:30px;">	
+                <span style="font-weight:bold;color:#C63;">{$word_shipping}</span><br>	
+                {$vo['shipping_info']['name']}<br>	
+                {$vo['shipping_info']['address1']}&nbsp;{$vo['shipping_info']['address2']}&nbsp;{$vo['shipping_info']['address3']}<br>	
+                {$vo['shipping_info']['city']}<br>	
+                {$vo['shipping_info']['state']}<br>	
+                {$vo['shipping_info']['country']}<br>	
+                {$vo['shipping_info']['post']}<br>	
+                {$vo['shipping_info']['telephone']}
+            </div>
+		</div>
+        <p style="font-size:32px;">{$word_chakan}	</p>	
+        <div style="width:100%;  text-align:left; border:1px solid #000;">	
+            <p style="font-size:30px;font-weight:bold;padding-bottom:15px;padding-left:10px;border-bottom:1px solid #000;">
+            	{$word_o_num}: 	<?php echo str_replace('-','0',$vo['order_number'])?>&nbsp;&nbsp;&nbsp;
+                <volist name="vo['factory_order']" id="factory_order_vo">
+                &nbsp;&nbsp; {:strtoupper($vo['factory'][$key]['val'])}<?php echo (date('m.d',strtotime($factory_order_vo["date"]))); ?>-<if condition="$factory_order_vo.number lt 10">0</if>{$factory_order_vo.number}
+                </volist>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lilysilk_{$vo.come_from_info.name}
+            </p>
+            <table style="width:100%;font-size:20px;">
+            <tr>
+                <th style="width:60%;font-size:28px;padding-left:10px;" align="left">{$word_name}</th>
+                <th style="width:20%;font-size:28px;" align="left">{$word_num}</th>
+            </tr>
+            
+            <volist name="vo['product_info'] " id="product_vo">
+			<tr>
+                <td>
+                    <p style="font-size: 32px">
+                      {$product_vo.name}
+                     </p>
+                     <notempty name="product_vo['rakuten_product_color']">
+                     	<p class="product_color">
+                       	{$product_vo['rakuten_product_color']}
+                  		 </p>
+                     </notempty>
+                    <notempty name="product_vo['rakuten_product_size']">
+	                    <p>
+	                    	{$product_vo['rakuten_product_size']}
+	                    </p>
+                    </notempty>
+                    <p>{$product_vo.sku}</p>
+                </td>
+                <td>
+                    <span>{$product_vo['number']}</span>
+                </td>
+                <td style="text-align:center;">
+                                
+                </td>
+            </tr>
+            </volist>
+            <!--
+            <tr>	
+                <td class="name">
+                    Gift<br>
+                    Silk Sleep Eye Mask With Wide Elastic Band	
+                </td>	
+                <td>
+                    1
+                </td>			
+                <td>&nbsp;</td>
+            </tr>-->
+            </table>
+        </div>
+	</div>
+    <p></p>
+    <p class="fenye" style="text-align:right;font-size:25px;width:1200px;margin:auto;">www.lilysilk.com</p>
+</volist>
+<script language= "JavaScript">
+window.onload=function(){
+	 window.print();
+}
+</script>
+</body>
+</html>

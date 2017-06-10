@@ -1,0 +1,36 @@
+<div class="admin">
+	<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr class="list_head ct">
+            <td width="180">子任务描述</td>
+            <td width="150">操作人</td>
+            <td width="130">创建时间</td>
+            <td width="150">截止时间</td>
+            <td width="100">任务等级</td>
+			<td width="180">操作</td>
+		</tr>
+	<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.message}</td>
+			<td>{$vo.operator}</td>
+			<td>{$vo.begin_time}</td>
+			<td>{$vo.end_time}</td>
+			<td>{$vo.level}</td>
+			<td>
+			<a <if condition="$_GET[check_id] eq 0 || $_GET[check_id] neq ''"> href="{:U('/Admin/ProjectManage/projectsubtaskCheck/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id'],'operator'=>$vo['operator']))}" <else />style="color:#ccc;"</if>>审查</a>
+			<!--
+				<a <if condition="$vo[status] eq 0"> href="{:U('/Admin/ProjectManage/projectStart/',array('id'=>$vo['id'] ))}" <else / >style="color:#CCC;"</if>>开始</a>
+			-->
+				<a onclick="return confirm('确定要删除吗?')" <if href="{:U('/Admin/ProjectManage/projectsubtaskDel/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id']))}">删除</a> |
+				<a href="{:U('/Admin/ProjectManage/projectsubtaskAdd/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id'] ))}">修改</a> | 
+				
+				<a href="{:U('/Admin/ProjectManage/projectsubtaskFinish/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id'],'operator'=>$vo['operator']))}">完成</a>
+			</td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

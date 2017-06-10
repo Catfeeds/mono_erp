@@ -1,0 +1,43 @@
+<script src="__JS__/AdwordsManage/adwords.js"></script>
+<div class="admin">
+	<div style="margin-bottom:20px;">
+		<button class="button border-main" onclick="adwords_select_country('us')">US</button>
+		<button class="button border-main" onclick="adwords_select_country('ca')">CA</button>
+		<button class="button border-main" onclick="adwords_select_country('au')">AU</button>
+		<button class="button border-main" onclick="adwords_select_country('uk')">UK</button>
+		<button class="button border-main" onclick="adwords_select_country('sg')">SG</button>
+		<button class="button border-main" onclick="adwords_select_country('fr')">FR</button>
+		<button class="button border-main" onclick="adwords_select_country('de')">DE</button>
+		<button class="button border-main" onclick="adwords_select_country('nl')">NL</button>
+		<button class="button border-main" onclick="adwords_select_country('it')">IT</button>
+		<button class="button border-main" onclick="adwords_select_country('es')">ES</button>
+	</div>
+	<div style="margin-bottom:20px;">
+		<form action="{:U('/Admin/AdwordsManage/adwords_fee',array('come_from'=>$_GET['come_from']))}" method="post" name="form" id="myform">日期：<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="Wdate bd" onClick="WdatePicker()" value=""> TO <input type="text" style="cursor:pointer;" name="end_time" id="btime" class="Wdate bd" onClick="WdatePicker()" value=""> <input type="submit" name="sub" value="查询"></form>
+	</div>
+	<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr class="list_head ct">
+			<td>日期</td>
+			<td>当天营业额</td>
+            <td>google广告费用</td>
+            <td>bing广告费用</td>
+            <td>国家（平台）来源</td>
+			<td>APR</td>
+		</tr>
+	<volist name="adwords_fee_list" id="vo">
+		<tr>
+			<td>{$vo.come_from}</td>
+			<td>{$vo.fee}</td>
+			<td>{$vo.operate}</td>
+			<td>{$vo.country}</td>
+			<td>{$vo.fee_date}</td>
+			<td><a onclick="return confirm('确定要删除吗?')" <if href="{:U('/Admin/AdwordsManage/adwords_fee_del/',array('id'=>$vo['id'],'come_from'=>$_GET['come_from']))}">删除</a></td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

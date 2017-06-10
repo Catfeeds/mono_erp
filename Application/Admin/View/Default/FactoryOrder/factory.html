@@ -1,0 +1,349 @@
+<script src="__JS__/FactoryOrder/main.js"></script>
+<script>
+function transform_click(id,pid,code_name)
+{
+$('#detail_id').val(id+"_"+pid);
+//自定页
+layer.open({
+  type: 1,
+  skin: 'layui-layer-demo', //样式类名
+  closeBtn: 1, //显示关闭按钮
+  shift: 2,
+  shadeClose: true, //开启遮罩关闭
+  area: ['420px', '240px'], //宽高
+  title: code_name,
+  content: '<div style=" text-align: center;"> <select class="select" onchange="factory(this.options[this.options.selectedIndex].value)"><option value="">--请选择--</option><volist name="factory_list" id="vo"><option value="{$vo.id}">{$vo.name}</option></volist></select><span style="font-size:14px;"><input class="plcz" type="button"  onclick="transform_form_submit('+id+')" value="转工厂提交" /> </span></div> '
+});	
+}
+function order_detail_print()
+{
+	var myform=document.getElementById('myform');
+	myform.action="{:U('OrderManage/order_detail_print')}";
+	var input=getByClass(myform,'check');
+	for(var i=0;i<input.length;i++)
+	{
+		input[i].value=input[i].id;
+	}
+	myform.submit();
+}
+function add_message(detail_id,name)
+{
+//自定页
+layer.open({
+  type: 1,
+  skin: 'layui-layer-demo', //样式类名
+  closeBtn: 1, //显示关闭按钮
+  shift: 2,
+  shadeClose: true, //开启遮罩关闭
+  area: ['420px', '240px'], //宽高
+  title: name,
+  content: '<div style=" text-align: center;"><form method="post" name="add_message" id="add_message"> <input type="hidden" value="'+detail_id+'"  name="id"/><textarea name="message" style="width: 400px;height: 150px;"></textarea><br><br><input class="plcz" style="border-radius:0px;" type="button"  onclick="factory_order_detail_message_add()" value="提交" /></form></div> '
+});	
+}
+</script>
+
+<style>
+.table td{vertical-align:middle; }
+p{ margin:0px;} 
+</style>
+<div class="admin">
+	<div class="remark">
+    	
+    	<ul class="ul">
+        	<li <if condition="$sta eq 'history_ok'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>sta/history_ok.html"  > 历史订单 <span class="badge bg-dot">{$coun_history_ok}</span></a>
+            </li>
+            <li  style="margin-left:30px;">
+            
+            <input type="text" style="cursor:pointer;" name="beginTime" id="beginTime" class="Wdate bd" onClick="WdatePicker()" value="{$btime}"  />
+            TO
+            <input type="text" style="cursor:pointer;" name="endTime" id="endTime" class="Wdate bd" onClick="WdatePicker()" value="{$etime}"  /> 
+       	 	<input  type="button" class="but_sub" onclick="factory_order_check_execl()"  style="color:#fff;" value="导出工厂核对单">
+            
+            </li>
+            <div style=" clear:both; height:10px;"></div>
+        
+        	<li <if condition="$sta eq 'new'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>sta/new.html"  > 新单生成 <span class="badge bg-dot">{$coun_new}</span></a>
+            </li>
+            
+            <li <if condition="$sta eq 'accept'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>sta/accept.html" >已接单 <span class="badge remark_bg">{$coun_accept}</span></a>
+            </li>
+            
+            <li <if condition="$sta eq 'shipping'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>sta/shipping.html" >正在派送 <span class="badge remark_bg">{$coun_shipping}</span></a>
+            </li>
+            
+            <li <if condition="$sta eq 'history'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>sta/history.html" >已收货 <span class="badge remark_bg">{$coun_history}</span></a>
+            </li>
+            <li <if condition="$detail_sta eq 'cancel'">class="action"</if>>
+            	<a href="__ACTION__/<present name='type'>type/<?php echo strtolower($type); ?>/</present>detail_sta/cancel.html" >已取消 <span class="badge remark_bg">{$coun_cancel}</span></a>
+            </li>
+            <in name="sta" value="shipping,history,history_ok">
+                <li>
+                    <input type="text" style="width:240px; height:24px;" name="delivery_number" class='bd' id="delivery_number" placeholder='请输入快递单号'  value="{$delivery_number}" /><span onclick="delivery_number_sub()"  class="plcz" style="cursor:pointer; position: relative;right:45px;border-radius: 0px 4px 4px 0px;">筛选</span>
+                </li> 
+            </in>
+         </ul>
+         
+        <div style=" clear:both;" ></div>
+        
+        <br> 
+        <p style="margin-left:20px; font-size:12px;">
+            <input type="text" style="width:240px; height:24px;    margin-bottom: 10px;" name="order_num" class='bd' id="order_num" placeholder='请输入交易单号'  value="{$order_num}" /><span onclick="order_num_sub()"  class="plcz" style="cursor:pointer; position: relative;right:45px;border-radius: 0px 4px 4px 0px;">筛选</span>
+            <input type="text" style="width:240px; height:24px;" name="fac_num" class='bd' id="fac_num" placeholder='请输入工厂订单号'  value="{$fac_num}" /><span onclick="fac_num_sub()" class="plcz"  style="cursor:pointer; position: relative;right:45px;border-radius: 0px 4px 4px 0px;">筛选</span>
+        </p>    
+    </div>
+	<form  method="post" name="form" id="myform">
+    <input type="hidden" value="{$input_sta}"  name="sta"/>
+    <input type="hidden" value="{$sta}"  name="execl_sta" id="execl_sta"/>
+    <input type="hidden" value="{$type}"  name="factory_type" id="factory_type"/>
+    <input type="hidden" name="factory_list" id="factory_list" />
+    <input type="hidden" name="delivery" id="delivery" value="顺丰"/>
+    <input type="hidden" name="delivery_num" id="delivery_num" />
+    <input type="hidden" name="id" id="id" />
+    <input type="hidden" name="detail_id"  id="detail_id"/>
+    
+    <div class="tab-panel" id="tab-not">
+         <table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" id="come_dp">
+            <tr>
+            <td colspan="12" class="table_title tab_title">
+                <span class="fl icon-align-justify"> 工厂订单管理</span>
+                <if condition="$sta neq 'history_ok'">
+                	<span style="font-size:14px;"><a onclick="select_all()" class="icon-arrows-v margin-left" href="#"> 全选 </a></span>
+                    <if condition="$sta neq 'get'">
+				    	<span style="font-size:14px;"><input class="plcz" type="button"  onclick="plcz_form_submit('{$input_sta}','{$type}')" value="批量操作" /> </span>
+                    </if>
+                    <if condition="$sta eq 'new'">
+                         <span style="font-size:14px;"><input class="plcz" type="button"  onclick="transform_click()" value="转工厂提交" /> </span>
+                    </if>
+                     <span style="font-size:14px;"><input class="plcz" type="button"  onclick="order_detail_print()" value="打印商品详情单" /> </span>
+                </if>
+                <span class="fr">
+                	<input class="plcz" type="button"  onclick="execl_export()"  value="导出订单" />
+                </span>
+            </td>
+            <tr class="list_head ct">
+           	    <if condition="$sta neq 'history_ok'">
+            		<td width="2%"></td>
+                </if>
+                <td align='left'></td>
+                <td align='left'>交易单号</td>
+                <td align='left' style=" min-width:100px;">工厂单号</td>
+                <td align='left'   style="   min-width: 120px;">关联工厂单号</td>
+                <td align='left'>来源</td>
+                <in name="sta" value='history,shipping,history_ok,get'>
+                	<td align='center' width="6%">快递信息</td>
+                </in>
+                <td align='center'>提交时间</td>
+                	<if condition="$sta neq 'new'"><td align='center' width="13%"><if condition="$sta eq 'shipping'">发货时间<elseif condition="$sta eq 'history_ok'" />发货时间<else />接收时间</if></td></if>
+                <td align='left' style="min-width:420px;">备注 </td>
+                <td style="min-width: 70px; max-width:70px;">状态</td>
+               		 <if condition="$sta neq 'history_ok'"><td align='center' width="6%">管理操作</td></if>
+            </tr>
+        <volist name="info" id="vo" key="a">
+            <tr>
+            	<if condition="$sta neq 'history_ok'">
+                	<td><input class="check" name="check[]" type="checkbox" value="{$vo.id}" id="{$vo.come_from}_<if condition="$vo.order_id neq 0">{$vo.order_id}<else/>{$vo.order_platform_id}</if>"></td>
+                </if>
+                <td align='left'>{$a}</td>
+                <td  class="td_ff">
+                	<a href="{$vo.url}" style=" color:#03F; text-decoration: underline;" target="_blank">
+                    {$vo.order_number}
+                    </a>
+                    <div style=" margin-top:3px;">
+                    	<?php
+                        	if($vo['order_id'])
+                            {
+                        		$product_extra = product_extra($vo['order_id'],"<br>");
+                        		echo '<div>'.$product_extra.'</div>';
+                                if(panduan_sample($vo['order_id'],$vo['come_from_id']))
+                                {
+                                	echo '<div>有样布</div>';
+                                }
+                                echo '<div>'.payment_style($vo['order_id']).'</div>';
+                                echo '<div>'.product_customization($vo['order_id']).'</div>';
+                                $num = all_order_number($vo['order_id'],'web');
+                                if($num != 1 && $num != 0)
+                                {
+                                	echo '<div>该用户还有其他'.($num-1).'条订单</div>';
+                                }
+                                if(order_cancel($vo['order_id'],'web'))
+                                {
+                                	echo '<div>有取消订单</div>';
+                                }
+                                $malicious_user = malicious_user($vo['order_id']);
+                                if($malicious_user)
+                                {
+                                	echo '<div>'.$malicious_user.'</div>';
+                                }
+                            }
+                            if($vo['order_platform_id'])
+                            {
+                                $num = all_order_number($vo['order_platform_id'],'plat');
+                                if( $num!= 1 &&  $num != 0)
+                                {
+                                	echo '<div>该用户还有其他'.( $num-1).'条订单</div>';
+                                }
+                                if(order_cancel($vo['order_platform_id'],'plat'))
+                                {
+                                	echo '<div>有取消订单</div>';
+                                }
+                            }
+                        ?>
+                    </div>
+                </td>
+                <td  class="td_ff">
+                	{$vo.factory_number}
+                </td>
+                <td  class="td_ff">
+                    <if condition="$vo['order_id'] !='0'">
+                    	{:associated_fac($vo['id'],$vo['order_id'],'fac',0,'<br>','web','YES')}
+                    <elseif condition="$vo['order_platform_id'] !='0'" />
+                    	{:associated_fac($vo['id'],$vo['order_platform_id'],'fac',0,'<br>','plat','YES')}
+                    </if>
+                </td>
+                <td>{$vo.come_from}</td>
+                <in name="sta" value='history,shipping,history_ok,get'>
+                	 <td>{$vo.delivery_style}<br>{$vo.delivery_number}</td>
+                </in>
+                <td align="center">{$vo.date} {$vo.date_detail}</td>
+                	<if condition="$sta neq 'new'">
+                        <td align="center">
+                            <if condition="$sta eq 'history'">
+                                {$vo.history_time|date='Y-m-d H:i:s',###}
+                            <elseif condition="$sta eq 'shipping'"/>
+                                {$vo.shipping_time|date='Y-m-d H:i:s',###}
+                            <elseif condition="$sta eq 'accept'"/>
+                                {$vo.accept_time|date='Y-m-d H:i:s',###}
+                            <elseif condition="$sta eq 'history_ok'"/>
+                                {$vo.ok_time|date='Y-m-d H:i:s',###}    
+                            </if>
+                            
+                            <if condition="$sta eq 'get'">
+                                <if condition="$vo['status'] eq 'history'">
+                                    {$vo.history_time|date='Y-m-d H:i:s',###}
+                                <elseif condition="$vo['status'] eq 'shipping'"/>
+                                    {$vo.shipping_time|date='Y-m-d H:i:s',###}
+                                <elseif condition="$vo['status'] eq 'accept'"/>
+                                    {$vo.accept_time|date='Y-m-d H:i:s',###}
+                                <elseif condition="$vo['status'] eq 'history_ok'"/>
+                                    {$vo.ok_time|date='Y-m-d H:i:s',###}   
+                                <elseif condition="$vo['status'] eq 'new'"/>
+                                    新单
+                                </if>
+                            </if>
+                   </if>
+                            
+                        </td>
+                    </if>
+                    
+                    
+                <td class="td_cc">
+                     <volist name='vo.detail' id="vo2" key='k'>
+                         <if condition="($vo['factory_id'] neq '7') and ($vo['factory_id'] neq '8')"> <!--非定制产品-->
+                            <if condition='$k gt 1'><if condition='$k elt $vo.coun '><hr /></if></if>
+                            {$vo2.code}--<span style="color:red">{$vo2.code_name}</span> <span class="icon-times"></span> <span style="color:red;font-weight:bold;">{$vo2.number}</span>
+                            <if condition="$vo2.status eq 'cancel'"><strong style="color:red;margin-left:10px;">已取消</strong></if>
+                            <if condition='$vo2.description neq ""'> 
+                            	<hr /> 
+                                 <span style=" color:#000;font-size:10px;">备注：</span>
+                                 <span style="color:red;font-size:10px;">{$vo2.description}</span>
+                            </if>
+                         <else />  <!--定制产品-->
+                          	<if condition='$k gt 1'><if condition='$k elt $vo.coun '><hr /></if></if>
+                                数量 ：<span style="color:red; font-weight: bold; font-size:20px;">{$vo2.number}</span>
+                                <if condition="$vo2.status eq 'cancel'"><strong style="color:red;margin-left:10px;">已取消</strong></if>
+                                <br />
+                                <span style=" color:#000;font-size:10px;">备注：</span>
+                                <br />
+                                <span style="color:red;font-size:10px;">{$vo2.description}</span>
+                         </if>
+                         <?php 
+                         	if($vo2['code_name'])
+                            {
+                            	$name = $vo2['code_name'];
+                            }
+                            else
+                            {
+                            	$name ="定制产品 ".$vo['order_number'] ;
+                            }
+                         
+                         ?>
+                         <if condition="$vo['status'] eq 'new'">
+                         <span  onclick="transform_click('{$vo2.id}','{$vo.id}','{$vo2.code_name}')"  class="fr icon-mail-forward cur" style=" margin-left:10px;" title="转工厂"></span>
+                         </if>
+                         <span class="fr icon-plus cur" title="添加留言" onclick="add_message('{$vo2.id}','{$name}')"></span>
+                         	<if condition="$vo2.message ">
+                                <br />
+                                <p style=" font-weight: bold; color:#000;font-size:10px;">特别注意：</p> <!-- 生成工厂订单号可以添加的备注-->
+                                <div  style="border:1px solid #999;">
+                                    <volist name="vo2['message']" id="mes_vo">
+                                        <p style="color:#000;font-size:10px; padding-left:5px;"> {$mes_vo.message} - {:username_name($mes_vo['operator'])} - <span style="color:#390;">{$mes_vo.time|date="Y-m-d H:i:s",###}</span></p>
+                                    </volist>
+                                </div>
+                          	</if>
+                     </volist>
+                     <!--订单商家留言-->
+                    <?php  
+                     	
+                     	if($vo['order_id'])
+                        {
+                        	$message_seller_web = message_seller($vo['order_id'],'web','<br>');
+                            if($message_seller_web)
+                            {
+                            	echo '<hr><p style=" font-weight: bold; color:#000;font-size:10px;margin:0px;">订单商家留言：</p>';
+                            }
+                        }
+                        if($vo['order_platform_id'])
+                        {
+                        	$message_seller_plat = message_seller($vo['order_platform_id'],'plat','<br>');
+                            if($message_seller_plat)
+                            {
+                            	echo '<hr><p style=" font-weight: bold; color:#000;font-size:10px;margin:0px;">订单商家留言：</p>';
+                            }
+                        }
+                        	
+                        if($vo['order_id'])
+                        {
+                        	echo '<p style="color:#000;font-size:10px; padding-left:5px;margin:0px; overflow: auto; max-width: 420px;">'.$message_seller_web.'</p>';
+                        }
+                        if($vo['order_platform_id'])
+                        {
+                        	echo '<p style="color:#000;font-size:10px; padding-left:5px;margin:0px;overflow: auto; max-width: 420px;">'.$message_seller_plat.'</p>';
+                        }
+                     ?>  
+              </td>
+              <td align="center" style=" font-weight:bold; color:#F00;">{:factory_status($vo['status'])}</td>
+              <php>$is_true=factory_all_cancel($vo["id"],$vo["is_come"]);</php>
+              <?php $fac_sta = fac_sta($vo['status']) ;?>
+                <if condition="$vo.status neq 'history_ok'">
+                    <td align="center">
+                        <if condition="$sta neq 'get' && $detail_sta neq 'cancel'">
+                            <if condition="$sta neq 'shipping'"><a onclick="factory_sta('{$vo['id']}','{$input_sta}','{$type}')"  class="icon-check cur" title="{$input_sta}"></a></if>
+                            
+                            <if condition="$sta eq 'shipping'"><a href="{:U('/Admin/FactoryOrder/factory_sta/',array('id'=>$vo['id'],'sta'=>history))}" class="icon-check cur" title='history' ></a></if>       
+                        <else />
+                        	<if condition="$fac_sta neq 'history'"><a onclick="factory_sta('{$vo['id']}','{$fac_sta}','{$type}')"  class="icon-check cur" title="{$fac_sta}"></a></if>
+                            
+                            <if condition="$fac_sta eq 'history'"><a href="{:U('/Admin/FactoryOrder/factory_sta/',array('id'=>$vo['id'],'sta'=>$fac_sta))}" class="icon-check cur" title='history' ></a></if>
+                            
+                        </if>    
+           				<if condition="$sta eq 'accept'"><if condition="$is_true eq 'yes'"><a onclick="factory_sta('{$vo.id}','history_ok','{$type}')" style="cursor:pointer;">转入历史</a></if></if>     
+                    </td>
+                <else />
+                	<td align="center"></td>
+                </if>    
+            </tr>
+        </volist>
+        </table>
+     </div>
+    
+     </form>
+     <div class="list-page">
+     	<empty name="page">暂时没有相关数据<else />{$page}</empty>
+     </div>
+
+</div>

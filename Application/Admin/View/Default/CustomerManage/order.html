@@ -1,0 +1,24 @@
+<if condition="$customer_order_list neq No">
+<div class="panel" style="width:100%;float:left;">
+   	<div class="panel-head"><strong>订单资料</strong></div>
+      <table class="table">
+          <tr><td width="150"><strong>订单数量：</strong></td><td width="150">{$num}</td><td width="150"><strong>订单总额：</strong></td><td width="150">{$total_price}</td><td width="150"><strong>平均购买日期：</strong></td><td width="150"><if condition="$day eq 0">一天内 <else />{$day} 天</if></td></tr>
+          <tr><td colspan="6">订单列表</td></tr>
+          <tr><td>序号</td><td>订单号</td><td>物流编号</td><td>物流状态</td><td colspan="2">付款信息</td></tr>
+          <?php
+		      $number=0;
+      	  ?>
+      		<volist name="customer_order_list" id="vo">
+      		<tr>
+		    <td><?php $number++;echo $number;?></td>
+		    <td>{$vo.order_number}</td>
+		    <td>{$vo.delivery_number}</td>
+		    <td><if condition="$vo.status eq ''">发货中 <else />{$vo.status}</if></td>
+		    <td><if condition="$vo.is_paypal eq 1"><p>Paypal交易ID：<span>{$vo.payment_id}</span></p><p>交易邮箱：<span>{$vo.payment_email}</span></p><else />无记录</if></td>
+		    </tr>
+		    </volist>
+      </table>
+</div>
+<else />
+<div class="prompt">没有数据记录</div>
+</if>

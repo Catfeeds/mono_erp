@@ -1,0 +1,22 @@
+{__NOLAYOUT__}
+<div style="padding:25px">
+	<p>
+		<label style="display:inline-block;width:50px">快递：</label>
+		<select id="delivery_edit_style">
+		<volist name="delivery_style_list" id="delivery_style_vo">
+		<option value="{$delivery_style_vo}" <eq name="old_style" value="$delivery_style_vo">selected="selected"</eq> >{$delivery_style_vo}</option>
+		</volist>
+		</select>
+	</p>
+	<p>
+		<label style="display:inline-block;width:50px">重量：</label>
+		<input type="text" id="delivery_edit_weight" value="<if condition="$old_weight ">{$old_weight}<else />0.5</if>"/>
+	</p>
+	<p>
+		<label style="display:inline-block;width:50px">hs：</label>
+		<select id="delivery_edit_hs">{$hs}</select>
+	</p>
+	<p>
+		<input type="submit" onclick="delivery_edit({$order_id},'{$style}','update')">
+	</p>
+</div>

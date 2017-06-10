@@ -1,0 +1,21 @@
+<div class="admin">
+<table class="table  table-striped table-hover table-condensed">
+	<tr>
+        <td colspan="5" class="table_title" style="font-size:14px;padding:10px;">
+          <span class="fl">燃油费管理</span>
+          <span class="fr">
+            <a href="{:U('/Admin/DeliveryManage/delivery_baf_act')}">添加燃油费</a>
+          </span>
+        </td>
+    </tr>
+    <tr>
+    	<td>序号</td><td>快递类型</td><td>百分比</td><td>操作人</td><td>开始有效时间</td>
+    </tr>
+    <?php $num=1;?>
+    <volist name="baf_list" id="vo">
+    <tr>
+    	<td><?php echo $num;$num++;?></td><td>{$vo.style}</td><td>{$vo.percent}</td><td>{:username_name($vo['operator'])}</td><td>{$vo.time}</td>
+    </tr>
+    </volist>
+</table>
+</div>

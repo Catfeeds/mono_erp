@@ -1,0 +1,64 @@
+<include file="./Application/Admin/View/Default/Public/head.html" />
+<script src="__JS__/CodeManage/main.js?v={:time()}"></script>
+<style>
+.code_ul li{ list-style: none; float:left; width:180px; overflow:hidden;line-height:25px; font-size:12px; border-radius: 4px; background: #CCC; margin:2px 4px; padding:0px 4px;}
+.code_ul li:hover{ background: #E6E6E6; cursor: pointer;}
+#code_id .add{ position:relative;}
+#code_id .add .add_span{position: absolute;right: 4px; top: 3px;}
+.code_num{ width:20px; height:20px;}
+#dis_no{ display: none;}
+</style>
+<div class="remark">
+			<span class="remark_span">分类：</span>
+                <select name="catalog" class="" onchange="get_product_of_catalog(this.value)">
+                  <option value="">全部</option>
+                  <volist name="catalog" id="vo">
+                 	 <option value='{$vo.id}' <eq name="catalog_id" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                  </volist>
+                </select>
+             <span class="remark_span">产品：</span>    
+                <select  name="product_id" id="product_id" onchange="get_product_of_code(this.value)" style="max-width: 450px;">
+                  <option value="">全部</option>
+                  <volist name="product_list" id="vo">
+                 	 <option value='{$vo.id}' <eq name="product_id" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                  </volist>
+                </select>
+
+</div>
+<form method="post" name="form" id="myform">
+<input type="hidden" name="sku_id" value="{$id}">
+<span class="remark_span" style=" margin-top:10px;font-size:14px; line-height:25px;color:#960;">产品名称 ：</span>{$pro_name}
+<br />
+<span class="remark_span" style="font-size:12px; line-height:35px; width:20%;">sku ：{$pro_sku}</span>
+<p id="code_list" style=" margin:0px;">
+<span class="remark_span" style="font-size:12px; line-height:35px; width:20%;">手动输入code：</span>
+<input type="text" name="code_list"  style="border-radius:6px;">
+</p>
+
+<p id="dis_no" style=" margin:0px;">
+<span class="remark_span" style="font-size:12px; line-height:35px; width:20%;">请输入sku名称：</span>
+<input type="text" name="sku_name" id="sku_name" style="border-radius:6px;">
+</p>
+
+<div style="font-size:12px; margin-left:20px;line-height: 30px;">表单内不填写数字， 默认为一件</div>
+	<ul class="code_ul" id='code_id'></ul> 
+        <div style="clear:both;"></div>
+        <div style="position:fixed; bottom:10px; right:20px;">
+        		<input type="hidden" name="order_id" value="{$order_id}">
+        		<input type="hidden" name="type" value="{$type}">
+        		<input class="button border-main" type="button" name="dosubmit" onclick="code_list_sub()" value="提 交">
+        </div>
+</form>
+<hr />
+ <ul class="code_ul" id='code_ul'>
+         <!--
+		 <volist name="code_list" id="vo">
+          <li onclick="code_add(this.innerHTML)" ><input type="text" name="code_num[{$vo.id}]" class="code_num"  id="aa"> <span title="{$vo.code}">{$vo.code}</span>
+		  <br>
+		  <span title="{$vo.code}">{$vo.name}</span>
+		  </li>
+        </volist>
+		-->
+    </ul> 
+</body>
+</html>

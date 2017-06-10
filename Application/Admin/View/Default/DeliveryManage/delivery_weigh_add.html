@@ -1,0 +1,83 @@
+<div class="admin">
+<if condition="$Think.get.way eq 'add'">
+<form action="{:U('/Admin/DeliveryManage/delivery_weight_act/act/add')}" method="post">
+	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+		<tr class="table_title">
+		<td colspan="4">添加记录</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">快递</td>
+		<td colspan="3" class="lt">
+		<select name="style">
+		<volist name="cost_way" id="vo">
+		<option value="{$vo.style}">{$vo.style}</option>
+		</volist>
+		</select>
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">国家</td>
+		<td colspan="3" class="lt">
+		<select name="country">
+		<volist name="cost_country" id="vo">
+		<option value="{$vo.country}">{$vo.country}</option>
+		</volist>
+		</select>
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">最低重量</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="lower_weight" style="width:200px">
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">最高重量</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="upper_weight" style="width:200px">
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">价格</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="price" style="width:200px">
+		</td>
+		</tr>
+		
+		<tr class="tr lt">
+		<td colspan="4">
+		<input class="bginput" type="submit" value="添 加" >
+		&nbsp;
+		<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+		</td>
+		</tr>
+	</table>
+</form>
+<elseif condition="$Think.get.way eq 'import'"/>
+<form action="__URL__/deliverycost_upload" enctype="multipart/form-data" method="post" >
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+	<tr class="table_title">
+		<td colspan="4">导入记录</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100"><label for="file">文件选择:</label></td>
+		<td colspan="3" class="lt">
+		<input type="file" name="file" />
+		</td>
+	</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+		<input class="bginput" type="submit" value="提 交">
+		&nbsp;
+		<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+		</td>
+	</tr>
+</table>
+</form>
+</if>
+</div>

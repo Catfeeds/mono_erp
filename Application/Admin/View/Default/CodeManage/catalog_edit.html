@@ -1,0 +1,45 @@
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>添加分类</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label for="name">名称：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="name" name="name" size="30" value="{$row['name']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">排序：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="sort_id" name="sort_id" size="30" value="{$row['sort_id']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="is_work">生效：</label>
+		</div>
+		<div class="field">
+			<div class="button-group radio">
+				<label class="button <if condition="$row['is_work'] eq 1">active</if> ">
+					<input name="is_work" value="1" <if condition="$row['is_work'] eq 1">checked="checked"</if> type="radio"><span class="icon icon-check"></span>是
+				</label>
+				<label class="button <if condition="$row['is_work'] eq 0">active</if> ">
+					<input name="is_work" value="0" <if condition="$row['is_work'] eq 0">checked="checked"</if> type="radio"><span class="icon icon-times"></span>否
+				</label>
+			</div>
+		</div>
+	</div>
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

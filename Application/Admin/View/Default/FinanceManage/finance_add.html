@@ -1,0 +1,70 @@
+<div class="admin">
+	<gt name="info.id" value="0">
+	<form action="{:U('/Admin/FinanceManage/finance_edit')}" method="post" name="form" id="myform">
+	<input type="hidden" name="id" value="{$info.id}">
+	<else />
+	<form action="{:U('/Admin/FinanceManage/finance_add')}" method="post" name="form" id="myform">
+	</gt>
+	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+		<tr class="table_title">
+			<td colspan="4">{$tpltitle} 财务用处</td>
+		</tr>
+
+		<tr class="tr rt">
+			<td width="100">花费来源：</td>
+			<td colspan="3" class="lt">
+				<input type="text" name="name" id="name" style="width:200px" value="{$info.name}" >
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">花费留言：</td>
+			<td colspan="3" class="lt">
+				<textarea name="content" style="width:800px;height:300px;visibility:hidden;">{$info.message}</textarea>
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">申请人：</td>
+			<td colspan="3" class="lt">
+				<input type="text" name="applicant" id="name" style="width:200px" value="{$info.applicant}" >
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">批准人：</td>
+			<td colspan="3" class="lt">
+				<input type="text" name="operator" id="name" style="width:200px" value="{$info.operator}" >
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">申请时间：</td>
+			<td colspan="3" class="lt">
+				<input type="text" style="cursor:pointer;" name="apply_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$apply_time neq 0">value="{:date('Y-m-d',$apply_time)}"<else />value=""</if>>
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">批准时间：</td>
+			<td colspan="3" class="lt">
+				<input type="text" style="cursor:pointer;" name="oper_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$oper_time neq 0">value="{:date('Y-m-d',$oper_time)}"<else />value=""</if>>
+			</td>
+		</tr>
+		<tr class="tr rt">
+			<td width="100">状态：</td>
+			<td colspan="3" class="lt">
+				<select name="status">
+					<option value="0" <eq name="info.status" value="0"> selected</eq>>未通过</option>
+					<option value="1" <eq name="info.status" value="1"> selected</eq>>通过</option>
+				</select>
+			</td>
+		</tr>
+		<tr class="tr lt">
+			<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+		</tr>
+	</table>
+	</form>
+</div>

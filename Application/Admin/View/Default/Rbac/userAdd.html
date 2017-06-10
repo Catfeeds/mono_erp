@@ -1,0 +1,92 @@
+<div class="admin">
+<gt name="info.id" value="0">
+			<form action="{:U('/Admin/Rbac/userEdit')}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+			<input type="hidden" name="create_time" value="{$info.create_time}">
+		<else />
+			<form action="{:U('/Admin/Rbac/userAdd')}" method="post" name="form" id="myform">
+		</gt>
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle}后台用户</td>
+				</tr>
+
+				<tr class="tr rt">
+					<td width="100">用户名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="username" id="username" style="width:200px" value="{$info.username}" <eq name="info.username" value="$Think.config.SPECIAL_USER">readonly="readonly"</eq>>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">密　　码：</td>
+					<td colspan="3" class="lt">
+						<input type="password" name="password" id="password" style="width:200px" value="">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">确认密码：</td>
+					<td colspan="3" class="lt">
+						<input type="password" name="repassword" id="repassword" style="width:200px" value="">
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">真实名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="name" id="name" style="width:200px" value="{$info.name}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">所属部门：</td>
+					<td colspan="3" class="lt">
+						<select name="branch" style="width:200px;">
+							<volist name="branch_list" id="vo">
+								<option value="{$vo.branch_name}" <eq name="vo.branch_name" value="$info.branch">selected=""</eq> >{$vo.branch_name}</option>
+                                <if condition="$vo.detail">
+                                    <volist name="vo.detail" id="detail_vo">
+                                    	<option value="{$detail_vo.branch_name}" <eq name="detail_vo.branch_name" value="$info.branch">selected=""</eq> >┕  {$detail_vo.branch_name}</option>
+                                    
+                                    </volist>
+                                </if>
+							</volist>
+						</select>
+					</td>
+				</tr>
+                
+                <tr class="tr rt">
+					<td width="100">用户角色：</td>
+					<td colspan="3" class="lt">
+						<select name="role" style="width:200px;">
+							<volist name="role" id="vo">
+								<option value="{$vo.id}" <eq name="vo.id" value="$info.role">selected=""</eq> >{$vo.name}</option>
+							</volist>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >用户状态：</td>
+					<td colspan="3" class="lt">
+						<input type="radio" class="radio" value="1" name="status" id="status1" <if condition="($info.status eq 1) OR ($info['status'] eq '') ">checked=""</if> >
+							启用
+							<input type="radio" class="radio" value="0" name="status" id="status2" <eq name="info.status" value="0">checked=""</eq> >
+							关闭
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >备注说明：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="remark" id="remark" style="width:400px" value="{$info.remark}">
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

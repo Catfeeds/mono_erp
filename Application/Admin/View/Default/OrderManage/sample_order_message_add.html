@@ -1,0 +1,28 @@
+<div class="admin">
+<style>
+.tab tr{ height:50px; line-height:50px; }
+.td_one{ width:200px;font-size:18px; padding-left:50px;}
+.txt_sample{ width:300px; height:25px; padding-left:5px; font-weight:bold; font-size:16px;}
+
+</style>
+<form action="__CONTROLLER__/sample_order_message_add" method="post" id="myform">
+<input type="hidden" name="id" value="{$id}">
+	<h1>
+    	添加备注
+    </h1>
+    <div style="margin-top:30px; width:600px; padding-left:50px;">
+    	<span>客户备注 ：</span>
+       	<br>
+        <br>
+        <P>{$info.message}</P>
+    	<textarea name="message_ch" style=" width:600px; height:300px;">{$info.message_ch}</textarea>
+        <br/>
+        <br>
+    	<input type="submit" value="提交" class="plcz_big cur"/>
+            
+        <a href="__CONTROLLER__/sample_order/come_from/{$come_from}/p/{$nowPage}.html" class="plcz_big cur">返回</a>
+    </div>
+
+</form>
+
+</div>

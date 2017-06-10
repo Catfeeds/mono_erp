@@ -1,0 +1,32 @@
+<div class="admin">
+
+<div class="clear"></div>
+	<table class="table  table-striped table-hover table-condensed margin-large-top">
+	<tr>
+		<td class="table_title tab_title" colspan="5">
+		<span class="fl icon-align-justify"> 分类列表</span>
+		<span class="fr"><a class="icon-plus-circle" href="__CONTROLLER__/catalog_edit"> 添加分类</a></span>
+		</td>
+	</tr>
+	<tr class="list_head ct">
+		<td  align='left'>序号</td>
+		<td  align='left'>名称</td>
+		<td  align='left'>生效</td>
+        <td  align='left'>排序</td>
+        <td  align='left' style='text-align:center;'>操作</td>
+	</tr>
+	<volist name="list" id="vo">
+       <tr>
+        <td>{$i}</td>
+        <td>{$vo.name}</td>
+        <td><eq name="vo.is_work" value="1"><font color="red" class="icon-check"></font><else/><font color="blue" class="icon-times"></font></eq> </td>
+        <td>{$vo.sort_id}</td>
+        <td style='text-align:center;'>
+         <a class="icon-pencil" title="修改" href="__CONTROLLER__/catalog_edit/id/{$vo.id}"></a>&nbsp;&nbsp;
+         <!--  <a class="icon-trash-o" title="删除" href="__CONTROLLER__/catalog_delete/id/{$vo.id}" onclick="{if(confirm('确认删除?')){return true;}return false;}" ></a>-->
+        </td>
+       </tr>
+     </volist>
+	</table>
+	<div class="list-page">{$page}</div> 
+</div>

@@ -1,0 +1,26 @@
+<div class="admin">
+
+<h1 class="float-left">产品sku与code关联关系表</h1>
+<a href="__CONTROLLER__/relate_edit" class="float-right button button-small border-green">添加关联</a><div class="clear"></div>
+
+<div class="panel admin-panel margin-large-top">
+    <table class="table table-hover">
+    	<tr><th width="45"></th><th width="120">sku</th><th width="120">来源</th><th width="100">code</th><th width="100">数量</th><th width="100">操作</th></tr>
+    	<volist name="list" id="vo">
+        <tr>
+        	<td>{$i}</td>
+        	<td>{$vo.sku_info.sku}</td>
+        	<td>{$vo.sku_info.come_from}</td>
+        	<td>{$vo.code_info.name}</td>
+        	<td>{$vo.number}</td>
+        	<td>
+        		<a class="button border-blue button-little" href="__CONTROLLER__/relate_edit/id/{$vo.id}">修改</a> 
+        		<a class="button border-yellow button-little" href="__CONTROLLER__/relate_delete/id/{$vo.id}" onclick="{if(confirm('确认删除?')){return true;}return false;}">删除</a>
+       		</td>
+    	</tr>
+        </volist>
+    </table>
+</div>
+{$show}
+
+</div>

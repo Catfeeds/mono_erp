@@ -1,0 +1,22 @@
+<div class="admin">
+<table class="table  table-striped table-hover table-condensed">
+<tr>
+	<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-users"> 导入返回信息</span>
+				
+			</td>
+<tr class="list_head">
+<td>行号</td><td>A</td><td>B</td><td>C</td><td>D</td><td>E</td><td>F</span></td><td>G</td><td>H</td>
+</tr>
+<volist name="log" id="value">
+	<notempty name="value">
+	<tr style='text-align:center;'>
+	<empty name="value.fatal_error">
+	<td>{$key}</td><td>{$value.A}</td><td>{$value.B}</td><td>{$value.C}</td><td>{$value.D}</td><td></td><td><span style='color:red;'>{$value.F}</span></td><td></td><td><span style='color:red;'>{$value.H}</span></td>
+	<else /> 
+	<td colspan="9"><span style='color:red;font-weight:bold;'>致命错误：{$value.fatal_error}</span></td>
+	</empty>
+	</tr>
+	</notempty>
+</volist>
+</table>

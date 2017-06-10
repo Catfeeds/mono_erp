@@ -1,0 +1,168 @@
+<style>
+.form-x .form-group .label{width:160px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>修改地址</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label for="name">收货人：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="name" name="name" size="30" value="{$row['name']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="country">国家：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="country" name="country" size="30" value="{$row['country']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="state">省：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="state" name="state" size="30" value="{$row['state']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="city">市：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="city" name="city" size="30" value="{$row['city']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="address1">地址1：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="address1" name="address1" size="30" value="{$row['address1']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="address2">地址2：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="address2" name="address2" size="30" value="{$row['address2']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="address3">地址3：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="address3" name="address3" size="30" value="{$row['address3']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="post">邮编：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="post" name="post" size="30" value="{$row['post']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="telephone">电话：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="telephone" name="telephone" size="30" value="{$row['telephone']}"/>
+		</div>
+	</div>
+			
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_style">shipping_style：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_style" name="shipping_style" size="30" value="{$row['shipping_style']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_number">shipping_number：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_number" name="shipping_number" size="30" value="{$row['shipping_number']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_weight">shipping_weight：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_weight" name="shipping_weight" size="30" value="{$row['shipping_weight']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_tax">shipping_tax：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_tax" name="shipping_tax" size="30" value="{$row['shipping_tax']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_date">shipping_date：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_date" name="shipping_date" size="30" value="{$row['shipping_date']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_operator">shipping_operator：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_operator" name="shipping_operator" size="30" value="{$row['shipping_operator']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_operator">shipping_operator：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_operator" name="shipping_operator" size="30" value="{$row['shipping_operator']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_hs">shipping_hs：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_hs" name="shipping_hs" size="30" value="{$row['shipping_hs']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_sample">shipping_sample：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_sample" name="shipping_sample" size="30" value="{$row['shipping_sample']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="shipping_report_price">shipping_report_price：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="shipping_report_price" name="shipping_report_price" size="30" value="{$row['shipping_report_price']}"/>
+		</div>
+	</div>
+	
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

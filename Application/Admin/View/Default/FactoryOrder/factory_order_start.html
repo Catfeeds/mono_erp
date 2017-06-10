@@ -1,0 +1,63 @@
+<div class="admin">
+		<form action="__ACTION__" method="post" name="form" id="myform">
+            <input type="hidden" name="product_stock_come_id" value="{$info.id}">
+            <input type="hidden" name="code_id" value="{$info.code_id}">
+            <input type="hidden" name="begin_time" value="{$info.begin_time}">
+            <input type="hidden" name="end_time" value="{$info.end_time}">
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 产品订单</td>
+				</tr>
+
+				<tr class="tr rt">
+					<td width="100">接单者：</td>
+					<td colspan="3" class="lt">
+						{$username}
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">产品名称：</td>
+					<td colspan="3" class="lt">
+						{$info.code_name}
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">库存类型：</td>
+					<td colspan="3" class="lt">
+                    	{$info.sty}
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">生产数量：</td>
+					<td colspan="3" class="lt" style=" color:red; font-weight:bold;">
+                    	{$info.number}
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">开始时间：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" readonly  name="" value="{:date('Y-m-d', $info['begin_time'])}"  />
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">结束时间：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" readonly name=""  value="{:date('Y-m-d', $info['end_time'])}"  />
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >备注说明：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="remark" id="remark" style="width:400px" value="{$info.remark}">
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<input class="bginput" type="submit" name="dosubmit" value="确 认 接 单" >
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+
+</div>

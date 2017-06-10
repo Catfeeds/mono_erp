@@ -1,0 +1,41 @@
+<div class="admin">
+<form action="{:U('/Admin/DeliveryManage/delivery_other_price_edit/act/edit/id/'.$_GET[id])}" method="post">
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+	<tr class="table_title">
+		<td colspan="4">修改记录</td>
+	</tr>
+	
+	<tr class="tr rt">
+		<td width="100">订单ID</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="order_id" style="width:200px;background:white;" readonly="readonly" value="<if condition="$other_price_one_list.order_web_id neq 0">{$other_price_one_list.order_web_id}<else />{$other_price_one_list.order_platform_id}</if>">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">关税</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="tariffs" style="width:200px" value="{$other_price_one_list.tariffs}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">偏远费</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="remote" style="width:200px" value="{$other_price_one_list.remote}">
+		</td>
+	</tr>
+	<tr class="tr rt">
+		<td width="100">操作人</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="operator" style="width:200px;background:white;" readonly="readonly" value="{$username}">
+		</td>
+	</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+		<input class="bginput" type="submit" value="添 加" >
+		&nbsp;
+		<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" >
+		</td>
+	</tr>
+</table>
+</form>
+</div>

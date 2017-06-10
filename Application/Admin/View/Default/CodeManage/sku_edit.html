@@ -1,0 +1,44 @@
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+
+<h1>添加sku</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<div class="form-group">
+		<div class="label">
+			<label for="sku">sku：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="sku" name="sku" size="30" value="{$row['sku']}"/>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="name">名称：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="name" name="name" size="30" value="{$row['name']}"/>
+			 <span style='color:red;font-size:12px'>注意：sku名称只有在该sku为套件时才可填写（套件包括两只以上装、四件套等）【如果不确定或者不清楚，请询问技术部】</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="sort_id">来源：</label>
+		</div>
+		<div class="field">
+			<select class="input" name="come_from_id">
+				<volist name="come_from_list" id="come_from_vo">
+				<option value="{$come_from_vo.id}" <if condition="$come_from_vo.id eq $row['come_from_id']">selected="selected"</if> >{$come_from_vo.name}</option>
+				</volist>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-button">
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

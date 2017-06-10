@@ -1,0 +1,36 @@
+<script src="__JS__/Messages/main.js"></script>
+<script>
+
+window.onload =function left_menu()
+{
+	aa =getByClass(document,"icon-dedent")[0] ;
+	var oMain=getByClass(document,"admin")[0];
+	startMove(oMain,{left:0});
+	startMove(aa,{left:0});
+	aa.className="icon-indent";
+	
+}
+</script>
+
+<style>
+.admin{ margin:0; padding:0;}
+.left{ width:15%; height:100%; background:#CCC; float:left; padding-top:20px;}
+.left_ul { margin:0; padding:0;}
+.left_ul li{ height:35px; line-height:35px; padding-left:20px;}
+.left_ul li a{display:block;}
+.left_ul li:hover{ background:#666;}
+.action {background:#666; }
+.action a{color:#fff;}
+
+.middle{ width:65%; height:100%; background:#E6E6E6;float:left; overflow:hidden;}
+.clear{ clear:both;}
+</style>
+
+<div class="admin" >
+	<div class="left">
+    	<ul class="left_ul">
+    		<li class="cur <if condition="ACTION_NAME eq 'Index'">  action</if>"><a href="__APP__/Admin/messages/Index.html"> 写信  </a></li>
+            <li class="cur <if condition="ACTION_NAME eq 'receive_list'">  action</if>"><a href="__APP__/Admin/messages/receive_list.html"> 收件箱 </a></li>
+            <li class="cur <if condition="ACTION_NAME eq 'send_list'">  action</if>"><a href="__APP__/Admin/messages/send_list.html"> 已发送 </a></li>
+		</ul>	
+	</div>

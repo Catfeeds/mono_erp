@@ -1,0 +1,15 @@
+<table id="showtablecontext" style="border-collapse:collapse;border-spacing:0;" width="520px" border="0" cellpadding="0" cellspacing="0">
+  <tbody>
+    <tr>
+      <td style="background:#64AADB;border:1px solid #75C2EF;color:#FFFFFF;font-size:14px;font-weight:bold;height:28px;line-height:28px;text-indent:15px;" width="163">时间</td>
+      <td style="background:#64AADB;border:1px solid #75C2EF;color:#FFFFFF;font-size:14px;font-weight:bold;height:28px;line-height:28px;text-indent:15px;" width="354">地点和跟踪进度</td>
+    </tr>
+    <volist name="courier_val" id="vo">	    
+        <tr>
+            <td style="border:1px solid #DDDDDD;font-size:12px;line-height:22px;padding:3px 5px;" width="163">{$vo.time}</td>
+            <td style="border:1px solid #DDDDDD;font-size:12px;line-height:22px;padding:3px 5px;" width="354">{$vo.context}{$vo.message}</td>
+        </tr>
+    </volist>
+    <tr><td colspan="2" align="center" style=" height:30px; line-height:30px;"><empty name="courier_val">暂时没有数据</empty></td></tr>
+  </tbody>
+</table>

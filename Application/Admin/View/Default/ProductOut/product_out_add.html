@@ -1,0 +1,129 @@
+<script src="__JS__/productOut/productoutList.js"></script>
+<script src="__JS__/productstock/product_stock_set_apply_add.js"></script>
+<div class="admin">
+	<div class="tab">
+		<div class="tab-head">
+       	 <ul class="tab-nav">
+          <li class="active"><a href="#tab-set">单品出库</a></li>
+          <li><a href="#tab-email">套件出库</a></li>
+         </ul>
+     	 </div>
+     	 <div class="tab-body">
+     	 <div class="tab-panel active" id="tab-set">
+     	 <form action="{:U('/Admin/productOut/product_out_add/act/item')}" method="post" name="form" id="myform">
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+				<tr class="table_title tab_title">
+					<td colspan="4"><span class="icon-plus-circle">{$tpltitle} 人为出库</span></td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">分类：</td>
+					<td colspan="3" class="lt">
+						<select name="code_name" style=" min-width:100px"  onchange="admin_select_catalog(this.value)" id="catalog" class='input'>
+                        		<option value='0'>--请选择分类--</option>
+								<volist name="catalog" id="vo">
+									<option value="{$vo.id}">{$vo.name}</option>
+								</volist>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">产品：</td>
+					<td colspan="3" class="lt" id="products_td">
+						<select name="products" style=" min-width:100px" id="products" class='input'>
+						<option value='0'>--请选择产品--</option>
+						</select>
+					</td>
+				</tr>
+				<tr class="tr rt" id="code_tr">
+					<td width="100">Code：</td>
+					<td colspan="3" class="lt" id="code_td">
+						<select name="code_name" style=" min-width:100px" id="code" class='input'>
+                        		
+						</select>
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">数　　量：</td>
+					<td colspan="3" class="lt">
+						<input check="number" msg="数量必须填写!" type="text" name="number" id="number" style="width:200px" value="{$info.number}">
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">库存类型：</td>
+					<td colspan="3" class="lt">
+						<select name="style" style=" min-width:100px" id="style" class='style' check="0" msg="必须选择一个库存类型！">
+							<option value='0'>--请选择--</option>
+							<option value='1'>本地库存</option>
+							<option value='2'>美国库存</option>
+						</select>
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">出库备注：</td>
+					<td colspan="3" class="lt">
+					<select name="reason" style=" min-width:100px">
+					{$reason}
+					</select>
+						<!--<input type="text" name="reason" id="number" style="width:200px" value="{$info.reason}">-->
+					</td>
+				</tr>
+				<tr class="tr lt">
+				<td colspan="4">
+					<input class="bginput" type="submit" name="dosubmit" value="添 加" onclick="return check_form('myform')">
+					&nbsp;
+					<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+				</tr>
+			</table>
+		</form>
+		</div>
+        <div class="tab-panel" id="tab-email">
+        	<form action="{:U('/Admin/productOut/product_out_add/act/set')}" method="post" id="myform2">
+        	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+        	<tr class="tr rt">
+				<td width="100">来　　源：</td>
+				<td colspan="3" class="lt">
+					<select onchange="get_set_sku(this.value)" name="come_from" style=" min-width:100px">{$come_from}</select>
+				</td>
+			</tr>
+			<tr class="tr rt">
+				<td width="100">套件sku：</td>
+				<td colspan="3" class="lt">
+                    <select check="0" msg="必须选择一个sku！" id="sku" name="sku" style=" min-width:100px">
+                   		<option value="0">---</option>
+					</select>
+				</td>
+			</tr>
+			 <tr class="tr rt">
+					<td width="100">数　　量：</td>
+					<td colspan="3" class="lt">
+						<input check="number" msg="数量必须填写!" type="text" name="number" id="number" style="width:200px" value="{$info.number}">
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">库存类型：</td>
+					<td colspan="3" class="lt">
+						<select name="style" style=" min-width:100px" id="style" class='style' check="0" msg="必须选择一个库存类型！">
+							<option value='0'>--请选择--</option>
+							<option value='1'>本地库存</option>
+							<option value='2'>美国库存</option>
+						</select>
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">出库备注：</td>
+					<td colspan="3" class="lt">
+					<select name="reason" style=" min-width:100px">{$reason}</select>
+					</td>
+				</tr>
+				<tr class="tr lt">
+				<td colspan="4">
+					<input class="bginput" type="submit" name="dosubmit" value="添 加" onclick="return check_form('myform2')">
+					&nbsp;
+					<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+				</tr>
+        	</table>
+        	</form>
+        </div>
+      </div>
+     </div>
+</div>

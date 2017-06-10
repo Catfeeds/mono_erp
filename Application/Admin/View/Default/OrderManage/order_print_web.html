@@ -1,0 +1,252 @@
+<HTML>
+<object id="WebBrowser" width=0 height=0 classid="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2">
+</object>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta content="en" http-equiv="Content-Language">
+<style>
+.fenye{page-break-after: always}
+tr{border-bottom:5px solid red;}
+td{padding-left:10px;padding-top:30px;padding-bottom:10px;}
+p{font-size:20px;}
+</style>
+</head>
+<body>
+<volist name="info" id="vo" >
+<php>
+    if($vo['come_from_info']['name'] =="fr")
+    {
+    	$word_chenhu="Chère cliente, cher client,";
+    	$word_xieci="Merci beaucoup de votre achat chez Lilysilk! Pour évaluer nos produits et services, veuillez vous rendre sur notre site.";
+    	$word_shipping="Adresse de Livraison:";
+    	$word_chakan="Nous vous remercions par avance pour votre retour.";
+    	$word_o_num="Numéro de la commande";
+    	$word_num="Quantité";
+    	$word_name="Détails sur le produit";
+    	$word_model="modèle";
+    }
+    elseif($vo['come_from_info']['name']=="de")
+	{
+		$word_chenhu="Lieber Kunde,";
+		$word_xieci="Vielen Dank für Ihren Einkauf bei Lilysilk. Wir hoffen, dass Sie damit zufrieden sind. Es wäre sehr nett, wenn Sie Ihre Bestellung Liste wie folgen überprüfen:";
+		$word_shipping="Lieferanschrift:";
+		$word_chakan="Wir freuen uns auf Ihren nächsten Einkauf.";
+		$word_o_num="Bestellnummer";
+		$word_num="Menge";
+		$word_name="Produktdetails";
+		$word_model="Artikelnummer";
+	}
+	elseif($vo['come_from_info']['name']=="nl")
+	{
+		$word_xieci="BedankT voor uw aankoop op Lilysilk. We hopen dat u tevreden met onze producten en service bent. Controleer de volgende bestellijst alstublieft.";
+		$word_shipping="Verzendingadres:";
+		$word_chakan="Verwacht uw volgende bezoek.";
+		$word_o_num="Bestelnummer";
+		$word_num="AANTAL";
+		$word_name="Productnaam";
+		$word_model="Artikelnummer";
+	}
+	elseif($vo['come_from_info']['name']=="jp")
+	{
+	    $word_chenhu="様  ".":";
+	    $word_xieci="LilySilkでお買い上げいただき、誠にありがとうございます。お客様の注文が完了いたしましたのでご連絡申し上げます。注文内容：";
+	    $word_shipping="送付先住所:";
+	    $word_chakan="またのご利用を心よりお待ちしております。";
+	    $word_o_num="注文番号";
+	    $word_num="数量";
+	    $word_name="商品名";
+	    $word_model="model";
+	}
+	else
+	{
+    	if($vo['shipping_info'])
+        {
+        	$word_chenhu="Dear ".$vo['shipping_info']['first_name']." ".$vo['shipping_info']['last_name'].":";
+        }
+        else
+        {
+			$word_chenhu="Dear ".$vo['first_name']."&nbsp;".$vo['last_name'].":";
+        }
+		$word_xieci="Thank you for your purchase from Lilysilk. We do hope you will be satisfied with our products and service. Please check the following order list.";
+		$word_shipping="Shipping Address:";
+		$word_chakan="Looking forward for your next visit.";
+		$word_o_num="Order Number";
+		$word_num="QTY";
+		$word_name="Product Name";
+		$word_model="model";
+	}
+	$isset_wash_tenestar=false;
+</php>
+	<div style="padding:10px; width:1200px;margin:auto;height:auto;">
+        <p style="margin:0;">
+        <img style="border:none; width:340px;" src="http://www.lilysilk.com/mono_images/common/logo.png" title="lilysilk" alt="lilysilk">
+        </p>	
+        <div style="width:100%; float:left;">	
+            <div style="font-size:30px; color:#000; width:45%;text-align:left; float:left; margin-right:20px;">	
+                <p style="font-size:30px;"><span style="">{$word_chenhu} </span></p>	
+                <p style="font-size:30px;">	
+                    {$word_xieci}	
+                </p>	
+            </div>	
+            <div style="font-size:30px; text-align:left; width:30%; float:right; padding-top:30px;">	
+                <span style="font-weight:bold;color:#C63;">{$word_shipping}</span><br>	
+                {$vo['order_web_address'][0]['first_name']}&nbsp;{$vo['order_web_address'][0]['last_name']}<br>	
+                {$vo['order_web_address'][0]['address']}<br>	
+                {$vo['order_web_address'][0]['city']}<br>	
+                {$vo['order_web_address'][0]['province']}<br>	
+                {$vo['order_web_address'][0]['country']}<br>	
+                {$vo['order_web_address'][0]['code']}<br>	
+                {$vo['order_web_address'][0]['telephone']}<br>
+            </div>
+		</div>
+        <p style="font-size:32px;">{$word_chakan}	</p>	
+        <div style="width:100%;  text-align:left; border:1px solid #000;">	
+            <p style="font-size:30px;font-weight:bold;padding-bottom:15px;padding-left:10px;border-bottom:1px solid #000;">
+            	<?php echo $word_o_num.":";?>	{:str_replace('-','0',substr($vo['date_time'],0,10))."0".$vo['customer_id']."0".$vo['order_number']}&nbsp;&nbsp;
+                <volist name="vo['factory_order']" id="factory_order_vo">
+                &nbsp;&nbsp; {:strtoupper($vo['factory'][$key]['val'])}<?php echo (date('m.d',strtotime($factory_order_vo["date"]))); ?>-<if condition="$factory_order_vo.number lt 10">0</if>{$factory_order_vo.number}
+                </volist>
+                &nbsp;&nbsp;&nbsp;Lilysilk_{$vo.come_from_info.name}
+            </p>
+            <table style="width:100%;font-size:20px;">
+            <tr>
+                <th style="width:60%;font-size:28px;padding-left:10px;" align="left">{$word_name}</th>
+                <th style="width:20%;font-size:28px;" align="left">{$word_num}</th>
+            </tr>
+            
+            <volist name="vo['product_original_info']" id="product_vo">
+            <?php
+            if(strtolower($product_vo[product_name])=="special silk washing detergent tenestar" && $vo['come_from_info']['name']=="us")
+		    {
+		        $isset_wash_tenestar=true;
+		    }
+            ?>
+			<tr>
+			 <if condition="$product_vo['product_set_name'] eq ''">
+                <td>
+                    <p style="font-size: 32px">
+                       {$product_vo['product_name']}
+                     </p>
+                    <p class="product_color">
+                        {$product_vo['color']}
+                        </p>
+                    <p>
+                    	 {$product_vo['size']}
+                    	  <volist name="vo['order_web_product']" id="order_web_product">
+                    	  <if condition="$order_web_product[order_product_id] eq $product_vo[order_product_id]">
+                    	  		<notempty name='order_web_product[nightwear_customization_info]'>
+                    	  		<switch name="vo['come_from_info']['name']">
+								    <case value="jp">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("身長","体重","胸周り","ウェスト","尻周り","パンツ丈","袖丈"),$order_web_product[nightwear_customization_info][customization])}</case>
+								    <case value="fr">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Taille","Poids","Tour de poitrine","Tour de taille","Tour de bassin","Longueur du bas","Longueur de manche"),$order_web_product[nightwear_customization_info][customization])}</case>
+								    <case value="de">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Höhe","Gewicht","Büste","Taille","Hüften","Beinlänge","Ärmel"),$order_web_product[nightwear_customization_info][customization])}</case>
+								     <case value="nl">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Hoogte","Gewicht","Borst","Taille","heupen","Beenlengte","Mouw"),$order_web_product[nightwear_customization_info][customization])}</case>
+								     <case value="it">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Altezza","Peso","Busto","Cintura","Fianchi","Lunghezza della gamba","Manica"),$order_web_product[nightwear_customization_info][customization])}</case>
+								     <case value="es">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Altura","Peso","busto","cintura","cadera","Longitud de las piernas","manga"),$order_web_product[nightwear_customization_info][customization])}</case>
+								     <case value="ru">{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("pост","вес","окружность груди","талия","бедра","длина ног","длина рукава"),$order_web_product[nightwear_customization_info][customization])}</case>
+								    <default />{:str_replace(array("身高","体重","胸围","腰围","臀围","腿长","袖长"),array("Height","Weight","Bust/Chest","Waist","Hips","Length","Sleeve"),$order_web_product[nightwear_customization_info][customization])}
+								</switch>
+                    	  			
+                    	  		</notempty>
+                    	  </if>
+                    	  </volist>
+                    </p>
+                    <p>model : {$product_vo['sku']}</p>
+                </td>
+                <td>
+                    <span>{$product_vo['number']}</span>
+                </td>
+                <td style="text-align:center;">
+	              <volist name="vo['order_web_product']" id="order_web_product">
+	              	<if condition="$order_web_product[order_product_id] eq $product_vo[order_product_id]">
+		              	<?php
+		              	if($order_web_product[extra_info]['gift_box']!='')
+						{
+		              	?>
+		              		<img src='{$order_web_product[extra_info]['gift_box']}'>
+		              	<?php
+		              	}
+						if($order_web_product[extra_info]['gramming_img']!='')
+						{
+						?>
+						<img src='{$order_web_product[extra_info]['gramming_img']}'>
+						<br>
+						{$order_web_product[extra_info]['gramming_name']}
+						<br>
+						{$order_web_product[extra_info]['gramming_color']}
+						<?php
+						}
+		              	?>
+		             </if>
+	              </volist>           
+                </td>
+             <else />
+                 <td>
+                 <p style="font-size: 32px">
+                       {$product_vo['product_set_name']}&nbsp;&nbsp;{$product_vo['color']}&nbsp;&nbsp;{$product_vo['size']}
+                  </p>
+                  <volist name="product_vo['set_info']" id="product_set_one">
+                 	 <p class="product_one_name" style="width: 100%;display: block;clear: both;float:left;margin:10px 0;"><span style="width:500px;display:block;float:left;margin-right:30px;">{$product_set_one['product_name']}</span><span style="width:400px;display:block;float:left;margin-right:30px;">{$product_set_one['size']}</span><span style="width:100px;display:block;float:left;">{$product_set_one['number']}</span></p>
+                  </volist>
+                  </td>
+              </if>
+                
+            </tr>
+              <volist name="vo['order_web_product']" id="order_web_product">
+              	<if condition="$order_web_product[order_product_id] eq $product_vo[order_product_id]">
+              	<?php
+              	if($order_web_product['extra_info']['gift_product_name']!="")
+				{
+              	?>
+	              		<tr>
+	              		<td class='name'>
+	              		{$order_web_product[extra_info]['gift_name']}<br>{$order_web_product[extra_info]['gift_product_name']}
+	              		</td>
+	              		<td>1</td>
+	              		<td></td>
+	              		</tr>
+	              <?php
+	              }
+	              ?>
+	            </if>
+              </volist>
+            </volist>
+            <!--
+            <tr>	
+                <td class="name">
+                    Gift<br>
+                    Silk Sleep Eye Mask With Wide Elastic Band	
+                </td>	
+                <td>
+                    1
+                </td>			
+                <td>&nbsp;</td>
+            </tr>-->
+            </table>
+        </div>
+	</div>
+    <?php 
+	if($isset_wash_tenestar)
+	{
+	?>
+		<p style="text-align:right;font-size:25px;width:1200px;margin:auto;text-align:left;">
+		<span style="font-size:58px;">☆</span>Please note that, the Tenestar detergent in your order will be shipped out separately  for the protection of your delicate silk items. We apologize for any inconvenience this may cause and thank you for your patience with us. 
+		</p>
+		<?php 
+	}
+	else 
+	{
+   	?>
+		   <p>
+		   </p>
+	<?php 
+	}
+	?>
+    <p class="fenye" style="text-align:right;font-size:25px;width:1200px;margin:auto;">www.lilysilk.com</p>
+</volist>
+<script language= "JavaScript">
+window.onload=function(){
+	 window.print();
+}
+</script>
+</body>
+</html>

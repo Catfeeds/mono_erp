@@ -1,0 +1,105 @@
+<div class="admin">
+	<div class="remark">
+    	<ul class="ul">
+        	
+            <li <if condition="$sta eq '0' ">class="action"</if>><a href="__ACTION__/sta/0.html">未处理 <span class="badge bg-dot">{$info_not_coun}</span></a></li>
+            
+            <li <if condition="!$sta and $sta neq '0' and !$data">class="action"</if>><a href="__ACTION__.html">全部 <span class="badge remark_bg">{$info_all_coun}</span></a></li>
+            <li <if condition="$sta eq 1">class="action"</if>><a href="__ACTION__/sta/1.html">已处理 <span class="badge remark_bg">{$info_ok_coun}</span></a></li>
+            <li <if condition="$sta eq 2">class="action"</if>><a href="__ACTION__/sta/2.html">已失效 <span class="badge remark_bg">{$info_failure_coun}</span></a></li>
+            <li <if condition="$data eq 2">class="action"</if>><a href="__ACTION__/data/2.html">网站 <span class="badge remark_bg">{$info_web_coun}</span></a></li>
+            <li <if condition="$data eq 1">class="action"</if>><a href="__ACTION__/data/1.html">平台 <span class="badge remark_bg">{$info_platform_coun}</span></a></li>
+        </ul>
+        <div style=" clear:both;" ></div>
+        <br>
+    	<form action="{:U('Admin/OrderManage/remark_check')}"  method="post" name="form" id="myform">
+          <span class="remark_span">备注状态：</span>
+                <select name="sta" class="">
+                  <option value="">全部</option>
+                  <option value='1' <eq name="sta" value="1">selected=""</eq>>已处理</option>
+                  <option value='0' <eq name="sta" value="0">selected=""</eq>>未处理</option>
+                  <option value='2' <eq name="sta" value="2">selected=""</eq>>已失效</option>
+                </select>
+             <span class="remark_span">备注范围：</span>    
+                <select name="data">
+                  <option value="">全部</option>
+                  <option value='2' <eq name="data" value="2">selected=""</eq>>网站</option>
+                  <option value='1' <eq name="data" value="1">selected=""</eq>>平台</option>
+                </select>
+             <span class="remark_span">启用时间：</span> 
+             	<input type="checkbox" value="1" name="yes" <eq name="yes" value="1">checked</eq>>
+             <span>时间区间：</span>
+                <input type="text" style="cursor:pointer;" name="beginTime" id="btime" class="Wdate bd" onClick="WdatePicker()" value="<if condition='$beginTime neq ""'>{$beginTime}</if>"  />
+                <input type="text" style="cursor:pointer;" name="endTime" id="btime" class="Wdate bd" onClick="WdatePicker()" value="<if condition='$endTime neq ""'>{$endTime}</if>"  />
+             <br />
+             <br />
+             <span class="remark_span">发起人员：</span>
+             	<select name="operator">
+                  <option value="">全部</option>
+                  <volist name="user_list" id="vo">
+                  <option value='{$vo.username}' <eq name="operator" value="$vo.username">selected=""</eq>>{$vo.username}</option>
+                  </volist>
+                </select>
+             <span class="remark_span">指定人员：</span>
+             	<select name="accept">
+                  <option value="">全部</option>
+                  <volist name="user_list" id="vo">
+                  <option value='{$vo.username}' <eq name="accept" value="$vo.username">selected=""</eq>>{$vo.username}</option>
+                  </volist>
+                </select>
+             <span class="remark_span">订 单 号：</span> 
+             	<input type="text" value="{$order_number}" name="order_number" class="remark_txt">      
+        	<input  type="submit" class="but_sub" value="提交">
+        </form>       
+    </div>
+   
+    <div style="width:100%; height:20px;"></div>
+
+    <div class="tab-panel" id="tab-not">
+         <table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" id="come_dp">
+            <tr>
+            <td colspan="9" class="table_title tab_title">
+                <span class="fl icon-align-justify"> 产品备注管理</span>
+            </td>
+            <tr class="list_head ct">
+            	<td align="left" width="2%"></td>
+                <td align="left" width="12%">订单号</td>
+                <td align="left" width="33%">备注</td>
+                <td align='center' width="7%">发起人员</td>
+                <td align='center' width="7%">指定人员</td>
+                <td align='center' width="13%">提交时间</td>
+                <td align='center' width="13%">结束时间</td>
+                <td align='center' width="5%">状态</td>
+                <td align='center' width="8%">管理操作</td>
+            </tr>
+        <volist name="info" id="vo" key="k">
+            <tr>
+            	<td class="td_number">{$k}</td>
+                <td class="td_number">{$vo.order_number}</td>
+                <td class="td_cc">{$vo.message}</td>
+                <td align="center">{$vo.operator}</td>
+                <td align="center">{$vo.accept}</td>
+                <td align="center">{$vo.date_time|date='Y-m-d H:i:s',###}</td>
+                <td align="center" class="td_ff"><if condition="$vo.end_time ">{$vo.end_time|date='Y-m-d H:i:s',###}<else />正在进行</if></td>
+                <td align="center" class="td_ff">{$vo.sta}</td>
+                <td align="center">
+                	<if condition="$vo.status eq 0">
+                    	<if condition="$vo.accept eq $username ">
+                            <a href="{:U('/Admin/OrderManage/remark_status/sta/1/id/'.$vo[id])}" class="icon-check" title="已处理"></a> 
+                        </if>
+                            &nbsp;&nbsp;
+                        <if condition="$vo.operator eq $username ">    
+                            <a href="{:U('/Admin/OrderManage/remark_status/sta/2/id/'.$vo[id])}" class="icon-times" title="失效"></a>
+                        </if>    
+                     </if>
+                       
+                 </td>
+            </tr>
+        </volist>
+        </table>
+     </div>
+     <div class="list-page">
+     	<empty name="page">暂时没有相关数据<else />{$page}</empty>
+     </div>
+
+</div>

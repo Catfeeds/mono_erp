@@ -1,0 +1,212 @@
+<script src="__JS__/CodeManage/main.js?v={:time()}"></script>
+<script src="__JS__/productOut/productoutList.js"></script>
+<script src="__JS__/productstock/product_stock_set_apply_add.js"></script>
+<script>
+function handleFile(val){
+	var full_name = $("#file_"+val).attr("value");
+	var arr = full_name.split('\\');
+	var file_name = arr[arr.length-1];
+	$("#file_name_"+val).html(file_name);
+}
+
+function handleFile_upload(){
+	var full_name = $("#file").attr("value");
+	var arr = full_name.split('\\');
+	var file_name = arr[arr.length-1];
+	$("#file_name").html(file_name);
+}
+
+</script>
+<style>
+.input-file input[type="file"]{cursor:pointer;}
+
+</style>
+<div class="admin">
+<table class="table table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" style='margin-bottom:20px;'>
+		<tr>
+			<td colspan="6" class="table_title tab_title">
+				<span class="fl icon-align-justify"> {$title}库存管理</span>
+				<span style="margin-left:10px;"><a  href="{:U('Admin/ProductManage/'.$return_stock_style,array('flag'=>'single','warn'=>'all'))}"> 单件</a></span>
+				<span style="margin-left:10px;"><a  href="{:U('Admin/ProductManage/'.$return_stock_style.'/flag/set/warn/all',array('flag'=>'set','warn'=>'all'))}"> 套件</a></span>
+				<span style="margin-left:10px;"><a  href="{:U('Admin/ProductManage/'.$return_stock_style.'/flag/single/warn/warn',array('flag'=>'single','warn'=>'warn'))}"> 单件预警 </a></span>
+				<span style="margin-left:10px;"><a  href="{:U('Admin/ProductManage/'.$return_stock_style.'/flag/set/warn/warn',array('flag'=>'set','warn'=>'warn'))}"> 套件预警 </a></span>
+				<span style="margin-left:10px;"><a style="color:#0a8" href="{:U('Admin/ProductManage/product_stock_check_add',array('style'=>$stock_style))}">盘点录入</a></span>
+				<span style="margin-left:10px;"><a href="{:U('Admin/ProductManage/product_stock_check_list',array('style'=>$stock_style))}"> 盘点记录</a></span>
+				
+				<eq name="stock_style" value="2">
+				<a class="fr icon-share-square-o" href="{:U('/Admin/ProductManage/shock_check_excel/',array('style'=>2))}"> 导出盘点列表</a>
+				</eq>
+			</td>
+		</tr>
+		</table>
+	<div class="tab">
+		<div class="tab-head">
+       	 <ul class="tab-nav">{$title} 库存盘点录入
+          <li class="active"><a href="#tab-set">单品盘点</a></li>
+          <li><a href="#tab-email">套件盘点</a></li>
+          <!--本地导入-->
+          <if condition="$title eq '本地'">	
+              <li><a href="#tab-execl">导入盘点</a></li>
+              <li><a href="#tab-upload">网站库存导入</a></li>
+          </if>  
+         </ul>
+     	 </div>
+     	 <div class="tab-body">
+     	 <div class="tab-panel active" id="tab-set">
+     	 <form action="" method="post" name="form" id="myform">
+		 <input type="hidden" name='type' value="dp" />
+        <table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+        
+                        <tr class="table_title">
+                            <td colspan="4">单品库存盘点</td>
+                        </tr>
+                        
+                    <empty name="info">
+                        <tr class="tr rt">
+                            <td width="100">分类：</td>
+                            <td colspan="3" class="lt">
+                                <select name="catalog" onchange="get_product_of_catalog(this.value)"  <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> > 
+                                      <option value="-1">--请选择--</option>
+                                      <volist name="catalog" id="vo">
+                                         <option value='{$vo.id}' <eq name="row['code_info'][catalog_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                                      </volist>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="tr rt">
+                            <td width="100">产品：</td>
+                            <td colspan="3" class="lt">
+                                <select  name="product_id" id="product_id" onchange="get_product_of_code_option(this.value)"  <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+                                      <option value="-1">--请选择--</option>
+                                      <volist name="product_list" id="vo">
+                                         <option value='{$vo.id}' <eq name="row['code_info'][product_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                                      </volist>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr class="tr rt">
+                            <td width="100">code：</td>
+                            <td colspan="3" class="lt">
+                                <select check="-1" msg="必须选择code！" name="code_name" id="product_code_id" <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+                                    <option value="-1" >--请选择--</option>
+                                    <volist name="code_list" id="code_vo">
+                                    <option value="{$code_vo.id}" <if condition="$code_vo.id eq $row['product_code_id']">selected="selected"</if> >{$code_vo['code']} ( name: {$code_vo['name']} ) </option>
+                                    </volist>
+                                </select>
+                            </td>
+                        </tr>
+                    <else/>
+                        <tr class="tr rt">
+                            <td width="100">C o d e&nbsp;&nbsp;：</td>
+                            <td colspan="3" class="lt">
+                                <span>{$info.code_code} - {$info.code_name}</span>
+                                <input type="hidden" name="code_name" value="{$info.code_id}" readOnly="readOnly"/>
+                            </td>
+                        </tr>
+                    </empty>
+                    
+                        <tr class="tr rt">
+                            <td width="100">盘点数量：</td>
+                            <td colspan="3" class="lt">
+                                <input check="number" msg="数量必须填写数字！" type="text" name="number" id="number" style="width:200px" > <span  style="color:red;">请输入当前库存</span>
+                            </td>
+                        </tr>
+                        <tr class="tr rt">
+                            <td width="100">盘点备注：</td>
+                            <td colspan="3" class="lt">
+                                <input  type="text" name="message" id="message" style="width:200px" >
+                            </td>
+                        </tr>
+                        
+            <tr class="tr lt">
+                <td colspan="4">
+                    <gt name="info.id" value="0">
+                        <input class="bginput" type="submit" name="dosubmit" value="修 改" onclick="return check_form('myform')">
+                        <else />
+                        <input class="bginput" type="submit" name="dosubmit" value="添 加" onclick="return check_form('myform')"></gt>
+                  </td>
+            </tr>
+        </table>
+        </form>
+        
+		</div>
+        <div class="tab-panel" id="tab-email">
+        	<form action="" method="post" id="myform2">
+             <input type="hidden" name='type' value="tj" />
+        	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+            <tr class="table_title">
+                            <td colspan="4">套件库存盘点</td>
+                        </tr>
+        	<tr class="tr rt">
+				<td width="100">来　　源：</td>
+				<td colspan="3" class="lt">
+					<select onchange="get_set_sku(this.value)" name="come_from" style=" min-width:100px">{$come_from}</select>
+				</td>
+			</tr>
+			<tr class="tr rt">
+				<td width="100">套件sku：</td>
+				<td colspan="3" class="lt">
+                    <select check="0" msg="必须选择一个sku！" id="sku" name="sku" style=" min-width:100px">
+                   		<option value="0">---</option>
+					</select>
+				</td>
+			</tr>
+			 <tr class="tr rt">
+					<td width="100">盘点数量：</td>
+					<td colspan="3" class="lt">
+						<input check="number" msg="数量必须填写!" type="text" name="number" id="number" style="width:200px" >
+					</td>
+				</tr>
+                <tr class="tr rt">
+					<td width="100">盘点备注：</td>
+					<td colspan="3" class="lt">
+						<input  type="text" name="message" id="message" style="width:200px" >
+					</td>
+				</tr>
+				<tr class="tr lt">
+				<td colspan="4">
+					<input class="bginput" type="submit" name="dosubmit" value="添 加" onclick="return check_form('myform2')">
+					&nbsp;
+					<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+				</tr>
+        	</table>
+        	</form>
+        </div>
+        
+        <div class="tab-panel" id="tab-execl">
+        	
+            <form method="post" action="__CONTROLLER__/upload_excel.html" class="form-x margin-large-top" enctype="multipart/form-data">
+            <input type="hidden" value="2" name="style" />
+                <div class="form-group">
+                    <div class="field">
+                        <a class="button input-file" style="float:left;margin-right:25px;width:250px;cursor:pointer;">
+                            导入盘点 <input size="100" type="file" name="file" id="file_2" onchange="handleFile(2)">
+                            <span id="file_name_2" style="margin-left:10px;">&nbsp;&nbsp;</span>
+                        </a>
+                        <input type="submit"  class="button input-file" value="导入" style="float:left;" />
+                    </div>
+                </div>
+            </form>
+            <p style=" margin:10px; color:red;"> 注意：第一个工作表为套件，第二个为单品</p>
+        </div>
+        
+       <div class="tab-panel" id="tab-upload">
+       		<form method="post" action="__CONTROLLER__/product_stock_import.html" class="form-x margin-large-top" enctype="multipart/form-data">
+            <div class="form-group">
+				<div class="label" style=" width:85px;">
+						<label>上传文件：</label>
+					</div>
+					<div class="field">
+						<a class="button input-file" style="float:left;">
+							+ 浏览文件
+							<input type="file" onchange="handleFile_upload()" id="file" name="file" size="100">
+							<span style="margin-left:10px;" id="file_name">&nbsp;&nbsp;</span>
+						</a>
+                           <button  style="float:left; margin-left:20px;" type="submit" class="button border-black padding-small">网站库存导入</button>
+					</div>
+				</div>
+            </form>
+      		</div> 
+      </div>
+     </div>
+</div>

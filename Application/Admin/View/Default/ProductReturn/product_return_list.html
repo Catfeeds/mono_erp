@@ -1,0 +1,29 @@
+<div class="admin">
+<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+	<tr>
+        <td colspan="9" class="table_title">
+          <span class="fl">退货列表管理</span>
+        </td>
+    </tr>
+    <tr>
+        <td class="table_title" colspan="9">
+        <form action="{:U('/Admin/ProductReturn/product_return_list/act/select')}" method="post">
+          <span class="fl">订单号：</span><input type="text" name="order_id">
+          &nbsp;&nbsp;
+          <span class="fl">交易号：</span><input type="text" name="transaction_id">
+          &nbsp;&nbsp;
+          <input type="submit" value="查 询">
+        </form>
+        </td>
+    </tr>
+    <tr>
+    	<td>序号</td><td>订单号</td><td>交易号</td><td>状态</td><td>退回地</td><td>来源</td><td>是否取消</td><td>操作人</td><td>操作</td>
+    </tr>
+    <?php $num=1;?>
+    <volist name="product_return_list" id="vo">
+    <tr>
+    	<td><?php echo $num;$num++;?></td><td>{$vo.order_id}</td><td>{$vo.transaction_id}</td><td>{$vo.status}</td><td>{$vo.place}</td><td>{$vo.come_form}</td><td><if condition="$vo.is_cancel eq 0">未取消 <elseif condition="$vo.is_cancel eq 1"/>已取消</if></td><td>{$username}</td><td><a href="{:U('/Admin/ProductReturn/product_return_act/id/'.$vo[id])}">修 改</a></td>
+    </tr>
+    </volist>
+</table>
+</div>

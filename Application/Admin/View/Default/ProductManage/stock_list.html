@@ -1,0 +1,183 @@
+<script src="__JS__/ProductManage/main.js"></script>
+<script>
+	<notempty name="stock_sync_result"> 
+		layer.alert("{$stock_sync_result}",{title:'更新结果',shade:0.5});
+	</notempty>
+	
+</script>
+<style>
+.ul li{ float:left; line-height:24px; margin: 4px 1px;}
+.xx{ font-size:20px; margin-left:5px;}
+.padd{ padding:0px 3px;}
+</style>
+
+<div class="admin">
+<input type="hidden" name="flag" id="flag" value="{$flag}"  />
+<input type="hidden" name="warn"  id='warn' value="{$warn}"  />
+<input type="hidden" name="catalog_id" id="catalog_id" value="{$catalog_id}"  />
+<input type="hidden" name="product_id"  id='product_id' value="{$product_id}"  />
+<input type="hidden" name="style"  id='style' value="<if condition='$style eq 2'>stock_local<elseif condition='$style eq 1'/>stock_fba<elseif condition='$style eq 3'/>stock_us<elseif condition='$style eq 0'/>stock_all</if>"  />
+	<!--库存列表-->
+	<table class="table table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1">
+		<tr>
+			<td colspan="6" class="table_title tab_title">
+				<span class="fl icon-align-justify"> {$title}库存管理</span>
+				
+				<span style="margin-left:10px;"><a <if condition=" ($flag eq 'single') AND ($warn eq 'all') ">style="color:#0a8";</if> href="{:U('',array('flag'=>'single','warn'=>'all'))}"> 单件</a></span>
+				<in name="style" value="0,2,3">
+					<span style="margin-left:10px;"><a <if condition=" ($flag eq 'set') AND ($warn eq 'all') ">style="color:#0a8";</if> href="{:U('',array('flag'=>'set','warn'=>'all'))}"> 套件</a></span>
+				</in>
+				<span style="margin-left:10px;"><a <if condition=" ($flag eq 'single') AND ($warn eq 'warn') ">style="color:#0a8";</if> href="{:U('',array('flag'=>'single','warn'=>'warn'))}"> 单件预警 </a></span>
+				<in name="style" value="0,2,3">
+					<span style="margin-left:10px;"><a <if condition=" ($flag eq 'set') AND ($warn eq 'warn') ">style="color:#0a8";</if> href="{:U('',array('flag'=>'set','warn'=>'warn'))}"> 套件预警 </a></span>
+				</in>
+				<in name="style" value="2,3">
+					<span style="margin-left:10px;"><a <if condition=" $check eq 'in' ">style="color:#0a8";</if> href="{:U('Admin/ProductManage/product_stock_check_add',array('style'=>$style))}"> 盘点录入</a></span>
+					<span style="margin-left:10px;"><a <if condition=" $check eq 'list' ">style="color:#0a8";</if> href="{:U('Admin/ProductManage/product_stock_check_list',array('style'=>$style))}"> 盘点记录</a></span>
+				</in>
+				<eq name="style" value="2">
+					<a class="fr icon-share-square-o" href="{:U('/Admin/ProductManage/shock_check_excel/',array('style'=>2,'catalog_id'=>$catalog_id,'product_id'=>$product_id))}" > 导出盘点列表</a>
+				</eq>
+<!-- 			<eq name="style" value="1">
+					<span onclick="return sync_fba_stock() " style="cursor:pointer;margin-left:10px;text-decoration:underline;">点击更新数据</span>
+				</eq> -->	
+			</td>
+		</tr>
+        
+        <tr>
+        	<td colspan="6" class="table_title tab_title">
+                <label for="code">Code / Sku :</label>
+            	<input type="text" name="code" id="code" value="{$code}">
+                <input type="submit" value="查询" onclick="select_stock_local(<if condition='$style eq 2'>'stock_local'<elseif condition='$style eq 1'/>'stock_fba'<elseif condition='$style eq 3'/>'stock_us'<elseif condition='$style eq 0'/>'stock_all'</if>)">
+                <eq name="flag" value="single">
+                    <span class="remark_span">分类：</span>
+                        <select name="catalog" class="" onchange="get_product_of_catalog(this.value,<if condition='$style eq 2'>'stock_local'<elseif condition='$style eq 1'/>'stock_fba'<elseif condition='$style eq 3'/>'stock_us'<elseif condition='$style eq 0'/>'stock_all'</if>,this.options[this.selectedIndex].text)">
+                          <option value="">全部</option>
+                          <volist name="catalog_list" id="vo">
+                             <option value='{$vo.id}' <eq name="catalog_id" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                          </volist>
+                        </select>
+                     <span  <if condition="$select_catalog_coun gt '1'"> class='dis_no'</if>>   
+                     <span class="remark_span">产品：</span>    
+                        <select  name="product_id" id="product_id" onchange="get_product_of_code(this.value,<if condition='$style eq 2'>'stock_local'<elseif condition='$style eq 1'/>'stock_fba'<elseif condition='$style eq 3'/>'stock_us'<elseif condition='$style eq 0'/>'stock_all'</if>,this.options[this.selectedIndex].text)" style="max-width: 450px;">
+                          <option value="">全部</option>
+                          <volist name="product_list" id="vo">
+                             <option value='{$vo.id}' <eq name="product_id" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                          </volist>
+                        </select>
+                     </span>   
+                </eq>
+                     
+            </td>
+        </tr>
+        
+       	<tr <if condition='!$select_catalog '>class="catalog_tr dis_no"</if>>
+       		<td colspan="6">
+            	<ul class="catalog_ul ul" id='catalog_ul'>
+                     <li>分类:</li>
+                     <volist name="select_catalog" id="catalog_vo">
+                     	<li class="plcz padd"><input type="hidden" name="catalog[]" value="{$catalog_vo.id}"  id="aa">{$catalog_vo.name}<span class="close rotate-hover add_span xx" onclick="$(this).parent().remove(),get_product_of_catalog()"></span></li>
+                     </volist>                     
+                </ul> 
+       		</td>
+       	</tr>
+       
+        <tr <if condition='!$select_product '>class="product_tr dis_no"</if>>
+       		<td colspan="6">
+            	 <ul class="product_ul ul" id='product_ul'>
+                   <li>产品:</li>
+                   <volist name="select_product" id="product_vo">
+                     	<li class="plcz padd"><input type="hidden" name="product[]" value="{$product_vo.id}"  id="aa">{$product_vo.name}<span class="close rotate-hover add_span xx" onclick="$(this).parent().remove(),get_product_of_code()"></span></li>
+                     </volist> 
+                   
+                 </ul> 
+       		</td>
+       	</tr>
+		<tr class="list_head ct">
+		<eq name="flag" value="single">
+			<td width="30"></td>
+			<td align='left' width="180">产品代号</td>
+			<td align='left' width="70">当前库存</td>
+			<td align='center' width="100">预警设置</td>
+            <eq name="style" value="1">
+            <td align='center' width="70">仓库</td>
+            </eq>
+			<if condition="$style neq 0">
+			<td align='center' width="150">管理操作</td>
+			<else/>
+			<td align='center' width="150">库存类型</td>
+			</if>
+		<else/>
+			<td width="30"></td>
+			<td align='left' width="180">产品sku</td>
+			<td align='left' width="50">当前库存</td>
+			<td align='center' width="100">预警设置</td>
+            <eq name="style" value="1">
+            <td align='center' width="70">仓库</td>
+            </eq>
+			<td align='center' width="200">库存组成</td>
+			<if condition="$style neq 0">
+			<td align='center' width="100">管理操作</td>
+			<else/>
+			<td align='center' width="150">库存类型</td>
+			</if>
+		</eq>
+		</tr>
+		
+		<volist name="list" id="vo">
+		<tr>
+			<td><span class="td_number">{$i}</span></td>
+		  <td align="left" class="td_cc">
+				<eq name="flag" value="single">
+					{:get_product_info($vo['code_id'],$flag)}
+				<else/>
+					{:get_product_info($vo['sku_id'],$flag)}
+				</eq>
+				<if condition="($vo['minimum'] neq 0) or ($vo['maximum'] neq 0)">
+					<if condition="$vo['number'] lt $vo['minimum']">
+						<span class="tag bg-red">过低</span>
+					</if>
+					<if condition="$vo['number'] gt $vo['maximum']">
+						<span class="tag bg-red">过高</span>
+				 	 </if>
+			  </if>
+			</td>
+			<td align='left' ><span style='color:#0a8'>{$vo.number}</span></td>
+			<td align="center">
+				<if condition="($vo['minimum'] neq 0) or ($vo['maximum'] neq 0)">
+					最大库存:<span style="color:red;">{$vo.maximum}</span>  ；最小库存:<span style="color:red;">{$vo.minimum}</span>
+				<else/>
+				未设置
+				</if>
+			</td>
+            <eq name="style" value="1">
+            <td align="center">{$vo.place}</td>
+            </eq>
+		  <eq name="flag" value="set">
+			<td align="center" style=";">
+			  <volist name="vo.code_list" id="code_list">
+						<span class="td_cc">[{$code_list['code']}]</span>&nbsp;{$code_list['code_name']}&nbsp;&nbsp;<span style='color:#0a8'>{$code_list[number]}</span><br>
+			  </volist>
+			  </td>
+			</eq>
+			<if condition="$style neq 0">
+			<td align='center'>
+				<a href="{:U('/Admin/ProductManage/product_warn_edit?id='.$vo['id'],$param)}" class="icon-pencil" title='修改'></a>&nbsp;&nbsp;
+				<a href="{:U('/Admin/productstock/product_stock_apply_add/',array('code'=>$vo['code_id']))}" class="icon-file-o" title="添加库存申请"></a>
+				&nbsp;&nbsp;<a href="{:U('/Admin/productstock/product_stock_check/',array('id'=>$vo['id'],'flag'=>$flag,'p'=>I('get.p')))}" class="icon-file-text-o" title="盘点"></a>
+			</td>
+			</if>
+			<if condition="$style eq 0">
+				<td align='center'>
+				{:get_stock_style( $vo['style'] )}
+				</td>
+			</if>
+		</tr>
+		</volist>
+		
+		<tr>
+			<td colspan="6" class="list-page table_titlen tab_title" align="center" style='padding:15px 0;'><empty name="page_bar">暂时没有数据<else />{$page_bar}</empty></td>
+		</tr>
+	</table>
+
+</div>

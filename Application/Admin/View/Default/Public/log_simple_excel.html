@@ -1,0 +1,17 @@
+{__NOLAYOUT__}
+<table border="1" style="border-collapse: collapse;">
+<tr>
+	<th>行数</th>
+	<volist name="column_list" id="column_vo">
+	<th>{$column_vo}</th>
+	</volist>
+</tr>
+<volist name="log_list" id="log_vo">
+<tr <switch name="log_vo['result']"><case value="error">style="background-color:red;"</case><case value="warning">style="background-color:orange;"</case></switch> >
+	<td>{$key}</td>
+	<volist name="column_list" id="col_vo" key="k">
+	<td>{$log_vo[$col_vo]}</td>
+	</volist>
+</tr>
+</volist>
+</table>

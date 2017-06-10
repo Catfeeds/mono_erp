@@ -1,0 +1,65 @@
+<include file="Index:messages_head" /> 
+
+<div class="messages_box">
+    <div class="messages_top">
+        <ul>
+        	<li ><a href="__APP__/Admin/Index/messages_instant.html" style="font-family:'宋体', '仿宋_GB2312', '汉仪旗黑-55S', '楷体_GB2312', '宋体-PUA'" >消息</a></li>
+            <li ><a href="__APP__/Admin/Index/messages.html" class="action">联系人</a></li>
+        </ul>
+    </div>
+    <div class="messages_list" >
+    
+        <ul class="ul">
+            <volist name="branch_list"  id="vo"><!--第一层-->
+            
+              <li class='one icon-group cur' onclick="open_ul('{$vo.id}',$(this))"> 
+                    {$vo.branch_name} [{$vo.coun}] <span id="more_{$vo.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                </li>
+                
+                    <ul class="li_ul" id="li_ul_{$vo.id}">
+                        <volist name="vo.personnel" id="voper">
+                        
+                            <li class="per_name icon-user cur" onClick="chat_open('{$voper.id}')"> {$voper.name} {$voper.id}</li>
+                            
+                      </volist>
+                        <volist name="vo.detail" id="vodet" ><!--第二层-->
+                        
+                            <li class="branch icon-group cur" onclick="open_ul('{$vodet.id}')"> 
+                            
+                                {$vodet.branch_name} [{$vodet.coun}] <span id="more_{$vodet.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                                
+                            </li>
+                            
+                                <ul class="li_ul" id="li_ul_{$vodet.id}">
+                                
+                                    <volist name="vodet.personnel" id="vo2per">
+                                    
+                                        <li class="per_name_2 icon-user cur" onClick="chat_open('{$vo2per.id}')"> {$vo2per.name} {$vo2per.id}</li>
+                                        
+                                    </volist>
+                                    <!--
+                                    <volist name="vodet.detail" id="vo2det">第三层
+                                    
+                                        <li class="branch_2 icon-group cur" onclick="open_ul('{$vo2det.id}')"> 
+                                        
+                                            {$vo2det.branch_name} <span id="more_{$vo2det.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                                            
+                                        </li>
+                                        
+                                    </volist>
+                                    -->
+                                    
+                                </ul>
+                                
+                        </volist>
+                        
+              </ul>
+                    
+            </volist>
+            
+        </ul>
+    
+    </div>
+    
+</div>
+<include file="Index:messages_foot" /> 

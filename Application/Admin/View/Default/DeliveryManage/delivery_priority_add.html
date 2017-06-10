@@ -1,0 +1,53 @@
+<div class="admin">
+<form action="{:U('/Admin/DeliveryManage/delivery_priority_add')}" method="post">
+<input type="hidden" name="id" value="{$id}">
+	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+		<tr class="table_title">
+		<td colspan="4" class="icon-reorder"> 添加记录</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">快递</td>
+		<td colspan="3" class="lt">
+		<select name="style"  style=" min-width:200px;">
+		<volist name="style" id="vo">
+			<option value="{$vo}" <if condition="$vo eq $info.style ">selected</if>>{$vo}</option>
+		</volist>
+		</select>
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">国家</td>
+		<td colspan="3" class="lt">
+		<select name="country" style=" min-width:200px;">
+		<volist name="country" id="vo">
+			<option value="{$vo.value}" <if condition="$info.country eq $vo['value'] ">selected</if>>{$vo.value}</option>
+		</volist>
+		</select>
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">最低重量</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="lower_weight" style="width:200px" value="{$info.lower_weight}">
+		</td>
+		</tr>
+		
+		<tr class="tr rt">
+		<td width="100">最高重量</td>
+		<td colspan="3" class="lt">
+		<input type="text" name="upper_weight" style="width:200px" value="{$info.upper_weight}">
+		</td>
+		</tr>
+		
+		<tr class="tr lt">
+		<td colspan="4">
+		<input class="bginput" type="submit" value=" 提 交 " >
+		</td>
+		</tr>
+	</table>
+</form>
+
+</div>

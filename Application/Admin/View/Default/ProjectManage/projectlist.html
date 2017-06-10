@@ -1,0 +1,55 @@
+<div class="admin">
+	<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr>
+			<td colspan="9" class="table_title">
+				<span class="fl">任务管理</span>
+				<span class="fr">
+					<a href="{:U('/Admin/ProjectManage/projectAdd')}">任务申请</a>
+				</span>
+			</td>
+		</tr>
+		<tr class="list_head ct">
+			<td width="50">ID</td>
+			<td width="350">任务名称</td>
+            <td width="70">状态</td>
+            <td width="180">任务描述</td>
+            <td width="150">申请人</td>
+            <td width="130">创建时间</td>
+            <td width="150">截止时间</td>
+            <td width="150">完成时间</td>
+			<td width="180">操作</td>
+		</tr>
+	<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.id}</td>
+			<td>{$vo.name}</td>
+			<td>
+				<if condition='$vo[status] eq 0'><span style="color:#808080;">未开始</span>
+				<elseif condition='$vo[status] eq 1'/><span style="color:#E84E0F;">进行中</span>
+				<elseif condition='$vo[status] eq 2'/><span style="color:#229F24;">已完成 </span>
+				</if>
+			</td>
+			<td>{$vo.message}</td>
+			<td>{$vo.proposer}</td>
+			<td>{$vo.begin_time}</td>
+			<td>{$vo.end_time}</td>
+			<td>{$vo.finish_time}</td>
+			<td>
+			<!--
+				<a <if condition="$vo[status] eq 0"> href="{:U('/Admin/ProjectManage/projectStart/',array('id'=>$vo['id'] ))}" <else / >style="color:#CCC;"</if>>开始</a>
+			-->
+				<a <if condition="($vo['status'] eq 0) or ($vo['status'] eq 1)"> href="{:U('/Admin/ProjectManage/projectFinish/',array('id'=>$vo['id'] ))}" <else / >style="color:#CCC;"</if>>完成</a> |
+				<a href="{:U('/Admin/ProjectManage/projectsubtaskAdd/',array('id'=>$vo['id'] ))}">添加子任务</a> |
+				<a href="{:U('/Admin/ProjectManage/projectsubtask/',array('id'=>$vo['id'] ))}">查看子任务</a> |
+				<a onclick="return confirm('确定要删除吗?')" <if href="{:U('/Admin/ProjectManage/projectDel/',array('id'=>$vo['id']))}">删除</a> |
+				<a href="{:U('/Admin/ProjectManage/projectAdd/',array('id'=>$vo['id'] ))}">修改</a>
+			</td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

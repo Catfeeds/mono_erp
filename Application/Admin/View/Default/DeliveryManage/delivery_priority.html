@@ -1,0 +1,60 @@
+<script src="__JS__/DeliveryManage/delivery.js"></script>
+<div class="admin">
+<table class="table  table-striped table-hover table-condensed">
+<tr>
+   <td colspan="7" class="table_title" style="font-size:14px;padding:10px;">
+   <span class="fl icon-reorder"> 快递优选列表</span>
+   <span class="fr">
+     <a href="{:U('/Admin/DeliveryManage/delivery_priority_add')}" class="icon-user"> 添加记录</a>
+   </span>
+   </td>
+</tr> 
+<tr>
+	<td colspan="7">
+	<lable><strong>运输方式：</strong></lable>
+	<select name="style" id="style" onchange="delivery_priority_act('select')">
+    	<option value="">-全部-</option>
+		<volist name="style" id="vo">
+			<option value="{$vo.style}" <if condition="$Think.get.style eq $vo[style]">selected</if> >{$vo.style}</option>
+		</volist>
+	</select>
+	<lable><strong>国家：</strong></lable>
+	<select name="country" id="country" onchange="delivery_priority_act('select')">
+    	<option value="">-全部-</option>
+		<volist name="country" id="vo">
+			<option value="{$vo.value}" <if condition="$come_from eq $vo['value']">selected</if> >{$vo.value}</option>
+		</volist>
+	</select>
+	</td>
+</tr>
+<tr class="list_head">
+	<td width="70" style="text-align:left">序号</td>
+	<td width="150" style="text-align:left">快递</td>
+	<td width="150" style="text-align:left">国家</td>
+	<td width="150" style="text-align:left">最低重量</td>
+	<td width="150" style="text-align:left">最高重量</td>
+	<td width="150" style="text-align:left">操作</td>
+</tr>
+<?php
+$num=1;
+?>
+<volist name="list" id="vo">
+<tr style='padding:20px;'>
+	<td align='left'><span class="td_number"><?php echo $num;$num++;?></span></td>
+	<td style="color:#03c">{$vo.style}</td>
+	<td>{$vo.country}</td>
+	<td  style="color: #f60">{$vo.lower_weight}</td>
+	<td  style="color: #f60">{$vo.upper_weight}</td>
+	<td >
+      <a href="{:U('/Admin/DeliveryManage/delivery_priority_delete',array('id'=>$vo['id']))}" class="icon-trash-o" title=" 删 除 "></a>
+      &nbsp;&nbsp;
+      <a href="{:U('/Admin/DeliveryManage/delivery_priority_add',array('id'=>$vo['id']))}" class="icon-pencil" title=" 修 改 "></a>
+    
+    </td>
+</tr>
+</volist>
+<tr class="tr">
+    <td colspan="7" class="pages" align="center">{$page}</td>
+</tr>
+</table>
+</div>

@@ -1,0 +1,47 @@
+<include file="Messages/messages_head" />
+<style>
+.middle{ padding:0px; overflow:auto;}
+.middle_ul li{ height:30px; line-height:30px; margin-top:5px; font-size:16px;}
+.middle_ul p{ margin:0; height:25px; line-height:25px; margin-left:20px; color:#CCC;}
+.middle_ul p a{color: #999; font-size:10px;}
+.middle_ul a{ display:block; }
+
+</style>
+<div class="middle">
+<table class="table  table-striped table-hover table-condensed">
+	<tr>
+    	<td></td>
+        <td>收件人</td>
+        <td>主题</td>
+        <td>时间</td>
+    
+    </tr>
+    <volist name="send_list" id="vo">
+		<tr>
+       		<td>
+             	<input class="check" name="check[]" type="checkbox" value="{$vo.id}">  
+            </td>
+            <td style='max-width: 250px; overflow:auto;'>
+            	<volist name="vo['detail']" id="detail_vo">
+                	<span <if condition='$detail_vo["is_see"] eq "0"'>style="color:#999;"<else />style="color:#000;"</if>> {$detail_vo.accept} </span>
+               </volist>
+            </td>
+            <td>
+            	<a href="__CONTROLLER__/receive_info/id/{$vo['id']}.html">
+                    <if condition="$vo['theme'] eq ''">
+                        {:msubstr(strip_tags(htmlspecialchars_decode($vo['content'])),0,30)}
+                    <else />
+                        {$vo['theme']}
+                    </if>     
+                </a> 
+            </td>
+            <td>{$vo['date_time']}</td>
+    	</tr>
+    </volist>
+</table>
+        <div class="list-page">
+            <empty name="page">暂时没有相关数据<else />{$page}</empty>
+         </div>
+</div>
+   
+<include file="Messages/messages_right_foot" />    

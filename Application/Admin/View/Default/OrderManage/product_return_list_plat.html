@@ -1,0 +1,583 @@
+<script src="__JS__/OrderManage/main.js"></script>
+<script src="__JS__/OrderManage/relate.js"></script>
+<script type="text/javascript" src="__JS__/ServiceManage/logistics_information.js"></script>
+<script src="__JS__/OrderManage/product_return_list.js"></script>
+<style>
+.red_warning,.red_warning td,.red_warning td span{color:#e33 !important;}
+.yellow_warning,.yellow_warning td,.yellow_warning td span{color:#f60 !important;}
+.accept_ul{ margin:0; padding:0;}
+.accept_ul li{list-style:none; float: left;}
+.product_original_set_tr td{ padding:2px 8px 2px 8px;}
+</style>
+
+<div class="admin">
+<form action="__ACTION__" method="post" id="muti_form">
+	<table class="table table-striped table-hover table-condensed">
+   	<tr>
+    	<td colspan="20" >
+            <span class="fl icon-align-justify"> {$tpltitle}</span>
+            
+            <a class="cur" href="__APP__/Admin/OrderManage/product_return_list_plat.html" style='<if condition='$sta eq "" '>color: #0a8;</if> margin-left:20px;'> 全部 </a>
+            <a class="cur" onClick="screening_sub('return','{$data}')"  <if condition="$sta eq 'return'">style="color: #0a8;"</if>> 退货 </a>
+            <a class="cur" onClick="screening_sub('change','{$data}')" <if condition="$sta eq 'change' ">style="color: #0a8;"</if>> 换货 </a>
+            
+            <a class="cur" href="__APP__/Admin/OrderManage/product_return_list_web" style="margin-left:20px;"> 网站 </a>
+            <a class="cur" href="__APP__/Admin/OrderManage/product_return_list_plat" style="color: #0a8;"> 平台 </a>
+        </td>
+	</tr>
+    <tr>
+		<td colspan="20">{//筛选栏}
+			<label for="order_number">订单号:</label>
+			<input name="order_number" type="text" value="{$order_number}" class="margin-right"/>
+			<label for="start_time">日期:</label>
+			<input type="text" value="{$start_time}" name="start_time" id="start_time" class="margin-right" onClick="WdatePicker()" style="cursor:pointer;"
+			><label for="end_time">TO:</label>
+			<input type="text" value="{$end_time}" name="end_time" id="end_time" class="margin-right" onClick="WdatePicker()" style="cursor:pointer;">
+			<span class="float-right">{$page_bar}</span>
+            <input  type="submit"  value="提交">
+		</td>
+	</tr>
+    <tr>
+		<td colspan="20">
+		<span style="font-size:14px;"><a onclick="select_all()" class="icon-arrows-v margin-left" href="#"> 全选 </a></span>
+		<span style="font-size:14px;"><a href="javascript:void(0)" onClick="muti_form_submit('export_address')" class="icon-share-square-o margin-left">导出订单地址 </a></span>
+		<span style="font-size:14px;"><a href="{:U('order_address_import')}" class="icon-share-square-o margin-left">导入订单地址 </a></span>
+        <eq name="order_status" value="all">
+        <span style="font-size:14px;"><a  class="icon-share-square-o margin-left" href="__MODULE__/OrderManage/export_execl_order/data/plat"> 导出未发货订单 </a></span>
+        </eq>
+		<eq name="order_status" value="audit">{//audit 批量审核按钮}
+		<span style="font-size:14px;"><a href="javascript:void(0)" onClick="layer.confirm('确认全部审核通过？',{title:false,closeBtn:false},
+				function(index){muti_form_submit('batch_audit');layer.close(index);})" class="icon-check-square-o margin-left"> 批量审核 </a></span>
+		</eq>
+		<eq name="order_status" value="shipping">{//shipping 批量转入历史}
+		<span style="font-size:14px;"><a href="javascript:void(0)" onClick="layer.confirm('确认全部转入历史？',{title:false,closeBtn:false},
+				function(index){muti_form_submit('batch_history');layer.close(index);})" class="icon-check-square-o margin-left"> 批量转入历史</a></span>
+		</eq>
+		<input type="hidden" name="come" value="plat">
+        <span style="font-size:14px;"><a onclick="order_print_plat()" class="icon-print margin-left" style='cursor:pointer;'> 打印商品详情单 </a></span>
+        
+		</td>
+	</tr>
+    
+    
+    
+    
+    <tr class="list_head">
+   		<td width="30"></td>
+   		<td width="45" style="text-align:left"></td>
+   		<td width="120" style="text-align:left">
+    		<a onclick="free_sort('order_number','{$param_json}')" href="#" class="text-green">订单号 
+    		<eq name="sort_field" value="order_number">
+	    		<eq name="sort_style" value="desc">
+	    			<span class="icon-sort-desc"></span>
+	    		<else/>
+	    			<span class="icon-sort-asc"></span>
+	   			</eq>
+   			</eq>
+   			</a>
+  		</td>
+  		<in name="filter.come_from_id" value="18,19">
+			<td width="100" style="text-align:left">订单ID</td>
+		</in>
+  		<neq name="order_status" value="audit">{//accept 工厂订单列表}
+        	<td width="110" style="text-align:left">工厂编号</td>    
+  		</neq>
+   		<td width="100" style="text-align:left">用户名</td>
+<!--	<td width="150">邮箱</td>-->
+<!--	<td width="100">电话</td>-->
+   		<td width="60">币种</td>
+   		<td width="60">总价</td>
+   		<td width="100">客户留言</td>
+<!-- 	<td width="60">礼品</td> -->
+   		<td width="100">来源</td>
+   		<td width="100">
+    		<a onclick="free_sort('date_time','{$param_json}')" href="#" class="text-green">下单时间 
+	    		<eq name="sort_field" value="date_time">
+		    		<eq name="sort_style" value="desc">
+		    			<span class="icon-sort-desc"></span>
+		    		<else/>
+		    			<span class="icon-sort-asc"></span>
+		   			</eq>
+	   			</eq>
+   			</a>
+   		</td>
+        <td width="100">退换货时间</td>
+<!--	<td width="100">货运服务</td>	-->
+   		<td width="180">商家留言</td>
+   		<eq name="order_status" value="shipping">{//shipping 运单信息}
+   		<td width="120">运单</td>
+   		</eq>
+   		<td width="100">状态</td>
+   		<td width="100">操作</td>
+	</tr>
+	<volist name="order_list" id="vo">
+	<tr id="list_row_{$vo['id']}" class='<eq name="mod" value="1">tr<else/>ji</eq>'> 
+   		<td><input class="check" name="check[]" id="check_{$vo.id}" type="checkbox" value="{$vo.id}" ></td>
+       	<td align='left'><span class="td_number"><empty name="Think.get.p">{$i}<else/>{:($_GET['p']-1)*$listRows+$i}</empty></span></td>
+       	<td align='left' style="color:#03c">
+       		<span onclick="see_more({$vo.id})" style="cursor:pointer;">{$vo.order_number}</span>
+       		<strong style="display:none;" id="warning_{$vo['id']}"></strong>
+  		</td>
+  		<in name="filter.come_from_id" value="18,19">
+  			<td align='left' style="color:#03c" width="100">{$vo.ebay_order_id}</td>
+  		</in>
+  		<neq name="order_status" value="audit">{//accept 工厂订单列表}
+        <td align="left">
+        	<volist name="vo.factory_order" id="vo2" key='factory_order_key'>
+                <p style=" margin:0px; <if condition='$vo2[status] eq "history"'>color:red; font-weight:bold;</if>">
+                    {:get_factory_str($vo2[factory_id],$vo2["date"],$vo2['number'],'execl')}
+                    <if condition='$vo2[status] eq "history"'>
+                        <span class="icon-check" style="color:red;"></span>
+                    </if>
+                </p>
+        	</volist>
+            <volist name="vo.fba_order" id="vo3" key='k'>
+                <p style=" margin:0px;">
+                	FBA<?php echo (date('md',strtotime($vo3["date"]))); ?>-<if condition="$vo.number lt 10">0</if>{$vo3.number}
+                	<if condition='$vo3[status] eq "history"'>
+                        <span class="icon-check" style="color:red;"></span>
+                    </if>
+                </p>
+           </volist>
+           <volist name="vo.product_stock_order" id="vo4" key='k'>
+                 <p style=" margin:0px;">
+                 	K<?php echo (date('md',strtotime($vo4["date"]))); ?>-<if condition="$vo.number lt 10">0</if>{$vo4.number}
+                    <if condition='$vo4[status] eq "history"'>
+                        <span class="icon-check" style="color:red;"></span>
+                    </if>
+                 </p>
+           </volist> 
+        </td>
+        </neq>
+       	<td align='left'>{$vo.name}</td>        
+<!--   	<td align='center' style="word-break:break-all;min-width:80px;">{$vo.email}</td>-->
+<!--   	<td align='center'>{$vo.telephone}</td> -->
+       	<td align='center'>{$vo.currency}</td>
+       	<td align='center' style="max-width:80px;overflow:hidden;">{$vo.price}</td>
+       	<td align='center'>{$vo.message}</td>
+<!-- 	<td align='center'><eq name="vo.is_gift_package" value="1"><font color="red" class="icon-check"></font><else/><font color="blue" class="icon-times"></font></eq></td> -->       
+       	<td align='center'>{$vo.come_from_info.name}</td>
+       	<td align='center'>{$vo.date_time}</td>
+        <td align='center'>{$vo['order_plat_form_status_history']['date_time']|date="Y-m-d H:i:s",###}</td>
+
+<!--  	<td align='center'>{$vo.ship_service_level}</td> -->   
+   		<td align='left' style="min-width:200px;">
+			<div id="message_first_{$vo.id}" class="tips" data-place="bottom" data-target="#message_tips_{$vo.id}" >
+		   		<notempty name="vo['message_info']">
+		   		<strong>{$vo['message_info'][0]['operator']}</strong> -
+				<small>{:date('Y-m-d H:i:s',$vo['message_info'][0]['date_time'])}</small> : <br/> 
+				{$vo['message_info'][0]['message']}
+				<if condition="sizeof($vo['message_info']) egt 2"><span class="icon-eye text-red"></span></if>
+				</notempty>
+			</div>
+	   		<div id='message_tips_{$vo.id}' class="hidden">
+	   			<if condition="sizeof($vo['message_info']) egt 2">
+				<volist name="vo['message_info']" id="message_vo" offset="1" key="k">
+				<p style="max-width:300px;">
+					<strong>{$message_vo['operator']}</strong> - 
+					<small>{:date('Y-m-d H:i:s',$message_vo['date_time'])}</small> : <br/>
+					{$message_vo.message}
+				</p>
+				</volist>
+				</if>
+			</div>
+		</td>
+		<eq name="order_status" value="shipping">{//shipping 运单信息}
+		<td>
+		<php>$temp = get_delivery_info($vo['id'],'plat');</php>
+		<notempty name="temp" >
+			<span><strong>重量:&nbsp;</strong>{$temp.weight}</span><br/>
+	  		<span>
+	  			<strong>快递:&nbsp;</strong>{$temp.shipping_style}
+	  			<a href="#" onclick="delivery_edit({$vo.id},'plat','fetch')" class="text-red icon-pencil margin-small-left" title="编辑运单信息"></a>
+	  			<a href="#" class="icon-sign-out text-yellow margin-small-left" title="打印运单"></a>
+	  		</span>
+		<else/>
+	  		<php>$temp = delivery_recommend($vo['id'],'plat');</php>
+	  		<span><strong>预估重量: </strong>{$temp['weight']}</span><br/>
+	  		<span>
+	  			<strong>推荐快递: </strong>{$temp['style']}
+	  			<a href="#" onclick="delivery_edit({$vo.id},'plat','fetch')" class="text-red icon-pencil margin-small-left" title="编辑运单信息"></a>
+	  			<a href="#" onclick="layer.msg('请先完善运单信息！')" class="icon-sign-out text-gray margin-small-left" title="打印运单"></a>
+  			</span>
+  		</notempty>
+		</td>
+		</eq>
+       	<td align='center' style="color:#f60"><empty name="vo.status_info.status">待审核<else/>{:order_status_list_hk($vo['status_info']['status'])}</empty></td>
+       	<td align='center'>
+       		<eq name="order_status" value="audit">{//audit 复选框}
+       		<a href="javascript:void(0)" id="audit_button_{$vo.id}" onclick="layer.confirm('确定审核通过该订单？', {btn:['确定','取消'], title:false, closeBtn:0}, 
+				function(){location.href='{:U('order_plat', array_merge($param,array('order_id'=>$vo['id']) ) )}'});"
+				class="icon-check-square-o text-red margin-right" title="审核通过"></a>
+			</eq>
+			<a class="icon-file-text margin-right" title="详情" href="{:U('/Admin/OrderManage/order_details/order_id/'.$vo[id])}"></a>
+       		<a id="button_see_more_{$vo.id}" onclick="see_more({$vo.id})" class="icon-chevron-down" title="展开" href="#"></a>
+      	</td>
+      	{// 检查超时}	
+		{:check_limit_time($vo['id'], $order_status, 'audit', $vo['date_time'], get_system_parameter('order_audit_limit_lv1','int'), '超时未审核',  get_system_parameter('order_audit_limit_lv1','char'))}
+		{:check_limit_time($vo['id'], $order_status, 'audit', $vo['date_time'], get_system_parameter('order_audit_limit_lv2','int'), '',  get_system_parameter('order_audit_limit_lv2','char'))}
+		{:check_limit_time($vo['id'], $order_status, 'audit', $vo['date_time'], get_system_parameter('order_audit_limit_lv3','int'), '',  get_system_parameter('order_audit_limit_lv3','char'))}
+   	</tr>
+   	<tr id="see_more_{$vo.id}" style="display:none;">
+   	<td></td>
+   	<td></td>
+	<td colspan="10" style="border:1px solid gray;border-right-width:0;">
+	<in name="vo['status_info']['status']" value="shipping,history">{//shipping 运单信息}
+	<div class="panel">
+		<php>$temp = get_delivery_info($vo['id'],'plat');</php>
+		<div class="panel-head">
+			<strong>运单详情：</strong>
+			<a href="#" onclick="delivery_edit({$vo.id},'plat','fetch')" class="icon-pencil text-red" title="编辑运单信息"></a>
+			<notempty name="temp" >
+				<a target="_blank" href="{:U('/Admin/OrderDelivery/index',array('style'=>'flat','id'=>$vo['id']))}" class="icon-sign-out text-yellow margin-left" style="font-size:14px;" title="打印运单"></a>
+			<else/>
+				<a href="#" onclick="layer.msg('请先完善运单信息！')" class="icon-sign-out text-gray margin-left" style="font-size:14px;" title="打印运单"></a>
+			</notempty>
+		</div>
+		<ul class="my_ul">
+		<php>$temp2 = get_delivery_number($vo['id'],'plat');</php>
+		<notempty name="temp2">
+			<li><strong>运单号:</strong>{$temp2.delivery_number}</li>
+		</notempty>
+		<notempty name="temp" >
+			<li><strong>重量:</strong>{$temp.weight}</li>
+	  		<li><strong>快递:</strong>{$temp.shipping_style}</li>
+	  		<li><strong>运费:</strong>{$temp.shipping_price}</li>
+	  		<notempty name="temp['hs']"><li><strong>{$temp.hs}, {$temp.name}, {$temp.price}</strong></li></notempty>
+		<else/>
+	  		<php>$temp = delivery_recommend($vo['id'],'plat');</php>
+	  		<li><strong>预估重量:</strong>{$temp['weight']}</li>
+	  		<li><strong>推荐快递:</strong>{$temp['style']}</li>
+	  		<li><strong>运费:</strong>{$temp['price']}</li>
+	  		<if condition="$temp2.delivery_number eq ''">
+            	<li><a href="#" onclick="delivery_edit({$vo.id},'plat','fetch')" class="text-yellow">点击编辑运单信息</a></li>
+            </if>
+  		</notempty>
+		</ul>
+        <if condition="$temp2.delivery_number neq ''">
+            <br />
+            <ul class="my_ul">
+            	<php>$delivery_numbe_val= logistics_information($temp2['style'],$temp2['delivery_number']);</php>
+                <li style="color:red;">{$delivery_numbe_val}</li>
+                <li class="plcz" onclick="btnSnap('{$temp2.style}','{$temp2.delivery_number}')">查看运单详情</li>
+            </ul>
+        </if>
+	</div>
+	</in>
+	<div class="panel">
+		<div class="panel-head">
+			<strong>商品详情：</strong>
+			<a href="__MODULE__/ProductReturn/product_return_order/order_number/{$vo.order_number}/come/plat" class="icon-pencil text-red" title="退货/换货/追加"></a>
+		</div>
+		<table>
+			<tr>
+				<!-- 序号	套件	价格	名称	颜色	尺码	工厂	数量	状态  -->
+				<th style="text-align:center;" width="45"></th>
+				<th style="text-align:center;" width="180">产品名称</th>
+				<th style="text-align:center;" width="100">sku</th>
+				<th style="text-align:center;" width="80">价格</th>
+				<th style="text-align:center;" width="120">code</th>
+				<th style="text-align:center;" width="80">颜色</th>
+				<th style="text-align:center;" width="60">尺码</th>
+				<th style="text-align:center;" width="60">工厂</th>
+				<th style="text-align:center;" width="60">数量</th>
+				<th style="text-align:center;" width="60">状态</th>
+			</tr>
+			<php>$flag = 'false';</php>{//标记是否已有未关联产品}
+			<volist name="vo['product_info']" id="product_group_vo" key="product_group_i">
+				<if condition=" (sizeof($product_group_vo) gt 1) ">{//套件}
+					<volist name="product_group_vo" id="product_vo" key="product_i">
+						<tr bgcolor=<if condition="$product_vo.status eq 'return'">'#999999'<elseif condition="$product_vo.status eq 'new'" />'#F20505'</if>>
+							<td><eq name="product_i" value="1">{$product_group_i}</eq></td>
+							<td><eq name="product_i" value="1">{$product_vo.name}<span style="color:red;margin-left:10px;">[套件]</span></eq></td>
+							<td align="center" id="td_{product_vo.id}">
+								<eq name="product_i" value="1">
+									<eq name="filter.come_from_id" value="20">{//日本乐天,添加/修改sku功能}
+										<eq name="product_i" value="1" id="td_{$product_vo.id}">
+											<input id="add_sku_{product_vo.id}" type="text" style="display:<notempty name="product_group_vo.0.sku">none<else />block</notempty>">
+											<span>{$product_group_vo.0.sku}</span>
+											<notempty name="product_group_vo.0.sku">
+												<span class="icon-plus-square text-green" title="添加sku" onclick="sku_relate({$product_vo.id},{$vo.come_from_id})" style="display:none;"></span>
+												<span class="icon-pencil text-green" title="修加sku" onclick="update_sku({$product_vo.id})"></span>
+											<else />
+												<span class="icon-plus-square text-green" title="添加sku" onclick="sku_relate({$product_vo.id},{$vo.come_from_id})"></span>
+												<span class="icon-pencil text-green" title="修改sku" style="display:none;" onclick="update_sku({$product_vo.id})"></span>
+											</notempty>
+											<input type="hidden" id="hidden_{$product_vo.id}" value="">
+										</eq>
+									<else/>	
+										<span>{$product_group_vo.0.sku}</span>
+									</eq>
+								</eq>
+							</td>
+							<td align="center"><eq name="product_i" value="1"><span>{$product_vo.price}</span></eq>
+							</td>
+							<notempty name="product_vo.code_id">
+								<td align="center">
+									{$product_vo.code_info.name}
+									<a onclick="code_relate({$product_vo.id},{$product_vo.sku_id},{$vo.id},'edit')" class="icon-pencil text-red" title="修改关联"></a>
+								</td>
+								<td align="center">{$product_vo.code_info.color_info.value}</td>
+								<td align="center">{$product_vo.code_info.size_info.value}</td>
+								<td align="center">
+									{$product_vo.code_info.factory_info.name}&nbsp;
+									<span style="font-weight:bold;font-size:12px;">{:check_local_stock($product_vo['code_id'], $product_vo['number'])}</span>
+								</td>
+							<else/>
+								<td align="center">
+									<span class="text-red">未关联</span>
+									<a onclick="code_relate({$product_vo.id},{$product_vo.sku_id},{$vo.id},'add')" class="icon-plus-square text-green" title="添加关联"></a>
+									<eq name="flag" value="false">{//如果该订单中有多件商品未关联，只标记一次}
+										<script>
+										$("#check_{$vo.id}").attr("disabled","disabled");
+										$("#audit_button_{$vo.id}").attr("onclick","layer.msg('产品sku未关联code');");
+										$("#audit_button_{$vo.id}").removeClass("text-red");
+										$("#audit_button_{$vo.id}").addClass("text-gray");
+										mark_row({$vo['id']},"产品sku未关联","gradual_color_lv10");
+										</script>
+										<php>$flag = 'true';</php>{//标记已有未关联产品}
+									</eq>
+								</td>
+								<td align="center"><span style="color:red;">—</span></td>
+								<td align="center"><span style="color:red;">—</span></td>
+								<td align="center"><span style="color:red;">—</span></td>
+							</notempty>
+							<td align="center">{:real_num_of_set($product_vo['sku_id'],$product_vo['code_id'],$product_vo['number'])}</td>
+							<td align="center">
+								<notempty name="product_group_vo.0.status">
+									{$product_vo.status}
+								<else/>
+									normal
+								</notempty>
+							</td>
+						</tr>
+					</volist>
+				<else/>{//单件}
+					<tr bgcolor=<if condition="$product_group_vo[0][status] eq 'return'">'#999999'<elseif condition="$product_group_vo[0][status] eq 'new'" />'#F20505'</if>>
+						<td>{$product_group_i}</td>
+						<td align="center">{$product_group_vo.0.name}</td>
+						<td align="center" id="td_{$product_group_vo.0.id}">
+							<eq name="filter.come_from_id" value="20">
+								<input id="add_sku_{$product_group_vo.0.id}" type="text" style="display:<notempty name="product_group_vo.0.sku">none<else />block</notempty>">
+								<span>{$product_group_vo.0.sku}</span>
+								<notempty name="product_group_vo.0.sku">
+								<span class="icon-plus-square text-green" title="添加sku" onclick="sku_relate({$product_group_vo.0.id},{$vo.come_from_id})" style="display:none;"></span>
+								<span class="icon-pencil text-green" title="修改sku" onclick="update_sku({$product_group_vo.0.id})"></span>
+								<else/>
+								<span class="icon-plus-square text-green" title="添加sku" onclick="sku_relate({$product_group_vo.0.id},{$vo.come_from_id})"></span>
+								<span class="icon-pencil text-green" title="修改sku" style="display:none;" onclick="update_sku({$product_group_vo.0.id})"></span>
+								</notempty>
+								<input type="hidden" id="hidden_{$product_group_vo.0.id}" value="">
+							<else/>
+								<span>{$product_group_vo.0.sku}</span>
+							</eq>
+						</td>
+						<td align="center">
+							<span>{$product_group_vo.0.price}</span> 
+						</td>
+						<notempty name="product_group_vo.0.code_id">
+							<td align="center">
+								{$product_group_vo.0.code_info.name}
+								<a onclick="code_relate({$product_group_vo.0.id},{$product_group_vo.0.sku_id},{$vo.id},'edit')" class="icon-pencil text-red" title="修改关联"></a>
+							</td>
+							<td align="center">{$product_group_vo.0.code_info.color_info.value}</td>
+							<td align="center">{$product_group_vo.0.code_info.size_info.value}</td>
+							<td align="center">
+								{$product_group_vo.0.code_info.factory_info.name}&nbsp;
+								<span style="font-weight:bold;font-size:12px;">{:check_local_stock($product_group_vo[0]['code_id'], $product_group_vo[0]['number'])}</span>
+							</td>
+						<else/>
+							<eq name="flag" value="false">
+								<script>
+									$("#check_{$vo.id}").attr("disabled","disabled");
+									$("#audit_button_{$vo.id}").attr("onclick","layer.msg('产品sku未关联code');");
+									$("#audit_button_{$vo.id}").removeClass("text-red");
+									$("#audit_button_{$vo.id}").addClass("text-gray");
+									mark_row({$vo['id']},"产品sku未关联","red_warning");
+								</script>
+								<php>$flag = 'true';</php>{//标记已有未关联产品}
+							</eq>
+							<td align="center">
+								<span style="color:red;">未关联</span> 
+								<a onclick="code_relate({$product_group_vo.0.id},{$product_group_vo.0.sku_id},{$vo.id},'add')" class="icon-plus-square text-green" title="添加关联"></a>
+							</td>
+							<td align="center"><span style="color:red;">—</span></td>
+							<td align="center"><span style="color:red;">—</span></td>
+							<td align="center"><span style="color:red;">—</span></td>
+						</notempty>
+						<td align="center">{$product_group_vo.0.number}</td>
+						<td align="center">
+							<notempty name="product_group_vo.0.status">
+								{$product_group_vo.0.status}
+							<else/>
+								normal
+							</notempty>
+						</td>
+					</tr>
+				</if>
+			</volist>
+		</table>
+	</div>
+	<div class="panel">
+		<div class="panel-head">
+			<strong>货运详情：</strong>
+			<a href="{:U('shipping_edit_plat?shipping_id='.$vo['shipping_info']['id'].'&anchor='.$vo['id'] , $param )}" class="icon-pencil text-red" title="修改地址"></a>
+		</div>
+		<style>.my_ul{list-style:none;} .my_ul li{display:inline-block;margin-left:15px;}</style>
+		<ul class="my_ul">
+		  	<notempty name="vo['shipping_info']['name']">
+		  		<li><strong>收件人:</strong>{$vo['shipping_info']['name']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['country']">
+		  		<li><strong>国家:</strong>{$vo['shipping_info']['country']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['state']">
+		  		<li><strong>州/省:</strong>{$vo['shipping_info']['state']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['city']">
+		  		<li><strong>城市:</strong>{$vo['shipping_info']['city']}</li>
+		  	</notempty>
+	  		<li>
+	  			<strong>地址:</strong>
+	  			<span id="address_text_{$vo['shipping_info']['id']}">{$vo['shipping_info']['address1']} / {$vo['shipping_info']['address2']} / {$vo['shipping_info']['address3']}</span>
+	  			<span id="address_input_{$vo['shipping_info']['id']}" style="display:none;">
+	  			<input id="address1_{$vo['shipping_info']['id']}" type="text" value="{$vo['shipping_info']['address1']}"/>
+	  			<input id="address2_{$vo['shipping_info']['id']}" type="text" value="{$vo['shipping_info']['address2']}"/>
+	  			<input id="address3_{$vo['shipping_info']['id']}" type="text" value="{$vo['shipping_info']['address3']}"/>
+	  			</span>
+	  			<a id="edit_address_{$vo['shipping_info']['id']}" onclick="edit_address({$vo['shipping_info']['id']})" class="icon-edit text-blue" href="#"></a>
+	  			<a id="submit_address_{$vo['shipping_info']['id']}" onclick="submit_address({$vo['shipping_info']['id']})" class="icon-check text-red" style="display:none;" href="#"></a>
+	  		</li>
+		  	<notempty name="vo['shipping_info']['post']">
+		  		<li><strong>邮编:</strong>{$vo['shipping_info']['post']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['telephone']">
+		  		<li><strong>电话:</strong>{$vo['shipping_info']['telephone']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_style']">
+		  		<li><strong>方式:</strong>{$vo['shipping_info']['shipping_style']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_number']">
+		  		<li><strong>运单号:</strong>{$vo['shipping_info']['shipping_number']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_weight']">
+		  		<li><strong>重量:</strong>{$vo['shipping_info']['shipping_weight']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_price']">
+		  		<li><strong>运费:</strong>{$vo['shipping_info']['shipping_price']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_tax']">
+		  		<li><strong>税费:</strong>{$vo['shipping_info']['shipping_tax']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_date']">
+		  		<li><strong>日期:</strong>{$vo['shipping_info']['shipping_date']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_operator']">
+		  		<li><strong>操作人:</strong>{$vo['shipping_info']['shipping_operator']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_hs']">
+		  		<li><strong>shipping_hs:</strong>{$vo['shipping_info']['shipping_hs']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_sample']">
+		  		<li><strong>shipping_sample:</strong>{$vo['shipping_info']['shipping_sample']}</li>
+		  	</notempty>
+		  	<notempty name="vo['shipping_info']['shipping_report_price']">
+		  		<li><strong>shipping_report_price:</strong>{$vo['shipping_info']['shipping_report_price']}</li>
+		  	</notempty>
+		</ul>
+	</div>
+	</td>
+	<td colspan="2" style="border:1px solid gray;border-left:1px dashed #999;">
+		<div class="panel">
+			<div class="panel-head">
+				<strong>其它操作：</strong>
+			</div>
+			<style>.list-group li{padding:5px 5px 5px 15px;}</style>
+			<ul class="list-group">
+               	<li onclick="order_status_update({$vo.id},'plat','fetch')" style="cursor:pointer"><span class="icon-exchange text-yellow"></span>&nbsp;&nbsp;修改订单状态</li>
+               	<li><a href="__MODULE__/ServiceManage/refund_add/id/{$vo.id}/data/1.html"><span class="icon-usd text-red"></span>&nbsp;&nbsp;&nbsp;&nbsp;申请退款</a></li>
+               	<li onclick="remark_add({$vo.id},'plat')" style=" cursor:pointer"><span class="icon-comment text-green" title="添加备注"></span>&nbsp;&nbsp;添加备注</li>
+<!--           	<eq name="order_status" value="audit">{//audit 单个审核按钮}
+               	<li>
+               		<a href="javascript:void(0)" onclick="layer.confirm('确定审核通过该订单？', {btn:['确定','取消'], title:false, closeBtn:0}, 
+               			function(){location.href='{:U('order_plat', array_merge($param,array('order_id'=>$vo['id']) ) )}'});">
+               		<span class="icon-check-square-o text-red"></span>&nbsp;&nbsp;审核通过</a>
+               	</li>
+               	</eq> -->
+               	<eq name="order_status" value="shipping">{//shipping 手动添加运单}
+               	<li><a href="#" onclick="delivery_detail_add({$vo.id},'plat','fetch')" ><span class="icon-plus text-red"></span>&nbsp;&nbsp;手动添加运单</a></li>
+               	</eq>
+               	<li><a href="#" onclick="see_more({$vo.id})"><span class="icon-chevron-up text-black"></span>&nbsp;&nbsp;收起</a></li>
+               </ul>
+		</div>
+	</td>
+	</tr>
+       </volist>
+   </table>
+</form>
+<div class="list-page"> {$page} </div>
+
+
+<!--添加备注start-->
+<div class="order_box" style="width:100%; background:#333;height:100%; position: fixed; top:0; left:0px; opacity:0.6; display: none;"></div>
+<div id="remark_smile" style="display:none; position:fixed; top:20%; left:25%; background:#fff; z-index:100; opacity:1;">
+<span class="icon-times" onclick="remark_over()" title="关闭" style=" float: right; font-size:15px; margin:5px 10px; cursor:pointer;"></span>
+<form action="#" method="post" name="form" id="myform">
+	<input type="hidden" name="id" class="click_bz_id">
+	<input type="hidden" name="style" value="" class="click_bz_style">
+    <table width="98%" border="0" cellpadding="4" cellspacing="1" class="table" id="table">
+    <tr class="tr rt">
+        <td width="100">备注内容：</td>
+        <td colspan="3" class="lt">
+            <textarea name="content" id="remark_message" style="width:320px;height:300px;visibility:hidden;"></textarea>
+        </td>
+    </tr>
+    <tr class="tr rt">
+        <td width="100">指定人员：</td>
+        <td colspan="2" class="lt" style=" width: 20%;">
+            <select name="accept" id="remark_accept" onchange="select_accept(this.options[this.options.selectedIndex].value)">
+            	<option value="" >--请选择人员--</option>
+            	<volist name="user_list" id="vo">
+                	<option value="{$vo.username}" >{$vo.username}</option>
+                </volist>
+            </select>
+        </td>
+        <td align="left" style=" width: 67%;">
+        	<ul class="accept_ul">
+            </ul>    
+        </td>
+    </tr>
+    <tr class="tr rt">
+            <td width="100">备注预警：</td>
+            <td colspan="3" class="lt"><p>
+              <label>
+                <input type="radio" name="warning" value="3" id="warning" checked=""/>
+                正常
+              </label>
+              
+              <label>
+                <input type="radio" name="warning" value="2" id="warning" />
+                加急
+              </label>
+              
+              <label>
+                <input type="radio" name="warning" value="1" id="warning" />
+                立刻
+              </label>
+
+            </p>
+                
+            </td>
+    </tr>
+    <tr class="tr lt">
+        <td colspan="4">
+            <input class="button border-main" type="submit" onclick="return remark_form_submit()" name="dosubmit" value="添 加">
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+<!--添加备注end-->
+
+
+</div>

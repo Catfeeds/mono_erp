@@ -1,0 +1,36 @@
+<include file="./Application/Admin/View/Default/Public/head.html" />
+<div id="remark_smile">
+<form action="__ACTION__" method="post" name="form" id="myform">
+<input type="hidden" name="id" value="{$id}">
+<input type="hidden" name="data" value="{$data}">
+	<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table" id="table">
+        <tr class="tr rt">
+            <td width="100">备注内容：</td>
+            <td colspan="3" class="lt">
+                <textarea name="content" style="width:320px;height:300px;visibility:hidden;"></textarea>
+            </td>
+        </tr>
+        <tr class="tr rt">
+            <td width="100">指定人员：</td>
+            <td colspan="3" class="lt">
+                <select name="accept">
+                	<option value="" >--请选择人员--</option>
+                	<volist name="user_list" id="vo">
+                    	<option value="{$vo.id}" >{$vo.username}</option>
+                    </volist>
+                </select>
+                
+            </td>
+        </tr>
+        
+        <tr class="tr lt">
+            <td colspan="4">
+                <input class="button border-main" type="submit" name="dosubmit" value="添 加">
+            </td>
+        </tr>
+        
+	</table>
+</form>
+</div>
+</body>
+</html>

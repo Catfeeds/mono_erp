@@ -1,0 +1,114 @@
+<style>
+.order_delivery_ratio{background:#fff;border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 10px;
+    padding: 2px;}
+.percent{color:red;}
+.order_delivery_ratio:hover{color:red;border:1px solid #0ae;}
+</style>
+<div class="admin">
+<form method="post" id="myform">
+<input type="hidden" name="factory" value="{$factory}" />
+<table class="table table-striped table-hover table-condensed">
+	<tr>
+		<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+        	<span class="float-left icon-list">订单发货率</span>
+        
+		</td>
+	</tr>
+	<tr>
+		<td colspan="9">
+			<a <if condition="$style eq 'web'">style="background:#0ae;border:1px solid #0ae;"</if> class="order_delivery_ratio" href="__ACTION__/style/web.html">网站发货率</a>
+			<a <if condition="$style eq 'plat'">style="background:#0ae;border:1px solid #0ae;"</if> class="order_delivery_ratio" href="__ACTION__/style/plat.html">平台发货率</a>
+		</td>
+	</tr>
+    <tr>
+		<td colspan="9" class="table_title" style="height: 40px;">		
+            <volist name="come_from_list" id="come_from_list_vo">
+            	<a href="__ACTION__/style/<?php echo $style;?>/come_from_id/{$come_from_list_vo.id}.html" class="order_delivery_ratio" <if condition="$come_from_list_vo['id'] eq $come_from_id">style="background:#0ae;border:1px solid #0ae;"</if>>{$come_from_list_vo.alias}</a>	
+            </volist>
+		</td>
+	</tr>
+    <tr>
+		<td colspan="9">
+		  <label for="start_time">日期:</label>
+			<input type="text" name="begin_time" id="begin_time" value="" class="margin-right" onclick="WdatePicker()" style="cursor:pointer;">&nbsp&nbspTO:&nbsp&nbsp
+		  <input type="text"  name="end_time" id="end_time" value="" class="margin-right" onclick="WdatePicker()" style="cursor:pointer;">
+			<input type="submit" value="查询" name="order_delivery_sub">
+            <input type="submit" value="网站查询" name="order_sub">
+            <!--  <span onclick="order_delivery_ratio_sub('export');" class="plcz fr">导出订单发货率</span>-->
+		</td>
+	</tr>
+    <tr>
+    	<td>日期</td>
+    	<td>当天总需发货单数</td>
+        <td>24小时</td>
+        <td>36小时</td>
+        <td>48小时</td>
+        <td>60小时</td>
+        <td>72小时</td>
+        <td>大于72小时</td>
+        <td>未发货</td>
+    </tr>
+	<if condition="$order_delivery_ratio_list">
+	<tr height="50px;" style="background:#0C3; margin:0px; padding:0px;">
+       	  <td style="max-width:150px;background:#0a8; " ><span class="percent ">{$order_delivery_ratio_list.date}</span></td>
+       	  <td style="max-width:150px;background:#0a8; " ><span class="percent ">{$order_delivery_ratio_list.number}</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.twenty_four_num}<span class="percent ">({$order_delivery_ratio_list.twenty_four})</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.thirty_six_num}<span class="percent ">({$order_delivery_ratio_list.thirty_six})</span> </td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.forty_eight_num}<span class="percent "> ({$order_delivery_ratio_list.forty_eight})</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.sixty_num}<span class="percent">({$order_delivery_ratio_list.sixty})</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.seventy_two_num}<span class="percent">({$order_delivery_ratio_list.seventy_two})</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.seventy_two_be_num}<span class="percent">({$order_delivery_ratio_list.seventy_two_be})</span></td>
+          <td style="background:#0a8; " >{$order_delivery_ratio_list.unfilled_num}<span class="percent">({$order_delivery_ratio_list.unfilled})</span></td>
+    </tr>
+	</if>
+	
+    <tr height="50px;" style="background:#0ae; margin:0px; padding:0px;">
+       	  <td style="max-width:150px;background:#0ae; " ><span class="percent">{$order_delivery_ratio_all.date}</span></td>
+       	  <td style="max-width:150px;background:#0ae; " ><span class="percent">{$order_delivery_ratio_all.number}</span></td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.twenty_four_num}<span class="percent">({$order_delivery_ratio_all.twenty_four})</span></td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.thirty_six_num}<span class="percent">({$order_delivery_ratio_all.thirty_six})</span> </td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.forty_eight_num}<span class="percent"></span>({$order_delivery_ratio_all.forty_eight})</td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.sixty_num}<span class="percent">({$order_delivery_ratio_all.sixty})</span></td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.seventy_two_num}<span class="percent">({$order_delivery_ratio_all.seventy_two})</span></td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.seventy_two_be_num}<span class="percent">({$order_delivery_ratio_all.seventy_two_be})</span></td>
+          <td style="background:#0ae; " >{$order_delivery_ratio_all.unfilled_num}<span class="percent">({$order_delivery_ratio_all.unfilled})</span></td>
+    </tr>
+
+    <volist name="order_delivery_ratio" id="vo" key='k'>
+        <tr>
+       	  <td>{$vo.date}</td>
+       	  <td>{$vo.number}</td>
+          <td>{$vo.one_num}<span class="percent">({$vo.one})</span></td>
+          <td>{$vo.two_num}<span class="percent">({$vo.two})</span></td>
+          <td>{$vo.three_num}<span class="percent">({$vo.three})</span></td>
+          <td>{$vo.fone_num}<span class="percent">({$vo.fone})</span></td>
+          <td>{$vo.five_num}<span class="percent">({$vo.five})</span></td>
+          <td>{$vo.six_num}<span class="percent">({$vo.six})</span></td>
+          <td>{$vo.seven_num}<span class="percent">({$vo.seven})</span></td>
+        </tr>
+    </volist>    
+
+</table>
+
+
+
+<div class="list-page">
+    {$page}
+</div>
+</form>
+</div>
+<script>
+function order_delivery_ratio_sub(val)
+{
+	if(val)
+	{
+		url = '/operate/'+val;
+	}
+	document.getElementById('myform').action = _CONTROLLER_+"/order_delivery_ratio"+url+".html";	 
+	document.getElementById('myform').submit(); 
+}
+</script>

@@ -1,0 +1,49 @@
+<div class="admin">
+
+	<table class="table table-striped table-hover table-condensed">
+		<tr>
+			<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-minus"> 相关单件sku</span>
+			</td>
+		</tr>
+		<tr class="list_head">
+			<td width="20" style="text-align:left"></td>
+			<td width="80" style="text-align:center">sku</td>
+			<td width="80" style="text-align:center">来源</td>
+			<td width="100"></td>
+		</tr>
+    	<volist name="single_list" id="vo">
+		<tr class='<eq name="mod" value="1">tr<else/>ji</eq>' style='padding:20px;'>
+			<td align='left'><span class="td_number">{$i}</span></td>
+			<td align="center" style="color:#03c">{$vo.sku}</td>
+			<td align="center">{:get_come_from_name($vo['come_from_id'])}</td>
+			<td></td>
+		</tr>
+    	</volist>
+    	
+		<tr>
+			<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-reorder "> 相关套件sku</span>
+			</td>
+		</tr>
+		<tr class="list_head">
+			<td width="20" style="text-align:left"></td>
+			<td width="80" style="text-align:center">sku</td>
+			<td width="80" style="text-align:center">来源</td>
+			<td width="100" style="text-align:center">名称</td>
+		</tr>
+    	<volist name="set_list" id="vo">
+		<tr class='<eq name="mod" value="1">tr<else/>ji</eq>' style='padding:20px;'>
+			<td align='left'><span class="td_number">{$i}</span></td>
+			<td align="center" style="color:#03c">{$vo.sku}</td>
+			<td align="center">{:get_come_from_name($vo['come_from_id'])}</td>
+			<td align='center'>{$vo.name}</td>
+		</tr>
+    	</volist>
+    	
+	</table>
+	
+	<button onclick="history.go(-1)">返回</button>
+	
+</div>
+

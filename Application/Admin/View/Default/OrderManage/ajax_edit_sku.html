@@ -1,0 +1,13 @@
+{__NOLAYOUT__}
+
+<div style="padding:15px;">
+	<p>
+		<span>SKU:　</span>
+		<input type="text" id="sku" name="sku" value="{$sku}"/>
+	</p>
+	
+	<p style="margin-top:10px;margin-bottom:10px;">
+		<button onclick="return edit_sku('submit', {$product_original_id}, {$product_original_set_id}, '{$sku}', {$order_product_id}, {$order_id});" style="float:right;margin-right:15px;">提交</button>
+		<button onclick="return edit_sku('cancel');" style="float:right;margin-right:15px;">取消</button>
+	</p>
+</div>

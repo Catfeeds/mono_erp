@@ -1,0 +1,133 @@
+<script>
+function product_gift_product(catalog,style){
+	$.ajax({
+		type: "POST",
+		url:  _APP_+"/Admin/ProductManage/product_gift_product",
+		data: {'catalog': catalog,"style": style},
+		dataType: 'html',
+		success : function(result){
+			if(style){
+				$("#gift_product_td").html(result);
+			}else{
+				$("#product_td").html(result);
+			}
+		}
+	})
+}
+
+function product_gift_code(product,style){
+	if(style){
+		var is_sku=document.getElementById("gift_is_sku").value;
+	}else{
+		var is_sku=document.getElementById("is_sku").value;
+	}
+	if(!is_sku){
+		$.ajax({
+			type: "POST",
+			url:  _APP_+"/Admin/ProductManage/product_gift_code",
+			data: {'product': product,"style" : style},
+			dataType: 'html',
+			success : function(result){
+				if(style){
+					$("#gift_code_td").show();
+					$("#gift_code_td").html(result);
+				}else{
+					$("#code_td").show();
+					$("#code_td").html(result);
+				}
+			}
+		})
+	}else{
+		if(style){
+			$("#gift_code_td").hide();
+		}else{
+			$("#code_td").hide();
+		}
+		
+	}
+}
+
+</script>
+<div class="admin">
+<div class="tab-panel">
+	<form action="" method="post" id="myform">
+		<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+			<tr class="table_title tab_title">
+				<td ><span class="icon-plus-circle">关联礼品</span></td>
+			</tr>
+			<tr class="tr rt">
+				<td >
+				<lable style="width:100px;">主产品：</lable>
+				<span style="margin-left:10px;">
+				<select onchange="product_gift_product(this.value)">
+	                <option value='0'>--请选择分类--</option>
+	                <php>$catalog_array=select_all();</php>
+				    <volist name="catalog_array" id="vo">
+					<option value="{$vo.id}">{$vo.name}</option>
+				    </volist>
+				</select>
+				</span>
+				<span id="product_td" style="margin-left:10px;"></span>
+				<span id="code_td" style="display:none;margin-left:10px;"></span>
+				</td>
+			</tr>
+			<tr class="tr rt">
+				<td >
+				<lable style="width:100px;">关联产品：</lable>
+				<span style="margin-left:10px;">
+				<select  onchange="product_gift_product(this.value,'gift')">
+	                <option value='0'>--请选择分类--</option>
+	                <php>$catalog_array=select_all();</php>
+				    <volist name="catalog_array" id="vo">
+					<option value="{$vo.id}">{$vo.name}</option>
+				    </volist>
+				</select>
+				</span>
+				<span id="gift_product_td" style="margin-left:10px;"></span>
+				<span id="gift_code_td" style="display:none;margin-left:10px;"></span>
+				</td>
+			</tr>
+			<tr class="tr rt">
+			<td>
+			<lable style="width:100px;">最低数量：</lable>
+			<input type="text" name="min_num" check="number" msg="数量必须填写!">
+			</td>
+			</tr>
+			<tr class="tr rt">
+			<td>
+			<lable style="width:100px;">有效时间：</lable>
+			<input type="text" name="start_time" check="empty" msg="开始时间必须填写!" onclick="WdatePicker()">&nbsp;&nbsp;TO&nbsp;&nbsp;<input type="text" name="end_time" check="empty" msg="结束时间必须填写!" onclick="WdatePicker()">
+			</td>
+			</tr>
+			<tr class="tr rt">
+			<td>
+			<lable style="width:100px;">有效平台：</lable>
+			<select name="work_place">{:come_from_new()}</select>
+			</td>
+			</tr>
+			<tr class="tr rt">
+			<td>
+			<lable style="width:100px;">操作人：</lable>
+			<input type="text" name="operator" value="{$username}" readonly="readonly" style="margin-left:13px;background-color:white;">
+			</td>
+			</tr>
+			<tr class="tr rt">
+			<td>
+			<lable style="width:100px;">生效：</lable>
+			<div class="button-group radio">
+				<label class="button <if condition="$row['is_work'] eq 1">active</if> ">
+					<input name="is_work" value="1" <if condition="$row['is_work'] eq 1">checked="checked"</if> type="radio"><span class="icon icon-check"></span>是
+				</label>
+				<label class="button <if condition="$row['is_work'] eq 0">active</if> ">
+					<input name="is_work" value="0" <if condition="$row['is_work'] eq 0">checked="checked"</if> type="radio"><span class="icon icon-times"></span>否
+				</label>
+			</div>
+			</td>
+			</tr>
+			<tr>
+			<td><button class="button border-black padding-small" type="submit" onclick="return check_form('myform')">提交</button></td>
+			</tr>
+		</table>
+	</form>
+</div>
+</div>

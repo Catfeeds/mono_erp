@@ -1,0 +1,32 @@
+<div class="admin">
+
+<table class="table  table-striped table-hover table-condensed">
+		<tr>
+			<td colspan="3" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-bars"> 工厂列表</span>
+				<span class="fr" style="margin-right:60px;">
+					<a href="{:U('/Admin/FactoryManage/factory_edit')}"><span class="icon-plus text-green"></span> 添加工厂</a>
+				</span>
+			</td>
+		</tr>
+		<tr class="list_head">
+			<td width="70" style="text-align:left">序号</td>
+			<td width="150" style="text-align:left">工厂名称</td>
+			<td width="150" style="text-align:center">操作</td>
+<!-- 		<td width="500" style="text-align:center"></td> -->	
+		</tr>
+		
+	    <volist name="list" id="vo">
+		<tr class='<eq name="mod" value="1">tr<else/>ji</eq>' style='padding:20px;'>
+			<td align='left'><span class="td_number">{$i}</span></td>
+			<td style="color:#03c">{$vo.name}</td>
+			<td align='center'>
+				<a href="{:U('/Admin/FactoryManage/factory_edit/',array('id'=>$vo['id']))}" class="icon-pencil" title="修改"> 修改</a>&nbsp;&nbsp;
+<!--            <a href="javascript:"  onClick="layer.confirm('你确定删除该用户？', {btn: ['确定','取消']}, function(){location.href='{:U('/Admin/FactoryManage/factory_delete/',array('id'=>$vo['id']))}'});" class="icon-trash-o" title="删除"> 删除</a></eq> -->
+            </td>
+<!--        <td></td> -->
+		</tr>
+	    </volist>
+</table>
+
+</div>

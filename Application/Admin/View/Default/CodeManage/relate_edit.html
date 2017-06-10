@@ -1,0 +1,82 @@
+<script src="__JS__/CodeManage/main.js?v={:time()}"></script>
+<style>
+.form-x .form-group .label{width:80px;text-align: left}
+.form-x .form-button {margin:0}
+</style>
+<div class="admin">
+<h1>{$tpltitle} relation</h1>
+<form method="post" action="" class="form-x margin-large-top" onsubmit="return enable_before_submit()">
+	<div class="form-group">
+		<div class="label">
+			<label for="product_sku_id">sku：</label>
+		</div>
+<!-- 	<div class="field">
+			<select onchange="get_relation_by_sku_code()" class="input" name="product_sku_id" id="product_sku_id" <if condition="($Think.get.sku_id neq null) or ($Think.get.relate_id neq null)">disabled="disabled"</if> >
+				<option value="-1">--请选择--</option>
+				<volist name="sku_list" id="sku_vo">
+				<option value="{$key}" <if condition="$key eq $row['product_sku_id']">selected="selected"</if> >{$sku_vo['sku']} ( {:get_come_from_name($sku_vo['come_from_id'] )} ) </option>
+				</volist>
+			</select>
+		</div> -->	
+		<div class="field">
+			<span class="input">{$sku}</span>
+			<input type="hidden" name="product_sku_id" id="product_sku_id" value="{$row['product_sku_id']}"/>
+		</div>
+	</div>
+    
+    <div class="form-group">
+		<div class="label">
+			<label for="product_code_id">分类：</label>
+		</div>
+		<div class="field">
+                <select name="catalog" onchange="get_product_of_catalog(this.value)" class="input" <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> > 
+                  <option value="-1">--请选择--</option>
+                  <volist name="catalog" id="vo">
+                 	 <option value='{$vo.id}' <eq name="row['code_info'][catalog_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                  </volist>
+                </select>
+            </div>
+	</div>
+    
+	<div class="form-group">
+		<div class="label">
+			<label for="number">产品：</label>
+		</div>
+		<div class="field">  
+                <select  name="product_id" id="product_id" onchange="get_product_of_code_option(this.value)" class="input" <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+                  <option value="-1">--请选择--</option>
+                  <volist name="product_list" id="vo">
+                 	 <option value='{$vo.id}' <eq name="row['code_info'][product_id]" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+                  </volist>
+                </select>
+            </div>
+	</div>
+    <div class="form-group">
+		<div class="label">
+			<label for="product_code_id">code：</label>
+		</div>
+		<div class="field">
+			<select onchange="get_relation_by_sku_code()" class="input" name="product_code_id" id="product_code_id" <if condition="$Think.get.relate_id neq null">disabled="disabled"</if> >
+				<option value="-1" >--请选择--</option>
+				<volist name="code_list" id="code_vo">
+				<option value="{$code_vo.id}" <if condition="$code_vo.id eq $row['product_code_id']">selected="selected"</if> >{$code_vo['code']} ( name: {$code_vo['name']} ) </option>
+				</volist>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="label">
+			<label for="number">数量：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input" id="number" name="number" size="30" value="{$row['number']}"/>
+		</div>
+	</div>
+	<div class="form-button">
+		<input type="hidden" name="sku_id" value="{$Think.get.sku_id}"/>
+		<input type="hidden" id="relate_id" name="relate_id" value="{$Think.get.relate_id}"/>
+		<button class="button border-black padding-small" type="submit">提交</button>
+	</div>
+</form>
+
+</div>

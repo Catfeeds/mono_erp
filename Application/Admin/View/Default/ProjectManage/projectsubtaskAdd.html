@@ -1,0 +1,54 @@
+<div class="admin">
+<gt name="info.id" value="0">
+			<form action="{:U('/Admin/ProjectManage/projectsubtaskEdit/',array('id'=>$_GET['id'] ))}" method="post" name="form" id="myform">
+			<input type="hidden" name="id" value="{$info.id}">
+		<else />
+			<form action="{:U('/Admin/ProjectManage/projectsubtaskAdd/',array('id'=>$_GET['id'] ))}" method="post" name="form" id="myform">
+		</gt>
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle} 子任务</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">任务描述：</td>
+					<td colspan="3" class="lt">
+						<textarea name="content" style="width:800px;height:300px;visibility:hidden;">{$info.message}</textarea>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">操作人：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="operator" id="name" style="width:200px" value="{$info.operator}" >
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">预计开始：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$begin_time neq 0">value="{:date('Y-m-d',$begin_time)}"<else />value="{:date('Y-m-d',time())}"</if>>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">截止日期：</td>
+					<td colspan="3" class="lt">
+						<input type="text" style="cursor:pointer;" name="end_time" id="btime" class="Wdate bd" onClick="WdatePicker()" <if condition="$end_time neq 0">value="{:date('Y-m-d',$end_time)}"<else />value="{:date('Y-m-d',time())}"</if>>
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">任务等级：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="level" id="name" style="width:200px" value="{$info.level}" >
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

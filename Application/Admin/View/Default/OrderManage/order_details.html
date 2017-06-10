@@ -1,0 +1,237 @@
+<script src="__JS__/OrderManage/main.js?v={:time()}"></script>
+<script>
+function merchants_message(order_id,style){
+	var user_list='';
+	var option='';
+	$.ajax({
+		type: "POST",
+		url:  _CONTROLLER_+"/order_message",
+		data : {"order_id":order_id},
+		dataType: 'json',
+		success : function(result){
+			$.each(result,function(n,value){
+				option+="<option>"+value['username']+"</option>";
+			})
+			user_list="<select name='accept'>"+option+"</select>";
+			layer.open({
+				  type: 1,
+				  title: "商家留言",
+				  area: ['600px', '350px'],
+				  closeBtn: 1,
+				  shadeClose: false,
+				  skin: 'layui-layer-lan',
+				  content: "<form action='{:U("/Admin/OrderManage/order_message/deal/add")}' method='post'><div><ul class='list-group'><li><strong>内容:</strong>&nbsp;&nbsp;&nbsp;<textarea name='plat_message' style='width:300px;height:100px;'></textarea></li><li><strong>指定人:</strong>&nbsp;&nbsp;&nbsp;"+user_list+"</li><li><strong>操作人:</strong>&nbsp;&nbsp;&nbsp;{$username}</li><li><input type='hidden' value='"+order_id+"' name='order_id'><input type='hidden' value='"+style+"' name='style'><input type='hidden' value='{$username}' name='operator'><input type='submit' value='提交' class='button border-blue'></li></ul></div></form>",	 
+			});
+		}
+	})
+}
+
+function history_order_information(obj,id){
+	var information=document.getElementById("information_"+id);
+	if(information.style.display=='none'){
+		information.style.display='';
+		obj.className="icon-chevron-up";
+	}else{
+		information.style.display='none';
+		obj.className="icon-chevron-down";
+	}
+}
+</script>
+<script src="__JS__/ServiceManage/logistics_information.js"></script>
+<div class="admin">
+	<a href="{:U('/Admin/OrderManage/order_plat/order_status/'.$order_status)}"><button class="button border-black padding-small">返回</button></a>
+	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+	<div class="panel-head"><strong>顾客邮箱:</strong>&nbsp;&nbsp;&nbsp;<a href="{:U('/Admin/CustomerManage/index/',array('email'=>$order_message_shipping[email]))}">{$order_message_shipping.email}</a></div>
+	</div>
+	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+		<div class="panel-head"><strong>收件地址:</strong><span style="float:right;"><a class="icon-pencil text-red" title="修改收件地址" href="{:U('/Admin/OrderManage/shipping_edit_plat',array('shipping_id'=>$order_message_shipping[id],'come'=>'plat_details'))}"></a></span></div>
+		<table class="table">
+          <tr><td width="110" align="right"><strong>收件人：</strong></td><td>{$order_message_shipping.shipping_info.name}</td><td width="90" align="right"><strong>国家：</strong></td><td>{$order_message_shipping.shipping_info.country}</td></tr>
+          <tr><td align="right"><strong>州/省：</strong></td><td>{$order_message_shipping.shipping_info.state}</td><td align="right"><strong>城市：</strong></td><td>{$order_message_shipping.shipping_info.city}</td></tr>
+          <tr><td align="right"><strong>地址1：</strong></td><td>{$order_message_shipping.shipping_info.address1}</td><td align="right"><strong>地址2：</strong></td><td>{$order_message_shipping.shipping_info.address2}</td></tr>
+          <tr><td align="right"><strong>地址3：</strong></td><td>{$order_message_shipping.shipping_info.address3}</td><td align="right"><strong>邮编：</strong></td><td>{$order_message_shipping.shipping_info.post}</td></tr>
+          <tr><td align="right"><strong>电话：</strong></td><td>{$order_message_shipping.shipping_info.telephone}</td><td align="right"><strong>日期：</strong></td><td>{$order_message_shipping.shipping_info.shipping_date}</td></tr>
+      </table>
+	</div>
+	
+	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+	<div class="panel-head"><strong>运单信息:</strong><span style="float: right;margin-right: 10px;cursor:pointer;"><empty name="order_message_shipping.detail_info"><a class="icon-pencil text-red" title="手动添加运单信息" onclick="waybill_information({$Think.get.order_id},'plat');" style="margin-right:10px"></a></empty><a class="icon-truck text-red" title="详情" onclick="btnSnap('{$order_message_shipping.detail_info.style}','{$order_message_shipping.detail_info.delivery_number}')"></a></span></div>
+	<table class="table" style="margin-top:5px;">
+         	<tr><td>运单号</td><td>运输方式</td><td>时间</td><td>状态</td></tr>
+ 			<tr><td>{$order_message_shipping.detail_info.delivery_number}</td><td>{$order_message_shipping.detail_info.style}</td><td><php>$message=get_last_message($order_message_shipping[detail_info][delivery_number],$order_message_shipping[id],'plat');echo $message[time];</php></td><td>{$message[message]}</td></tr>
+    </table>
+	</div>
+	
+	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+		<div class="panel-head"><strong>留言内容:</strong><span style="float:right;"><a class="icon-comment text-green" title="添加商家留言" style="cursor:pointer;" onclick="merchants_message({$order_message_shipping[id]},'plat')"></a></span></div>
+		<ul class="list-group">
+		<li>
+		<strong>客户留言:</strong>&nbsp;&nbsp;&nbsp;<notempty name="order_message_shipping.0.message">{$order_message_shipping.message}<else />无</notempty>
+		</li>
+         <li>
+         <strong>商家留言:</strong> 
+         <notempty name="order_message_shipping.message_info">
+         <table class="table" style="margin-top:5px;">
+         	<tr><td>日期</td><td>指定人</td><td>内容</td><td>操作人</td></tr>
+         	<volist name="order_message_shipping.message_info" id="vo">
+         	<tr><td>{:date("Y-m-d H:i:s",$vo[date_time])}</td><td class="text-red">{$vo.accept}</td><td class="text-red">{$vo.message}</td><td>{$vo.operator}</td></tr>
+         	</volist>
+         </table>
+         <else />无
+         </notempty> 
+         </li>
+         </ul>
+	</div>
+	
+	 <div class="panel" style="width:100%;float:left;margin-top:10px;">
+      <div class="panel-head"><strong>订单信息</strong><span style="float:right;"><a href="__MODULE__/ProductReturn/product_return_order/order_number/{$order_message_shipping.order_number}/come/plat/order_status/{$order_status}" class="icon-pencil text-red" title="退货/换货/追加"></a></span></div>
+      	 <ul class="list-group">
+      	 <li>
+      	 	<table class="table">
+      	 	<tr class="list_head">
+         		<td align="left">订单号</td><td align="left">姓名</td><td align="left">总价</td><td align="left">来源</td><td align="left">下单时间</td><td align="left">状态</td>
+         	</tr>
+         	<tr>
+         		<td>{$order_message_shipping.order_number}</td>
+         		<td>{$order_message_shipping.name}</td>
+         		<td>{$order_message_shipping.price}</td>
+         		<td>{$order_message_shipping.come_from}</td>
+         		<td>{$order_message_shipping.date_time}</td>
+         		<td>{$order_message_shipping.status_info.status}</td>
+         	</tr>
+      	 	</table>
+      	 </li>
+    	 <li>
+    		<table class="table">
+    			<tr><td><strong>订单状态</strong></td></tr>
+    			<tr><td>订单号</td><td>时间</td><td>内容</td><td>状态</td></tr>
+    			<php>$order_status_array=order_status_list($order_message_shipping[id],'plat')</php>
+    			<volist name="order_status_array" id="status_array">
+    			<tr>
+    			<td>{$order_message_shipping.order_number}</td>
+    			<td>{$status_array.date_time}</td>
+    			<td>{$status_array.message}</td>
+    			<td>{$status_array.status}</td>
+    			</tr>
+    			</volist>
+    		</table>
+    	 </li>
+    	 <li>
+	 		<table class="table">
+    			<tr><td><strong>订单产品</strong></td></tr>
+    			<tr><td>图片</td><td>产品名称</td><td>价格</td><td>数量</td><td>状态</td><td>套件</td></tr>
+    			<volist name="order_message_shipping.product_info" id="vo">
+    			<tr>
+	    			<td width="100"><img src="#"></td>
+	    			<td width="150">{$vo.code_info.name}</td>
+	    			<td width="60">{$vo.price}</td>
+	    			<td width="60">{$vo.number}</td>
+	    			<td width="60">{$vo.status}</td>
+	    			<td width="60"><notempty name="vo.set_sku">{$vo.set_sku}<else />否</notempty></td>
+    			</tr>
+    			</volist>
+    		</table>
+    	 </li>
+         </ul>
+         <div class="panel" style="width:100%;float:left;margin-top:10px;">
+   	<div class="panel-head"><strong>历史订单</strong><span style="color: #f60;margin-left:20px;">历史订单金额:&nbsp;&nbsp;{$all_price}</span><span style="color: #f60;margin-left:20px;">历史订单数:&nbsp;&nbsp;{$all_num}</span></div>
+   		<notempty name="order_history_list">
+         <table class="table">
+         <tr class="list_head">
+         <td align="left">订单号</td><td align="left">姓名</td><td align="left">总价</td><td align="left">来源</td><td align="left">下单时间</td><td align="left">状态</td><td align="left">运费</td><td align="left">关税</td><td align="left">偏远费</td><td align="center">操作</td>
+         </tr>
+         <volist name="order_history_list" id="vo">
+         <tr class="ji">
+         <td style="color:#03c">{$vo.order_number}</td>
+         <td style="color:#03c">{$vo.name}</td>
+         <td style="color:#03c">{$vo.price}</td>
+         <td style="color:#03c">{$vo.come_from}</td>
+         <td style="color:#03c">{$vo.date_time}</td>
+         <td style="color:#03c">{$vo.status_info.status}</td>
+         <td style="color:#03c">{:get_delivery_price($vo[shipping_info][country],$vo[detail_info][style],$vo[delivery_info][weight])}</td>
+         <td style="color:#03c">{$vo.other_price_info.tariffs}</td>
+         <td style="color:#03c">{$vo.other_price_info.remote}</td>
+         <td align="center"><a class="icon-chevron-down" style="cursor:pointer;" onclick="history_order_information(this,{$vo.id})"></a></td>
+         </tr>
+         <tr class="ji" id="information_{$vo.id}" style="display:none;">
+	         <td colspan="11">
+	         	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+	         		<div class="panel-head"><strong>订单状态</strong></div>
+	         		<table class="table">
+		    			<tr><td>订单号</td><td>时间</td><td>内容</td><td>状态</td></tr>
+		    			<php>$order_status_array=order_status_list($vo[id],'plat')</php>
+		    			<volist name="order_status_array" id="status_array">
+		    			<tr>
+		    			<td>{$vo.order_number}</td>
+		    			<td>{:date("Y-m-d H:i:s",$status_array[date_time])}</td>
+		    			<td>{$status_array.message}</td>
+		    			<td>{$status_array.status}</td>
+		    			</tr>
+		    			</volist>
+    				</table>
+	         	</div>
+	         	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+					<div class="panel-head"><strong>订单产品</strong></div>
+						<table class="table">
+					         <tr class="list_head"><td>图片</td><td align="left">产品名称</td><td align="left">价格</td><td align="left">数量</td><td align="left">状态</td><td align="left">套件</td></tr>
+					         <volist name="vo.product_info" id="vo_product">
+					         <tr class="ji">
+					         <td><img src="#"></td>
+					         <td>
+					         	<notempty name="vo_product.code_id">{$vo_product.code_info.name}<else />{:get_set_sku_name($vo_product[sku])}</notempty></td>
+					         <td>{$vo_product.price}</td>
+					         <td>{$vo_product.number}</td>
+					         <td>{$vo_product.status}</td>
+					         <td><empty name="vo_product.code_id">{$vo_product.sku}<else />无</empty></td>
+					         </tr>
+					         </volist>
+         				</table>
+				</div>
+				
+				<div class="panel" style="width:100%;float:left;margin-top:10px;">
+				<div class="panel-head"><strong>运单信息:</strong><span style="float: right;margin-right: 10px;cursor:pointer;"><a class="icon-truck text-red" title="详情" onclick="btnSnap('{$vo.detail_info.style}','{$vo.detail_info.delivery_number}')"></a></span></div>
+				<table class="table" style="margin-top:5px;">
+         			<tr><td>运单号</td><td>运输方式</td><td>时间</td><td>状态</td></tr>
+ 					<tr><td>{$vo.detail_info.delivery_number}</td><td>{$vo.detail_info.style}</td><td><php>$message=get_last_message($vo[detail_info][delivery_number],$vo[id],'plat');echo $message[time];</php></td><td>{$message[message]}</td></tr>
+    			</table>
+				</div>
+	
+	         	<div class="panel" style="width:100%;float:left;margin-top:10px;">
+				<div class="panel-head"><strong>收件地址:</strong></div>
+				<table class="table">
+		          <tr><td width="110" align="right"><strong>收件人：</strong></td><td>{$vo.shipping_info.name}</td><td width="90" align="right"><strong>国家：</strong></td><td>{$vo.shipping_info.country}</td></tr>
+		          <tr><td align="right"><strong>州/省：</strong></td><td>{$vo.shipping_info.state}</td><td align="right"><strong>城市：</strong></td><td>{$vo.shipping_info.city}</td></tr>
+		          <tr><td align="right"><strong>地址：</strong></td><td>{$vo.shipping_info.address1}{$vo.shipping_info.address2}{$vo.shipping_info.address3}</td><td align="right"><strong>邮编：</strong></td><td>{$vo.shipping_info.post}</td></tr>
+		          <tr></tr>
+		          <tr><td align="right"><strong>电话：</strong></td><td>{$vo.shipping_info.telephone}</td><td></td><td></td></tr>
+      			</table>
+				</div>
+				<div class="panel" style="width:100%;float:left;margin-top:10px;">
+					<div class="panel-head"><strong>留言内容</strong></div>
+					<ul class="list-group">
+					<li>
+						<strong>客户留言:</strong>&nbsp;&nbsp;&nbsp;<notempty name="vo.message">{$vo.message}<else />无</notempty>
+					</li>
+         			<li>
+         				<strong>商家留言:</strong> 
+         				<notempty name="vo.message_info">
+         				<table class="table" style="margin-top:5px;">
+         				<tr><td>日期</td><td>指定人</td><td>内容</td><td>操作人</td></tr>
+         				<volist name="vo.message_info" id="message_info">
+         				<tr><td>{:date("Y-m-d H:i:s",$vo[date_time])}</td><td class="text-red">{$message_info.accept}</td><td class="text-red">{$message_info.message}</td><td>{$message_info.operator}</td></tr>
+         				</volist>
+         				</table>
+         				<else />无
+         				</notempty> 
+         			</li>
+         			</ul>
+				</div>		
+	         </td>
+         </tr>
+         </volist>
+         </table>
+         <else /><div style="font-size: 16px;font-weight: bold;text-align: center;color:red;">暂无历史订单</div>
+         </notempty>
+   </div>
+   </div>
+</div>

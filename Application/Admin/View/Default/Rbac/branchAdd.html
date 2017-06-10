@@ -1,0 +1,52 @@
+<div class="admin">
+			<form action="{:U('/Admin/Rbac/branchAdd')}" method="post" name="form" id="myform">
+			<input type="hidden" name="type" value="{$type}">
+            <input type="hidden" name="id" value="{$info.id}">
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4" style="font-size:14px; font-weight:bold;">{$tpltitle} 部门</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">上级部门：</td>
+					<td colspan="3" class="lt">
+                    	<select name="pid" style="width:200px;">
+                        	<option value="0">顶级部门</option>
+							<volist name="list" id="vo">
+                            	<option value="{$vo.id}" <if condition="$vo['branch_name'] eq $select_branch"> selected</if>>{$vo.branch_name}</option>
+                                <if condition="$vo['detail'] ">
+                                	<volist name="vo.detail" id="vo_detail">
+                                    	<option value="{$vo_detail.id}"> ┕  {$vo_detail.branch_name}</option>
+                                	</volist>
+                                </if>
+                            </volist>
+						</select> 
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td width="100">部门名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="branch_name" id="title" style="width:200px" value="{$info.branch_name}">
+					</td>
+				</tr>
+                
+				<tr class="tr rt">
+					<td >节点状态：</td>
+					<td colspan="3" class="lt">
+							<input type="radio" class="radio" value="1" name="status" <if condition="($info.is_work eq 1) OR ($info['is_work'] eq '') ">checked=""</if> >
+							启用
+							<input type="radio" class="radio" value="0" name="status" <eq name="info.is_work" value="0">checked=""</eq> >
+							关闭
+					</td>
+				</tr>
+                
+	<tr class="tr lt">
+		<td colspan="4">
+			<input class="bginput" type="submit" name="dosubmit" value="{$tpltitle}" >
+				
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

@@ -1,0 +1,1544 @@
+[ 2016-07-14T16:58:10+08:00 ] 127.0.0.1 /erptest/index.php/Admin/OrderManage/order_web/order_status/shipping.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SELECT `id`,`title`,level,name FROM `node` WHERE ( `status` =1 AND `display`=1 AND `level`<>1 ) ORDER BY sort DESC [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SHOW COLUMNS FROM `node` [ RunTime:0.0127s ]
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000727s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:0.000773s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+SQL: SHOW COLUMNS FROM `node` [ RunTime:0.0049s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=24 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SHOW COLUMNS FROM `node` [ RunTime:0.0057s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=24 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 24 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=25 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=25 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=26 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=26 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=27 ) ORDER BY sort DESC [ RunTime:0.0012s ]
+SQL: SELECT * FROM `node` WHERE ( id=27 ) LIMIT 1   [ RunTime:0.0012s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=28 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=28 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=29 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=29 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=24 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000014s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.027269s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=40 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=40 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 40 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=46 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=46 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=95 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=95 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=149 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=152 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=150 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=151 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=149 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=138 ) ORDER BY sort DESC [ RunTime:0.0012s ]
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=119 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=120 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=131 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=138 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=139 ) ORDER BY sort DESC [ RunTime:0.0007s ]
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=112 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=115 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=114 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=139 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=154 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=154 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=155 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=154 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=156 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=154 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=163 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=163 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=239 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=239 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000028s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.065245s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=47 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=47 ) ORDER BY sort DESC [ RunTime:0.0007s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 47 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=48 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=48 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=49 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=162 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=161 ) LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=103 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=104 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=116 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=117 ) LIMIT 1   [ RunTime:0.0017s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=118 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=122 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=123 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=124 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=241 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=153 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=62 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=62 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=126 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=126 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=127 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=166 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=166 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=243 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=243 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=47 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000019s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.101047s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=85 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=85 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 85 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=86 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=86 ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=91 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=91 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=97 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=97 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=113 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=113 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=157 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=157 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=158 ) ORDER BY sort DESC [ RunTime:0.0007s ]
+SQL: SELECT * FROM `node` WHERE ( id=158 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=159 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=158 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=160 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=158 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=167 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=167 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=85 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=34 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000056s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.121443s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=34 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=34 ) ORDER BY sort DESC [ RunTime:0.0011s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 34 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=132 ) ORDER BY sort DESC [ RunTime:0.0007s ]
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=140 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=141 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=142 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=144 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=38 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=63 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=87 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=69 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=70 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=71 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=72 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=105 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.0011s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=106 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=145 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=39 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=39 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=34 ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=53 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=53 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=34 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=54 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=54 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=34 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=64 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=65 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=66 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=67 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=80 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=100 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=121 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=137 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=64 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=88 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=88 ) LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=34 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000020s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.170603s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=107 ) LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=107 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 107 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=143 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=143 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=108 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=108 ) LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=107 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=83 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000016s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.176768s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=83 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=83 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 83 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=41 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=41 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 122 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=59 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=41 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=58 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=41 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=82 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=41 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 133 行.
+SQL: SELECT * FROM `node` WHERE ( id=187 ) LIMIT 1   [ RunTime:0.0013s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=41 ) LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 143 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=78 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT * FROM `node` WHERE ( id=78 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=83 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=84 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=84 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=83 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=92 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=92 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=83 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=93 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=93 ) LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=83 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=109 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000020s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.195822s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=109 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=109 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 109 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=242 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=242 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=109 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=42 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000023s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.200095s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=42 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=42 ) ORDER BY sort DESC [ RunTime:0.0009s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=76 ) ORDER BY sort DESC [ RunTime:0.0005s ]
+SQL: SELECT * FROM `node` WHERE ( id=76 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=42 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 65 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 213 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+NOTIC: [2] Division by zero D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 76 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000017s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.206146s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 91 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 95 行.
+SQL: SELECT * FROM `node` WHERE ( name='OrderManage' and pid=18 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 101 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=18 ) ORDER BY sort DESC [ RunTime:0.0006s ]
+SQL: SELECT `title` FROM `node` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=19 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=19 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=20 ) ORDER BY sort DESC [ RunTime:0.0003s ]
+SQL: SELECT * FROM `node` WHERE ( id=20 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=21 ) ORDER BY sort DESC [ RunTime:0.0008s ]
+SQL: SELECT * FROM `node` WHERE ( id=21 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=98 ) ORDER BY sort DESC [ RunTime:0.0009s ]
+SQL: SELECT * FROM `node` WHERE ( id=98 ) LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+SQL: SELECT `id`,`title`,`name` FROM `node` WHERE ( `status` =1 AND `display`=2 AND `level` <>1 AND `pid`=165 ) ORDER BY sort DESC [ RunTime:0.0004s ]
+SQL: SELECT * FROM `node` WHERE ( id=165 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 211 行.
+NOTIC: [8] Use of undefined constant level - assumed 'level' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 215 行.
+NOTIC: [8] Use of undefined constant pid - assumed 'pid' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 217 行.
+SQL: SELECT * FROM `node` WHERE ( id=18 ) LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 218 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 149 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 157 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 158 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Admin\Controller\CommonController.class.php 第 171 行.
+SQL: SHOW COLUMNS FROM `order_web` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `order_web_status` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `id_come_from` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `id_come_from` WHERE `style` = 'web'  [ RunTime:0.0005s ]
+SQL: SELECT DISTINCT  `payment_style` FROM `order_web` WHERE `payment_style` <> ''  [ RunTime:0.0087s ]
+SQL: SELECT COUNT(*) AS tp_count FROM order_web a LEFT JOIN order_web_status as b ON a.id = b.order_web_id  WHERE a.come_from_id = '11' AND b.status = 'shipping' LIMIT 1   [ RunTime:0.0021s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000024s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.251902s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000017s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.251997s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000019s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.252058s ]
+SQL: SELECT `date_time` FROM `order_web` WHERE `come_from_id` = 11 ORDER BY date_time desc LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [2] Missing argument 1 for order_status(), called in D:\WWW\erptest\Application\Admin\Controller\OrderManageController.class.php on line 1076 and defined D:\WWW\erptest\Application\Admin\Common\function.php 第 293 行.
+NOTIC: [8] Undefined variable: style D:\WWW\erptest\Application\Admin\Common\function.php 第 297 行.
+NOTIC: [8] Undefined variable: style D:\WWW\erptest\Application\Admin\Common\function.php 第 300 行.
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `user` WHERE ( `name` !="" and `username` !="admin" ) ORDER BY id  ASC  [ RunTime:0.0011s ]
+NOTIC: [8] Undefined variable: overtime_num D:\WWW\erptest\Application\Admin\Controller\OrderManageController.class.php 第 1080 行.
+NOTIC: [8] Undefined variable: lacksku_num D:\WWW\erptest\Application\Admin\Controller\OrderManageController.class.php 第 1081 行.
+SQL: SELECT a.* FROM order_web a LEFT JOIN order_web_status as b ON a.id = b.order_web_id  WHERE a.come_from_id = '11' AND b.status = 'shipping' ORDER BY  date_time desc, total_price_discount desc  LIMIT 0,100   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `order_web_address` [ RunTime:0.0074s ]
+SQL: SELECT `id`,`first_name`,`last_name`,`country`,`province`,`city`,`address`,`code`,`telephone` FROM `order_web_address` WHERE ( 1=1 AND order_web_id='1931' )  [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `order_web_product` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `order_web_product` WHERE ( 1=1 AND order_web_id='1931' )  [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `id_product_code` [ RunTime:0.0405s ]
+SQL: SELECT * FROM `id_product_code` WHERE ( 1=1 AND id='19664' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `id_product_attribute` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='24' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='676' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `factory` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `factory` WHERE ( 1=1 AND id='4' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `order_web_product_extra` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `order_web_product_extra` WHERE ( 1=1 AND order_web_product_id='3149' ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `order_web_nightwear_customization` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `order_web_nightwear_customization` WHERE ( 1=1 AND order_web_product_id='3149' ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `order_web_product_original` [ RunTime:0.0085s ]
+SQL: SELECT * FROM `order_web_product_original` WHERE ( 1=1 AND order_web_id='1931' )  [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `order_web_product_original_set` [ RunTime:0.0096s ]
+SQL: SELECT * FROM `order_web_product_original_set` WHERE ( 1=1 AND order_web_product_original_id='2763' )  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `order_web_status` WHERE ( 1=1 AND order_web_id='1931' ) LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `order_web_product_customization` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `order_web_product_customization` WHERE ( 1=1 AND order_web_id='1931' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `order_business_message` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `order_business_message` WHERE ( 1=1 AND order_id='1931' ) ORDER BY warning asc, date_time desc  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `factory_order` [ RunTime:0.0083s ]
+SQL: SELECT * FROM `factory_order` WHERE ( 1=1 AND order_id='1931' )  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `fba_order` [ RunTime:0.0043s ]
+SQL: SELECT * FROM `fba_order` WHERE ( 1=1 AND order_id='1931' )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `product_stock_order` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `product_stock_order` WHERE ( 1=1 AND order_id='1931' )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `order_delivery_other_price` [ RunTime:0.0049s ]
+SQL: SELECT `tariffs`,`remote`,`operator` FROM `order_delivery_other_price` WHERE ( 1=1 AND order_web_id='1931' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `id_come_from` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `id_come_from` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `order_web_supplement` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `order_web_supplement` WHERE ( 1=1 AND order_web_id='1931' ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `id`,`first_name`,`last_name`,`country`,`province`,`city`,`address`,`code`,`telephone` FROM `order_web_address` WHERE ( 1=1 AND order_web_id='1848' )  [ RunTime:0.0021s ]
+SQL: SELECT * FROM `order_web_product` WHERE ( 1=1 AND order_web_id='1848' )  [ RunTime:0.0027s ]
+SQL: SELECT * FROM `id_product_code` WHERE ( 1=1 AND id='19671' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='16' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='342' ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `factory` WHERE ( 1=1 AND id='4' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `order_web_product_extra` WHERE ( 1=1 AND order_web_product_id='3014' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `order_web_nightwear_customization` WHERE ( 1=1 AND order_web_product_id='3014' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `order_web_product_original` WHERE ( 1=1 AND order_web_id='1848' )  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `order_web_product_original_set` WHERE ( 1=1 AND order_web_product_original_id='2649' )  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `order_web_status` WHERE ( 1=1 AND order_web_id='1848' ) LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `order_web_product_customization` WHERE ( 1=1 AND order_web_id='1848' )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `order_business_message` WHERE ( 1=1 AND order_id='1848' ) ORDER BY warning asc, date_time desc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `factory_order` WHERE ( 1=1 AND order_id='1848' )  [ RunTime:0.0015s ]
+SQL: SELECT * FROM `fba_order` WHERE ( 1=1 AND order_id='1848' )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `product_stock_order` WHERE ( 1=1 AND order_id='1848' )  [ RunTime:0.0004s ]
+SQL: SELECT `tariffs`,`remote`,`operator` FROM `order_delivery_other_price` WHERE ( 1=1 AND order_web_id='1848' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `id_come_from` WHERE ( 1=1 AND id='11' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `order_web_supplement` WHERE ( 1=1 AND order_web_id='1848' ) LIMIT 1   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `id_product_sku` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `id_product_sku` WHERE `sku` = '4001-02-50x60cm' AND `come_from_id` = 11 LIMIT 1   [ RunTime:0.0414s ]
+SQL: SHOW COLUMNS FROM `id_relate_sku` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `id_relate_sku` WHERE `product_sku_id` = 81654  [ RunTime:0.0299s ]
+SQL: SHOW COLUMNS FROM `order_delivery_cost` [ RunTime:0.0048s ]
+NOTIC: [8] Undefined index: shipping_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 258 行.
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = null AND `lower_weight` <= 0.5 AND `upper_weight` > 0.5 ORDER BY price asc LIMIT 1   [ RunTime:0.0191s ]
+SQL: SHOW COLUMNS FROM `order_web` [ RunTime:0.0045s ]
+SQL: SELECT * FROM order_web a LEFT JOIN order_web_status as b ON a.id=b.order_web_id  WHERE `email` = 'lindycolenbrander@gmail.com' AND (  b.status<>'history' OR b.status is null )  [ RunTime:0.0062s ]
+SQL: SELECT * FROM `id_product_sku` WHERE `sku` = '2005-03-60x70cm' AND `come_from_id` = 11 LIMIT 1   [ RunTime:0.0483s ]
+SQL: SELECT * FROM `id_relate_sku` WHERE `product_sku_id` = 82048  [ RunTime:0.0411s ]
+NOTIC: [8] Undefined index: shipping_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 258 行.
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = null AND `lower_weight` <= 0.5 AND `upper_weight` > 0.5 ORDER BY price asc LIMIT 1   [ RunTime:0.0231s ]
+SQL: SELECT * FROM order_web a LEFT JOIN order_web_status as b ON a.id=b.order_web_id  WHERE `email` = 'deepakmangroo@hotmail.com' AND (  b.status<>'history' OR b.status is null )  [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: product_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 293 行.
+NOTIC: [8] Undefined index: shipping_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 300 行.
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = null AND `lower_weight` <= 0 AND `upper_weight` > 0 ORDER BY price asc LIMIT 1   [ RunTime:0.0243s ]
+NOTIC: [8] Undefined index: product_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 293 行.
+NOTIC: [8] Undefined index: shipping_info D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 300 行.
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = null AND `lower_weight` <= 0 AND `upper_weight` > 0 ORDER BY price asc LIMIT 1   [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `sample_record` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `sample_record` WHERE ( `email` ="lindycolenbrander@gmail.com" and `is_send`=0 )  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `sample_record` WHERE ( `email` ="deepakmangroo@hotmail.com" and `is_send`=0 )  [ RunTime:0.0013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001115s ]
+NOTIC: [8] Undefined variable: no_menu D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 46 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+NOTIC: [8] Use of undefined constant active - assumed 'active' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Undefined index: active D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant main_menu_url - assumed 'main_menu_url' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 58 行.
+NOTIC: [8] Use of undefined constant left_menu_html - assumed 'left_menu_html' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 60 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000018s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.841162s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.841224s ]
+NOTIC: [8] Undefined index: order_number D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 142 行.
+NOTIC: [8] Undefined index: start_time D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 144 行.
+NOTIC: [8] Undefined index: end_time D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 146 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: payment_style D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 150 行.
+NOTIC: [8] Undefined index: email D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 153 行.
+NOTIC: [8] Undefined index: customer_name D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 155 行.
+SQL: SELECT `name` FROM `id_come_from` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant factory_id - assumed 'factory_id' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 248 行.
+NOTIC: [8] Undefined variable: ac D:\WWW\erptest\Application\Admin\Common\function.php 第 745 行.
+SQL: SELECT `name` FROM `id_come_from` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `order_delivery_parameters` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `order_web_address` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `order_delivery_parameters` WHERE `order_id` = 1931 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `order_web_address` WHERE `order_web_id` = 1931 LIMIT 1   [ RunTime:0.0044s ]
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = 'NL' AND `lower_weight` <= '23' AND `upper_weight` > '23' AND `style` = 'UPS货代' LIMIT 1   [ RunTime:0.0192s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 319 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000019s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.881203s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.881259s ]
+SQL: SHOW COLUMNS FROM `system_parameters` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv2' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv2' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv3' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv3' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant supplement_info - assumed 'supplement_info' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant custome_ip - assumed 'custome_ip' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant order_web_address - assumed 'order_web_address' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant telephone - assumed 'telephone' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+SQL: SHOW COLUMNS FROM `bad_user` [ RunTime:0.0071s ]
+SQL: SELECT * FROM `bad_user` WHERE `email` = 'lindycolenbrander@gmail.com' OR `telephone` = '0651821970' OR `custome_ip` IN ('31.161.177.104','31.161.177.104','31.161.177.104','31.161.177.104')  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bad_user` WHERE `first_name` = 'Lindy' AND `last_name` = 'Colenbrander' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `web_sample_email` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `web_sample_email` WHERE `email` = 'lindycolenbrander@gmail.com' AND `come_from_id` = 11 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `order_delivery_parameters` WHERE `order_id` = 1931 LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `order_web_address` WHERE `order_web_id` = 1931 LIMIT 1   [ RunTime:0.0029s ]
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = 'NL' AND `lower_weight` <= '23' AND `upper_weight` > '23' AND `style` = 'UPS货代' LIMIT 1   [ RunTime:0.0212s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000024s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.933292s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000036s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-0.933373s ]
+SQL: SHOW COLUMNS FROM `order_delivery_detail` [ RunTime:0.0084s ]
+SQL: SELECT * FROM `order_delivery_detail` WHERE `order_web_id` = 1931 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `status` FROM `order_delivery_detail` WHERE `style` = 'UPS货代' AND `delivery_number` = 'ew32323' ORDER BY time desc LIMIT 1   [ RunTime:0.0076s ]
+NOTIC: [8] Undefined index: data D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 127 行.
+SQL: SELECT * FROM `order_delivery_detail` WHERE `delivery_number` = 'ew32323' LIMIT 1   [ RunTime:0.0084s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\erptest\Application\Admin\Common\function\order_manage.php 第 132 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000016s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.961607s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.961656s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.961692s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.961727s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.961760s ]
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+SQL: SHOW COLUMNS FROM `product_stock` [ RunTime:0.0082s ]
+SQL: SELECT * FROM `product_stock` WHERE `code_id` = 19664 AND `number` >= '1' AND `style` = 2 LIMIT 1   [ RunTime:0.0011s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000024s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971581s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971647s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971685s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971719s ]
+NOTIC: [8] Use of undefined constant order_number - assumed 'order_number' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 743 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000009s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971799s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000009s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-1.971834s ]
+SQL: SELECT `name` FROM `id_come_from` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant factory_id - assumed 'factory_id' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 248 行.
+NOTIC: [8] Undefined variable: ac D:\WWW\erptest\Application\Admin\Common\function.php 第 745 行.
+SQL: SELECT `name` FROM `id_come_from` WHERE `id` = 11 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `order_delivery_parameters` WHERE `order_id` = 1848 LIMIT 1   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `order_web_address` WHERE `order_web_id` = 1848 LIMIT 1   [ RunTime:0.0021s ]
+SQL: SELECT * FROM `order_web_product` WHERE `order_web_id` = 1848  [ RunTime:0.0042s ]
+SQL: SELECT * FROM `id_product_code` WHERE ( 1=1 AND id='19671' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='16' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='342' ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `factory` WHERE ( 1=1 AND id='4' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = 'NL' AND `lower_weight` <= 0.5 AND `upper_weight` > 0.5 ORDER BY price asc LIMIT 1   [ RunTime:0.0211s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 319 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000023s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.006222s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000016s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.006291s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv1' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv2' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv2' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv3' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `system_parameters` WHERE `name` = 'order_audit_limit_lv3' LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant supplement_info - assumed 'supplement_info' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant custome_ip - assumed 'custome_ip' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant order_web_address - assumed 'order_web_address' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+NOTIC: [8] Use of undefined constant telephone - assumed 'telephone' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 329 行.
+SQL: SELECT * FROM `bad_user` WHERE `email` = 'deepakmangroo@hotmail.com' OR `telephone` = '31681944883' OR `custome_ip` IN ('213.93.58.254','213.93.58.254','213.93.58.254','213.93.58.254')  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `bad_user` WHERE `first_name` = 'Deepak' AND `last_name` = 'Mangroo' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `web_sample_email` WHERE `email` = 'deepakmangroo@hotmail.com' AND `come_from_id` = 11 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `order_delivery_parameters` WHERE `order_id` = 1848 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `order_delivery_detail` WHERE `order_web_id` = 1848 LIMIT 1   [ RunTime:0.0089s ]
+SQL: SELECT * FROM `order_web_address` WHERE `order_web_id` = 1848 LIMIT 1   [ RunTime:0.0028s ]
+SQL: SELECT * FROM `order_web_product` WHERE `order_web_id` = 1848  [ RunTime:0.0039s ]
+SQL: SELECT * FROM `id_product_code` WHERE ( 1=1 AND id='19671' ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='16' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `id_product_attribute` WHERE ( 1=1 AND id='342' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `factory` WHERE ( 1=1 AND id='4' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `order_delivery_cost` WHERE `country` = 'NL' AND `lower_weight` <= 0.5 AND `upper_weight` > 0.5 ORDER BY price asc LIMIT 1   [ RunTime:0.0179s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000018s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.049919s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.049975s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.050012s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.050047s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.050081s ]
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+NOTIC: [8] Use of undefined constant status - assumed 'status' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 404 行.
+SQL: SELECT * FROM `product_stock` WHERE `code_id` = 19671 AND `number` >= '2' AND `style` = 2 LIMIT 1   [ RunTime:0.0015s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000016s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.051986s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000011s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052038s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052073s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000014s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052107s ]
+NOTIC: [8] Use of undefined constant order_number - assumed 'order_number' D:\WWW\erptest\Application\Runtime\Cache\Admin\26e9690672f5d310919d85fd317ce44c.php 第 743 行.
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000010s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052204s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000009s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052238s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000009s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052311s ]
+INFO: [ correct_url_encode ] --START--
+INFO: Run Admin\Behavior\CorrectUrlEncodeBehavior [ RunTime:0.000009s ]
+INFO: [ correct_url_encode ] --END-- [ RunTime:-2.052345s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:1.290621s ]
+INFO: [ view_parse ] --END-- [ RunTime:1.290653s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000493s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000604s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000660s ]
+

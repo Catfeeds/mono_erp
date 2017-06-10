@@ -1,0 +1,110 @@
+<div class="admin">
+<style>
+.tab tr{ height:50px; line-height:50px; }
+.td_one{ width:200px;font-size:18px; padding-left:50px;}
+.txt_sample{ width:300px; height:25px; padding-left:5px; font-weight:bold; font-size:16px;}
+
+</style>
+<form action="__CONTROLLER__/sample_order_address_update" method="post" id="myform">
+<input type="hidden" name="id" value="{$id}">
+	<table  class="tab">
+    	<tr>
+        	<td colspan="2">
+            	<h1>
+            	修改样布订单地址
+                </h1>
+            </td>
+        </tr>
+    	<tr>
+        	<td class="td_one">
+            	First name
+            </td>
+            
+            <td>
+            	<input type="text" name="Fname" value="{$info.first_name}"  class="txt_sample"/>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Last name
+            </td>
+            
+            <td>
+            	<input type="text" name="Lname" value="{$info.last_name}"  class="txt_sample"/>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Address
+            </td>
+            
+            <td>
+            	<input type="text" name="address" value="{$info.address}"  class="txt_sample"/>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            City
+            </td>
+            
+            <td>
+            	<input type="text" name="city" value="{$info.city}" class="txt_sample" />
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Province
+            </td>
+            
+            <td>
+            	<input type="text" name="province" value="{$info.province}" class="txt_sample"/>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Country
+            </td>
+            
+            <td>
+            	<select name="country" class="txt_sample">
+                	<volist name="country" id="coun_vo">
+                		<option value="{$coun_vo.value}" <if condition="$coun_vo.value eq $info['country']">selected</if>>{$coun_vo.name}</option>
+                    </volist>
+                
+                </select>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Code
+            </td>
+            
+            <td>
+            	<input type="text" name="code" value="{$info.code}" class="txt_sample"/>
+            </td>
+        </tr>
+        <tr>
+        	<td class="td_one">
+            Telephone
+            </td>
+            
+            <td>
+            	<input type="text" name="telephone" value="{$info.telephone}" class="txt_sample"/>
+            </td>
+        </tr>
+    	<tr>
+        	<td class="td_one">
+            	<input type="submit" value="提交" class="plcz_big cur"/>
+            
+            	<a href="__CONTROLLER__/sample_order/come_from/{$come_from}/p/{$nowPage}.html" class="plcz_big cur">返回</a>
+            </td>
+            <td ></td>
+        </tr>
+    
+    
+    
+    </table>
+
+</form>
+
+</div>

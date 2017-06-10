@@ -1,0 +1,5 @@
+[ 2016-06-23T19:02:22+08:00 ] 127.0.0.1 /erptest/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015170s ]
+

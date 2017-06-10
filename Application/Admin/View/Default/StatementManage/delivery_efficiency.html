@@ -1,0 +1,52 @@
+<script src="__JS__/StatementManage/main.js"></script>
+<div class="admin">
+    
+    <div class="clear" ></div>
+ 	<form method="post" name="form" id="myform">
+    		<input type="hidden" name="data" <if condition='$data eq ""'>value="web"<else />value="{$data}"</if>>
+            <input type="hidden" name="whereId" value="{$whereId}">
+         <span>选择时间：
+            <input type="text" style="cursor:pointer;" name="bTime" id="btime" class="Wdate bd" onClick="WdatePicker()" value="{$bTime}"  />
+            <input type="text" style="cursor:pointer;" name="eTime" id="btime" class="Wdate bd" onClick="WdatePicker()" value="{$eTime}"  />
+       	 	<input  type="button" class="but_sub" onclick="delivery_sub()" value="提交">
+        </span>
+    </form>       
+	<div style="width:100%; height:20px;"></div>
+
+    <div class="tab-panel" id="tab-not">
+         <table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" id="come_dp">
+            <tr>
+            <td colspan="10" class="table_title tab_title">
+                <span class="fl icon-align-justify"> {$tpltitle}</span>
+                <a href="__ACTION__/data/web.html" <if condition="$data eq 'web' || $data eq ''">style="color: #0a8;"</if>> 网站 </a>
+                <a href="__ACTION__/data/plat.html" <if condition="$data eq 'plat' ">style="color: #0a8;"</if>> 平台 </a>
+                <span class="fr plcz" onclick="shipping_execl()"> 导出筛选 </span>
+            </td>
+            <tr class="list_head ct">
+            	<td align="left"></td>
+                <td align="left" >订单号</td>
+                <td align="left" >买家名称</td>
+                <td >Email</td>
+                <td >来源</td>
+                <td >运单号</td>
+                <td >快递公司</td>
+                <td >发货时间</td>
+            </tr>
+        <volist name="info" id="vo" key="k">
+            <tr>
+            	<td class="td_number">{$k}</td>
+                <td class="td_number">{$vo.order_number}</td>
+                <td class="td_cc">{$vo.name}</td>
+                <td align="center">{$vo.email}</td>
+                <td align="center">{$vo.come_from}</td>
+                <td align="center" class="td_ff">{$vo.delivery_number}</td>
+                <td align="center" class="td_ff">{$vo.style}</td>
+                <td align="center" class="td_ff">{$vo.date_time}</td>
+            </tr>
+        </volist>
+        </table>
+     </div>
+     <div class="list-page">
+     	<empty name="page">暂时没有相关数据<else />{$page}</empty>
+     </div>
+</div>

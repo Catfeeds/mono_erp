@@ -1,0 +1,66 @@
+<style>
+table{border-collapse:separate;border-spacing:10px;}
+</style>
+<div class="admin">
+
+<h1>修改地址</h1>
+<form method="post" action="" class="form-x margin-large-top">
+	<table>
+		<tr>
+			<td style="width:120px;">名　字:</td>
+			<td style="width:200px;">
+				<input name="first_name" value="{$row.first_name}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">姓　氏 :</td>
+			<td style="width:200px;">
+				<input name="last_name" value="{$row.last_name}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">国　家:</td>
+			<td style="width:200px;">
+				<input name="country" value="{$row.country}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">省　　:</td>
+			<td style="width:200px;">
+				<input name="province" value="{$row.province}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">城　市:</td>
+			<td style="width:200px;">
+				<input name="city" value="{$row.city}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">地　址:</td>
+			<td style="width:200px;">
+				<input name="address" value="{$row.address}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">邮　编:</td>
+			<td style="width:200px;">
+				<input name="code" value="{$row.code}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:120px;">电　话:</td>
+			<td style="width:200px;">
+				<input name="telephone" value="{$row.telephone}" style="width:200px;"/>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button onclick="history.go(-1);" style="margin-right:10px;">返回</button>
+				<input type="submit" value="提交"/>
+			</td>
+		</tr>
+	</table>
+</form>
+
+</div>

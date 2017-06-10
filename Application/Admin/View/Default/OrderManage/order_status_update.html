@@ -1,0 +1,24 @@
+{__NOLAYOUT__}
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table" id="table">
+	<tr class="tr rt">
+       <td width="100">状态：</td>
+       <td class="lt">
+       <select name="status" id="status_update_status">
+        <volist name="status_list" id="status_vo"> 
+        <option value="{$key}" <eq name="old_status" value="$key">selected="selected"</eq> >{$status_vo}</option>
+        </volist>
+       </select>
+       </td>
+   </tr>
+   <tr class="tr rt">
+       <td width="100">备注：</td>
+       <td class="lt">
+           <textarea name="status_update_message" id="status_update_message" value="{$old_message}" style="width:320px;height:300px;visibility:hidden;"></textarea>
+       </td>
+   </tr>
+   <tr class="tr lt">
+       <td colspan="4">
+           <input onclick="order_status_update({$order_id},'{$style}','update')" class="button" type="submit" value="添 加">
+       </td>
+   </tr>
+</table>

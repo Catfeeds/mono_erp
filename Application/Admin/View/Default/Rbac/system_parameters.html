@@ -1,0 +1,33 @@
+<div class="admin">
+	<table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr>
+			<td colspan="6" class="table_title tab_title">
+				<span class="fl icon-home"> 系统参数</span>
+				<span class="fr">
+					<a href="{:U('/Admin/Rbac/system_parameters_add')}" class="icon-plus-circle
+"> 添加系统参数</a>
+				</span>
+			</td>
+			<tr class="list_head ct">
+				<td width="5%" align='left'>ID</td>
+				<td width="20%" align='left'>参数名称</td>
+				<td width="20%" align='left'>参数数值(int)</td>
+                <td width="20%" align='left'>参数数值(varchar)</td>
+				<td width="20%" align='center'>参数描述</td>
+				<td width="10%">管理操作</td>
+			</tr>
+	    <volist name="info" id="vo">
+			<tr>
+				<td align='left' class="td_number">{$vo.id}</td>
+				<td class="tb_cc">{$vo.name}</td>
+				<td >{$vo.value_int}</td>
+                <td >{$vo.value_var}</td>
+                <td align='center' class="tb_ff">{$vo.message}</td>
+				<td align='center'>
+					 <a href="{:U('/Admin/Rbac/system_parameters_add/',array('id'=>$vo['id']))}" class="icon-pencil" title="修改"></a>&nbsp;&nbsp;
+					 <a href="{:U('/Admin/Rbac/system_parameters_delete/',array('id'=>$vo['id']))}" onclick="return confirm('确定删除该角色吗?')" class="icon-trash-o" title="删除"></a>
+				</td>
+			</tr>
+	    </volist>
+		</table>
+</div>

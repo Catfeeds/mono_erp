@@ -1,0 +1,157 @@
+<style>
+#table
+{
+width:95%;
+height:600px;
+border-top:2px solid #666666;
+border-right:2px solid #666666;
+margin:auto;
+}
+#table tr td
+{
+border-bottom:2px solid #666666;
+border-left:2px solid #666666;
+vertical-align:top;
+padding-left:10px;
+}
+b
+{
+	font-size:25px;
+}
+</style>
+</head>
+
+<body>
+<table id="table" cellspacing="0" cellpadding="0">
+ <tr>
+     <td colspan="4">  
+         <b>Sender:</b><br>  
+             MONO INTERNET TECHNOLOGY LTD<br>
+             Xiangyuan Jin<br>
+             373 Zhushan Road<br>
+             373 Zhushan Road<br>
+             3112965649<br>
+			 Nanjin  211100<br>
+			 CHINA,PEOPLES REPUBLIC<br>
+			 Phone:862552179794
+         <b style="padding-left:350px;">Fax:</b>
+        
+     </td>
+     <td colspan="4" valign="middle" style="width:45%;background:#ccc; text-align:center;"><b style="font-size:40px;">Proforma<br>Invoice</b></td>
+ </tr>
+ <tr>
+     <td rowspan="3" colspan="4">
+     <b>Receiver:</b><br>  
+             {$order_detail.name}<br>
+             {$order_detail.streetline}<br>
+             {$order_detail.city}<br>
+             {$order_detail.state}<br>
+             {$order_detail.country}<br>
+			 {$order_detail.code}<br>
+			 Phone: {$order_detail.phone}<br>
+     <b style="padding-left:350px;">Fax:</b>
+     </td>
+     <td colspan="4">
+     <b>Date:{$order_detail.date_time}</b>
+     </td>
+ </tr>
+ <tr>
+    <td colspan="4">
+    <b>Invoice Number:</b>
+    </td>
+ </tr>
+ <tr>
+    <td colspan="4">
+    <b>Shipment Reference:</b>
+    </td>
+ </tr>
+ <tr>
+    <td rowspan="2" colspan="4" valign="top">
+      <b>Bill to Third Party:</b>
+             
+    </td>
+    <td colspan="4">
+      <b>omments:</b>
+    </td>
+ </tr>
+ <tr>
+    <td colspan="4">
+      <b>Air Waybill Number: {$order_detail.trackingNumber_str}</b>
+    </td>
+ </tr>
+ <tr>
+    <td><b>Full Description of Goods</b></td>
+    <td><b>QTY</b></td>
+    <td><b>Commodity Code</b></td>
+    <td><b>Unit Value</b></td>
+    <td><b>Subtotal Value</b></td>
+    <td><b>Unit Net Weight</b></td>
+    <td><b>Gross Weight</b></td>
+    <td><b>Country of Manufacture</b></td>
+ </tr>
+ <tr style="height:200px;">
+    <td valign="top">{$order_detail.hs_name}</td> 
+    <td valign="top">1</td>  
+    <td valign="top">{$order_detail.hs_bm}</td> 
+    <td valign="top">{$order_detail.hs_price}</td> 
+    <td valign="top">{$order_detail.hs_price}</td> 
+    <td valign="top">{$order_detail.weight}</td> 
+    <td valign="top">0.00</td> 
+    <td valign="top">CHINA,PEOPLES REPUBLIC</td> 
+ </tr>
+ <tr>
+    <td></td>
+    <td colspan="4">
+    <b>Total Declared Value:</b><span style="margin:0 40px;">{$order_detail.hs_price}</span><b>USD</b>
+    </td>    
+    <td colspan="3">
+    <b>Total Net Weight:</b><span style="margin:0 40px;">{$order_detail.weight}</span><b>kgs.</b>
+    </td>
+ </tr>
+ <tr>
+    <td></td>
+    <td colspan="4">
+    <b>Total Pieces:</b><span style="margin:0 40px;">1</span>
+    </td>
+    <td colspan="3">
+    <b>Total Gross Weight:</b><span style="margin:0 40px;">0.0</span><b>kgs.</b>
+    </td>
+ </tr>
+</table>
+<div style="width:1200px;margin:auto;margin-top:30px;">
+  <div style="width:40%;float:left;">
+      <b>Payer of GST/VAT:</b>
+      <br>
+      <b>Harm.Comm.Code:</b>
+      <br>
+      <b>Type of Export:</b> <span style="margin-left:30px;">Permanent</span>
+      <br>
+      <b>Terms of Payment:</b>
+      <br>
+      <b>Reason For Export:</b>
+  </div>
+  <div style="float:left;width:60%;">
+       <b>Currency Code:</b> USD
+      <br>
+      <b>Terms of Trade:</b> Deliver Duty Paid : {$order_detail.city}
+  </div>
+  <div style="width:100%;float:left;margin-top:50px;">
+     <b>I/We hereby certify that information of this invoice is true and correct and that the contents of this shipment are as stated above.</b>
+  </div>
+  <div style="width:100%;float:left;margin-top:40px;">
+      <b>Signature:</b>
+      <br>
+      <b>Position in Company:</b>
+      <br>
+      <b>Shipping Consultant:</b>
+      <br>
+      <b>Company Stamp:</b>
+  </div>
+</div>
+</body>
+<script language= "JavaScript">
+window.onload=function()
+{
+   window.print();
+}
+</script>

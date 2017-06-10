@@ -1,0 +1,74 @@
+
+<script>
+function handleFile(val){
+	var full_name = $("#file_"+val).attr("value");
+	var arr = full_name.split('\\');
+	var file_name = arr[arr.length-1];
+	$("#file_name_"+val).html(file_name);
+}
+</script>
+<style >
+.wid{ width:120px; text-align:left;}
+.input-file input[type="file"]{cursor:pointer;}
+</style>
+<div class="admin">
+<h1>导入Execl</h1>
+<div style="clear:both"></div>
+<form method="post" action="__CONTROLLER__/upload_excel.html" class="form-x margin-large-top" enctype="multipart/form-data">
+<input type="hidden" value="2" name="style" />
+    <div class="form-group">
+        <div class="field">
+            <a class="button input-file" style="float:left;margin-right:25px;width:250px;cursor:pointer;">
+                code与sku关联（单品）     <input size="100" type="file" name="file" id="file_2" onchange="handleFile(2)">
+                <span id="file_name_2" style="margin-left:10px;">&nbsp;&nbsp;</span>
+            </a>
+            <input type="submit"  class="button input-file" value="导入" style="float:left;" />
+        </div>
+    </div>
+</form>
+
+<div style="clear:both"></div>
+<form method="post" action="__CONTROLLER__/upload_excel.html" class="form-x margin-large-top" enctype="multipart/form-data">
+<input type="hidden" value="3" name="style" />
+    <div class="form-group">
+        <div class="field">
+            <a class="button input-file" style="float:left;margin-right:25px;width:250px;cursor:pointer;">
+               code与sku关联（套件）     <input size="100" type="file" name="file" id="file_3" onchange="handleFile(3)">
+                <span id="file_name_3" style="margin-left:10px;">&nbsp;&nbsp;</span>
+            </a>
+            <input type="submit"  class="button input-file" value="导入"  style="float:left;"/>
+        </div>
+    </div>
+</form>
+
+
+<div style="clear:both"></div>
+<form method="post" action="__CONTROLLER__/upload_excel.html" class="form-x margin-large-top" enctype="multipart/form-data">
+<input type="hidden" value="4" name="style" />
+    <div class="form-group">
+        <div class="field">
+            <a class="button input-file" style="float:left;margin-right:25px;width:250px;cursor:pointer;">
+               导入产品列表<input size="100" type="file" name="file" id="file_4" onchange="handleFile(4)">
+                <span id="file_name_4" style="margin-left:10px;">&nbsp;&nbsp;</span>
+            </a>
+            <input type="submit"  class="button input-file" value="导入" style="float:left;" />
+        </div>
+    </div>
+</form>
+
+<div style="clear:both"></div>
+<form method="post" action="__CONTROLLER__/upload_excel.html" class="form-x margin-large-top" enctype="multipart/form-data">
+<input type="hidden" value="5" name="style" />
+    <div class="form-group">
+        <div class="field">
+            <a class="button input-file" style="float:left;margin-right:25px;width:250px;cursor:pointer;">
+               省份简写<input size="100" type="file" name="file" id="file_5" onchange="handleFile(5)">
+                <span id="file_name_5" style="margin-left:10px;">&nbsp;&nbsp;</span>
+            </a>
+            <input type="submit"  class="button input-file" value="导入" style="float:left;" />
+        </div>
+    </div>
+</form>
+
+
+</div>

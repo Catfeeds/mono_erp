@@ -1,0 +1,44 @@
+<include file="Public:head" /> 
+<script>
+function open_ul(id,current)
+{
+	if( $("#li_ul_"+id).css("display")=="none" )
+	{
+		$('#li_ul_'+id).fadeIn(500);
+		$("#more_"+id).removeClass("icon-chevron-down");
+		$("#more_"+id).addClass("icon-chevron-up");
+	}
+	else
+	{
+		$('#li_ul_'+id).fadeOut(500);
+		$("#more_"+id).removeClass("icon-chevron-up");
+		$("#more_"+id).addClass("icon-chevron-down");
+	}
+}
+function chat_open(id)
+{
+	window.open('messages_val/id/'+id+'.html','newwindow','height=600,width=800,top=100,left=100,toolbar=no,menubar=yes,scrollbars=no,resizable=no,location=no, status=yes');
+	
+}
+</script>
+<style>
+*{ margin:0; padding:0; font-size:12px;}
+.fr{margin-right:5px;}
+.messages_box{ width:300px; position:relative;z-index:9;top:0px; float:right; right:10px; display: block;}
+.messages_top{ position: absolute; top:0px; height:40px;width:100%;}
+.messages_top ul{list-style:none; margin:0; padding:0;}
+.messages_top ul li{width:150px; border:1px solid #666; line-height:38px; float:left; text-align:center; background:#999; font-weight:bold;}
+.messages_top ul li a{ display:block;}
+.messages_top ul li:hover{ background:#CCC; cursor:pointer;}
+.action{ background:#CCC;}
+.messages_list{ position: absolute; top:40px; width:100%; }
+.ul,.ul ul{list-style:none; margin:0; padding:0;}
+.ul li{ line-height:30px; width:100%; background:#eee; border:1px #CCCCCC solid;}
+.one{ padding-left:5px;}
+.li_ul{ display:none;}
+.branch{ padding-left:35px;}
+.per_name{ padding-left:25px;}
+.per_name_2{padding-left:50px;}
+.branch_2{padding-left:70px;}
+</style>
+<div class="admin">

@@ -1,0 +1,21 @@
+<div class="admin">
+<form action="{:U('/Admin/ProjectManage/project_subtask_finish',array('id'=>$_GET['id'],'projectprocess_id'=>$_GET['projectprocess_id']))}" method="post" name="form" id="myform">
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+	<tr class="tr rt">
+		<td width="100">完成人：</td>
+		<td colspan="3" class="lt">
+			<input type="text" name="operator" id="name" class="admin_input">
+				</td>
+			</tr>
+<tr class="tr lt">
+	<td colspan="4">
+		<gt name="info.id" value="0">
+			<input class="button border-main" type="submit" name="dosubmit" value="修 改" >
+			<else />
+			<input class="button border-main" type="submit" name="dosubmit" value="添 加"></gt>
+		&nbsp;
+		<input class="button border-main" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

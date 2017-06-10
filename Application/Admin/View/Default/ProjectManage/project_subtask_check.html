@@ -1,0 +1,37 @@
+<div class="admin">
+<form action="{:U('/Admin/ProjectManage/project_subtask_check',array('id'=>$_GET['id'],'projectprocess_id'=>$_GET['projectprocess_id']))}" method="post" name="form" id="myform">
+		</gt>
+			<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+				<tr class="tr rt">
+					<td width="100">审查人：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="operator" id="name" class="admin_input" value="{$info.operator}" >
+				</td>
+			</tr>
+			<tr class="tr rt">
+				<td width="100">审查状态：</td>
+				<td colspan="3" class="lt">
+					<select name="status" class="admin_input">
+						<option value="1" selected>审查通过</option>
+						<option value="0">未审查</option>
+					</select>
+				</td>
+			</tr>
+			<tr class="tr rt">
+				<td width="100">日期：</td>
+				<td colspan="3" class="lt">
+					<input type="text" style="cursor:pointer;" name="operator_date" id="btime" class="admin_input" onClick="WdatePicker()" value="{:date('Y-m-d',time())}">
+				</td>
+			</tr>
+<tr class="tr lt">
+	<td colspan="4">
+		<gt name="info.id" value="0">
+			<input class="button border-main" type="submit" name="dosubmit" value="修 改" >
+			<else />
+			<input class="button border-main" type="submit" name="dosubmit" value="添 加"></gt>
+		&nbsp;
+		<input class="button border-main" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

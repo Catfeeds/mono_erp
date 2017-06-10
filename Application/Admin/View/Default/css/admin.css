@@ -1,0 +1,110 @@
+body{background-color:#f2f9fd;}
+.panel{background:#fff;}
+form .form-group:last-child{padding-bottom:0;}
+.passcode{position:absolute;right:0;top:0;height:32px;margin:1px;border-left:solid 1px #ddd;text-align:center;line-height:32px;border-radius:0 4px 4px 0;}
+
+
+.lefter{position:relative;float:left;width:180px;margin-right:-180px;background:#e6f2fb;text-align:center;}
+.righter{float:right;width:100%;padding-top:15px;background:#e6f2fb;}
+.mainer{margin-left:180px;}
+
+.logo{border-bottom:solid 1px #b5cfd9;padding:23px 10px;}
+
+.admin-navbar{border-bottom:solid 5px #09c;padding:0 15px;}
+.admin-nav li{display:inline-block;}
+.admin-nav ul{display:none;}
+.admin-nav ul li{float:none;display:block;}
+.admin-nav ul ul li{list-style:circle;margin-left:15px;}
+.admin-nav .active a{background:#09c;color:#fff;border-radius:4px 4px 0 0;}
+.admin-nav .active ul{display:block;position:fixed;left:0;width:180px;margin-top:41px;}
+.admin-nav .active ul a{background:transparent;color:#333;border-radius:0;}
+.admin-nav .active .active a{background:#e6f2fb;border-top:solid 1px #b5cfd9;border-bottom:solid 1px #b5cfd9;}
+
+.admin-bread{background:#f2f9fd;border-left:solid 1px #b5cfd9;border-bottom:solid 1px #b5cfd9;line-height:20px;}
+.admin-bread .bread{margin-bottom:0;}
+.admin-bread span{float:right;font-size:12px;color:#666;line-height:36px;}
+
+.admin{padding:30px;background:#fff;position:fixed;border-left:solid 1px #b5cfd9;right:0;bottom:0;top:87px;left:180px; overflow:auto;}
+.alert{margin-bottom:20px;}
+.admin-panel td{line-height:24px;}
+.admin-panel td .button{line-height:16px;}
+.admin-panel .pagination .active{background:#fff;}
+.fr{float:right;}
+.fw{font-weight: bold;}
+
+.list-page{padding:20px 0;text-align:center;}
+.list-page a{margin:0 3px;padding:7px 10px;background:#f3f3f3; font-size:12px;border: solid 1px #ddd;border-radius: 4px;}
+.list-page a:hover{background:#eee;border:1px solid #908f8f; cursor: pointer;}
+.list-page .current{margin:0 5px;padding:7px 10px;background: #f5f5f5;border:1px solid #70D188;color: #090;border-radius: 4px;}
+
+.list-more{ margin-top:20px;border: solid 1px #ddd;background: #0ae; color:#FFF; border-radius: 4px;font-size: 14px;padding: 6px 15px; text-align:center;line-height: 26px;transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s;}
+.list-more:hover{ cursor:pointer; background:#06F;}
+.admin_input{border:1px solid #ccc;padding:6px;width:150px;border-radius:6px;}
+.admin_input:hover{border-color:#09c;}
+.td_cc{ color:#03c;}
+.td_ff{color:#f60;}
+.tab_title{font-size:14px;padding:10px;}
+/*查看备注*/
+.remark_bg{ background: #999;}
+.remark{ width:100%; font-size:12px;}
+.remark  .ul .action{ background:#CCC; border-radius: 4px;}
+.remark  .ul li{ list-style:none; float:left; padding: 0px 8px; line-height:30px; text-align:center;}
+.remark  .ul li a{ line-height:30px; display:block;}
+.remark select ,.select{  height:25px; min-width:120px;border: 1px solid #ccc;border-radius: 6px;}
+.remark select option{ line-height:25px;}
+.remark_span{ padding-left:20px; margin-bottom:20px;}
+.bd{ padding-left:3px;border: 1px solid #ccc;border-radius: 6px; height:25px;}
+.remark .remark_txt{height:25px; min-width:180px;border: 1px solid #ccc;border-radius: 6px; padding-left:5px;}
+.but_sub{border: solid 1px #ddd; background:#2c7; border-radius: 4px; padding: 4px 15px;display: inline-block;transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s;}
+.but_sub:hover{ background:#2c7; color:#FFF;}
+#remark_smile{ font-size:19px;}
+#remark_smile span{ font-size:120px;}
+/*end*/
+.plcz{margin-left:10px;border:1px solid #CCC; background:#fff; padding:5px;border-radius: 4px; font-size:12px; cursor:pointer;} /*批量操作按钮*/
+.plcz_big{margin-left:10px;border:1px solid #CCC; background:#fff; padding: 5px 10px;border-radius: 4px; font-size:15px; cursor:pointer;}
+.button_action{ background:#CCC; border-radius: 4px;}   //默认选中按钮
+.clear{ clear:both;}
+.button:hover{ cursor:pointer;}
+.cur:hover{cursor:pointer; color:#999;}
+.dis_no{display:none;}
+.dis_bl{display: block;}
+li{ list-style:none;}
+.table
+{
+	border:1px solid #ccc;
+}
+.table td
+{
+	padding:8px;
+	vertical-align: middle;
+}
+.list_head
+{
+	font-weight:bold;
+	text-align:center;
+}
+.td_number
+{
+	font-size:12px;color:#58f;
+}
+.table .table_title:hover
+{
+	background:#f9f9f9;
+}
+.table .list_head:hover
+{
+	background:#fff;
+}
+
+/*红绿梯度色*/
+.gradual_color_lv1,.gradual_color_lv1 td,.gradual_color_lv1 td span{color:rgb(51, 255, 0) !important;}
+.gradual_color_lv2,.gradual_color_lv2 td,.gradual_color_lv2 td span{color:rgb(102, 255, 0) !important;}
+.gradual_color_lv3,.gradual_color_lv3 td,.gradual_color_lv3 td span{color:rgb(153, 255, 0) !important;}
+.gradual_color_lv4,.gradual_color_lv4 td,.gradual_color_lv4 td span{color:rgb(204, 255, 0) !important;}
+.gradual_color_lv5,.gradual_color_lv5 td,.gradual_color_lv5 td span{color:rgb(255, 255, 0) !important;}
+.gradual_color_lv6,.gradual_color_lv6 td,.gradual_color_lv6 td span{color:rgb(255, 204, 0) !important;}
+.gradual_color_lv7,.gradual_color_lv7 td,.gradual_color_lv7 td span{color:rgb(255, 153, 0) !important;}
+.gradual_color_lv8,.gradual_color_lv8 td,.gradual_color_lv8 td span{color:rgb(255, 102, 0) !important;}
+.gradual_color_lv9,.gradual_color_lv9 td,.gradual_color_lv9 td span{color:rgb(255, 51, 0) !important;}
+.gradual_color_lv10,.gradual_color_lv10 td,.gradual_color_lv10 td span{color:rgb(255, 2, 0) !important;}
+

@@ -1,0 +1,41 @@
+<script src="__JS__/ProjectManage/project.js"></script>
+<div class="admin">
+	<table class="table  table-striped table-hover table-condensed">
+		<tr>
+			<td colspan="9" class="table_title">
+				<span class="fl" class="icon-users">子任务管理</span>
+				<span class="fr">
+					<a onclick="add_list_project({$_GET['id']});" href="javascript:" class="icon-plus-circle" title="添加子任务">子任务添加</a>
+				</span>
+			</td>
+		</tr>
+		<tr class="list_head ct">
+            <td width="180">子任务描述</td>
+            <td width="150">操作人</td>
+            <td width="130">创建时间</td>
+            <td width="150">截止时间</td>
+            <td width="100">任务等级</td>
+			<td width="180">操作</td>
+		</tr>
+	<volist name="list" id="vo">
+		<tr style="text-align:center;">
+			<td>{$vo.message}</td>
+			<td>{$vo.operator}</td>
+			<td>{$vo.begin_time}</td>
+			<td>{$vo.end_time}</td>
+			<td>{$vo.level}</td>
+			<td>
+				<a class="icon-check-square" title="审查" href="{:U('/Admin/ProjectManage/project_subtask_check/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id']))}"></a>&nbsp;&nbsp;
+				<a class="icon-pencil" title="修改" href="{:U('/Admin/ProjectManage/project_subtask_add/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id'] ))}"></a>&nbsp;&nbsp;
+				<a href="javascript:" class="icon-trash-o" title="删除" onClick="layer.confirm('你确定删除该用户？', {btn: ['确定','取消']}, function(){location.href='{:U('/Admin/ProjectManage/project_subtask_del/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id']))}'});"></a>&nbsp;&nbsp;
+				<a class="icon-check" title="完成" href="{:U('/Admin/ProjectManage/project_subtask_finish/',array('id'=>$vo['project_id'],'projectprocess_id'=>$vo['id']))}"></a>
+			</td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

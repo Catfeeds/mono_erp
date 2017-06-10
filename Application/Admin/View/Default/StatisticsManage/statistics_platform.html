@@ -1,0 +1,65 @@
+<style>
+.statistics_table td{border:none;}
+</style>
+<script src="__JS__/StatisticsManage/statistics.js"></script>
+<div class="admin">
+	<form action="{:U('/Admin/StatisticsManage/statistics_chart')}" method="post" name="form" id="myform">
+	<div style="margin-bottom:10px;float:left;">
+	<input type="hidden" name='come_from_id' value="<?php echo $_GET['come_from_id'];?>">
+	<input type="hidden" name='catalog_id' value="<?php echo $_GET['catalog_id'];?>">
+	<input type="hidden" name='product_id' value="<?php echo $_GET['product_id'];?>">
+	<input type="hidden" name='begin_time' value="<?php echo $_POST['begin_time'];?>">
+	<input type="hidden" name='end_time' value="<?php echo $_POST['end_time'];?>">
+	<input type="submit" value="导出统计图表" class="button border-main">
+	</div>
+	</form>
+	<div style="float:left;margin:10px 0px 10px;clear:both;">
+	<form style="float:left;" action="" method="post" name="form" id="myform">
+	<select name="country" class="admin_input" style="float:left;" onchange='javascript:location.href=_CONTROLLER_+"/statistics_platform/come_from_id/"+this.value+".html"'>
+	<option value="0">请选择平台来源</option>
+	<volist name='come_from_id' id='come_from_vo'>
+	<option value="{$come_from_vo.id}" <if condition="$_GET['come_from_id'] eq $come_from_vo['id']">selected</if>>{$come_from_vo.name}</option>
+	</volist>
+	</select>
+	<select name="catalog" onchange='javascript:location.href=_CONTROLLER_+"/statistics_platform/come_from_id/<?php if(isset($_GET[come_from_id])){echo $_GET[come_from_id];}else{echo 0;}?>/catalog_id/"+this.value+".html"' class="admin_input" style="float:left;">
+		<option value="0">请选择分类</option>
+		<volist name="catalog_list" id="catalog_vo">
+		<option value="{$catalog_vo.id}" <if condition="$_GET['catalog_id'] eq $catalog_vo['id']">selected</if>>{$catalog_vo.name}</option>
+		</volist>
+	</select>
+	<select style="float:left;" name="product" class="admin_input" onchange='javascript:location.href=_CONTROLLER_+"/statistics_platform/come_from_id/<?php echo $_GET[come_from_id];?>/catalog_id/<?php echo $_GET[catalog_id];?>/product_id/"+this.value+".html"'>
+		<option value="0">请选择产品</option>
+		<volist name="product_list" id="product_vo">
+		<option value="{$product_vo.id}" <if condition="$_GET['product_id'] eq $product_vo['id']">selected</if>>{$product_vo.name}</option>
+		</volist>
+	</select>
+	日期：<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="admin_input" onClick="WdatePicker()" value=""> TO <input type="text" style="cursor:pointer;" name="end_time" id="btime" class="admin_input" onClick="WdatePicker()" value=""> <input type="submit" name="sub" value="查询" class="button border-main">
+	</form>
+	</div>
+	<table class="table  table-striped table-hover table-condensed" style="border:none;">	
+		<foreach name="statistics_name" item="vo" key='i'>
+		<tr>
+			<td style="color:#03c;border:1px solid #ccc;">{$i}</td>
+			<foreach name="vo['name']" item='product_list' key='j'>
+			<if condition="$j neq ''">
+			<td style="border:1px solid #ccc;">
+			<table class="statistics_table">
+				<tr>
+				<td style="text-align:center">{$j}</td>
+				<td style="text-align:center">{$product_list.currency} {$product_list.price}</td>
+				<td style="text-align:center">{$product_list.number}</td>
+				</tr>
+			</table>
+			</td>
+			</if>
+			</foreach>
+		</tr>
+	   	</foreach>
+	   	
+		<tr class="tr">
+          <td colspan="9" class="pages" align="center">
+            {$page}
+          </td>
+        </tr>
+	</table>
+</div>

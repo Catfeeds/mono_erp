@@ -1,0 +1,82 @@
+<script src="__JS__/FactoryManage/main.js"></script>
+<style>
+.button_country{font-size:11px;margin-right:10px;padding:6px 10px;border:1px solid black;}
+.button_country:hover{border-color:#0a8;cursor:pointer;}
+.button_country.active{font-size:16px;border-color:#0a8; background: #0a8; color:#fff;}
+
+p{ height:20px; line-height:20px; margin:0px; padding:0px;}
+.update_number{  background: #000; color: #fff; width: 75px; text-align:center; font-size:12px;}
+.action{ background:#0F0;}
+.percent_overdue{ font-size:18px; color:#F00; font-weight:bold;}
+.percent{font-size:14px; font-weight:bold;}
+.all{ background:#0F0; display:block; height:50px; line-height:50px; }
+</style>
+<div class="admin">
+<form method="post" id="myform">
+<input type="hidden" name="factory" value="{$factory}" />
+<table class="table table-striped table-hover table-condensed">
+	<tr>
+		<td colspan="7" class="table_title" style="font-size:14px;padding:10px;">
+        	<span class="float-left icon-list"> 工厂收货率</span>
+        
+		</td>
+	</tr>
+    <tr>
+		<td colspan="7" class="table_title" style="height: 40px;">			
+            <volist name="factory_list" id="factory_list_vo">
+            	<a href="__ACTION__/factory/{$factory_list_vo.val}.html" class="button_country cur <if condition='$factory_list_vo["val"] eq $factory '>action</if>" >{:fac_name($factory_list_vo['val'])}</a>	
+            </volist>
+			
+		</td>
+	</tr>
+    <tr>
+		<td colspan="7">
+		  <label for="start_time">日期:</label>
+			<input type="text" name="btime" id="btime" value="{$btime}" class="margin-right" onclick="WdatePicker()" style="cursor:pointer;"><label for="end_time">TO:</label>
+		  <input type="text"  name="etime" id="etime" value="{$etime}" class="margin-right" onclick="WdatePicker()" style="cursor:pointer;">
+			<input type="submit" value="查询" onclick="screening_sub()">
+            
+            <span onclick="screening_sub('screening')" class="plcz fr">导出筛选订单</span>
+		</td>
+	</tr>
+    <tr>
+    	<td>时间</td>
+        <td>24小时</td>
+        <td>36小时</td>
+        <td>48小时</td>
+        <td>60小时</td>
+        <td>72小时</td>
+        <td>大于72小时</td>
+    </tr>
+    <if condition="$info_all">
+    <tr height="50px;" style="background:#0C3; margin:0px; padding:0px;">
+       	  <td style="max-width:150px;background:#0F0; " ><span class="percent all">{$info_all.time}</span> ({$info_all.coun})</td>
+          <td style="background:#0F0; " ><span class="percent all">{$info_all.one}</span> ({$info_all.one_coun})</td>
+          <td style="background:#0F0; " ><span class="percent all">{$info_all.two}</span> ({$info_all.two_coun})</td>
+          <td style="background:#0F0; " ><span class="percent all">{$info_all.three}</span> ({$info_all.three_coun})</td>
+          <td style="background:#0F0; " ><span class="percent_overdue all">{$info_all.fone}</span> ({$info_all.fone_coun})</td>
+          <td style="background:#0F0; " ><span class="percent_overdue all">{$info_all.five}</span> ({$info_all.five_coun})</td>
+          <td style="background:#0F0; " ><span class="percent_overdue all">{$info_all.six}</span> ({$info_all.six_coun})</td>
+    </tr>
+    </if>
+    <volist name="info" id="vo" key='k' >
+        <tr>
+       	  <td><span class="percent">{$vo.time}</span> ({$vo.coun})</td>
+          <td><span class="percent">{$vo.one}</span> ({$vo.one_coun})</td>
+          <td><span class="percent">{$vo.two}</span> ({$vo.two_coun})</td>
+          <td><span class="percent">{$vo.three}</span> ({$vo.three_coun})</td>
+          <td><span class="percent_overdue">{$vo.fone}</span> ({$vo.fone_coun})</td>
+          <td><span class="percent_overdue">{$vo.five}</span> ({$vo.five_coun})</td>
+          <td><span class="percent_overdue">{$vo.six}</span> ({$vo.six_coun})</td>
+        </tr>
+    </volist>    
+
+</table>
+
+
+
+<div class="list-page">
+    {$page}
+</div>
+</form>
+</div>

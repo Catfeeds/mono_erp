@@ -1,0 +1,47 @@
+<div class="admin">
+
+	<table class="table  table-striped table-hover table-condensed">
+		<tr>
+			<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+				<span class="fl icon-align-justify"> 用户管理</span>
+			</td>
+			</tr>
+			<tr class="list_head">
+				<td width="30" style="text-align:left"></td>
+				<td width="100" style="text-align:left">订单编号</td>
+				<td width="100" style="text-align:left">顾客姓名</td>
+				<td width="100" style="text-align:center">来源</td>
+				<td width="100" style="text-align:center">编号</td>
+                <td width="120" style="text-align:center">日期</td>
+				<td width="300" style="text-align:center">详情</td>
+			</tr>
+		<volist name="list" id="vo">
+			<tr class='<eq name="mod" value="1">tr<else/>ji</eq>' style='padding:20px;'>
+				<td align='left'><span class="td_number">{$i}</span></td>
+				<td style="color:#03c">{$vo.order.order_number}</td>
+				<td>{$vo.customer_name}</td>
+				<td align='center' style="color: #f60">{$vo.order.come_from}</td>				
+				<td align='center'>
+					{$vo.stock_number}<br/>
+					<volist name="vo.factory_info" id="factory_vo">
+					{:get_factory_str($factory_vo['id'],$factory_vo['date'],$factory_vo['number'])}
+					</volist>
+				</td>
+                <td align='center'>{$vo.date}</td>
+				<td align='center'>
+					<volist name="vo.detail_info" id="detail_vo">
+					{$detail_vo.detail_info.product_name} {$detail_vo.detail_info.model}&nbsp;&nbsp;
+					{$detail_vo.detail_info.product_color} {$detail_vo.detail_info.product_size}&nbsp;&nbsp;
+					{$detail_vo.detail_info.number}
+					</volist>
+                </td>
+			</tr>
+	    </volist>
+		<tr class="tr">
+          <td colspan="9" class="pages" align="center">
+            {$page}
+          </td>
+        </tr>
+	</table>
+		
+</div>

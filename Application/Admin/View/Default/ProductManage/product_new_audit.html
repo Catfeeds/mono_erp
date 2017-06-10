@@ -1,0 +1,31 @@
+<div class="admin">
+	<table class="table  table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr>
+			<td colspan="7" class="table_title tab_title">
+				<span class="fl icon-align-justify"> 产品申请管理</span>
+			</td>
+			<tr class="list_head ct">
+				<td width="50" align="left">ID</td>
+				<td width="250"align="left">产品名称</td>
+				<td width="250" align="left">产品描述</td>
+                <td width="70" align="center">申请人</td>
+                <td width="150" align="center">提交时间</td>
+                <!--<td width="100" align="center">状态</td>-->
+				<td width="150">管理操作</td>
+			</tr>
+	    <volist name="list" id="vo">
+			<tr class='<eq name="mod" value="1">tr<else/>ji</eq>'>
+				<td align='left' class="td_number">{$vo.id}</td>
+				<td align="left">{:username_name($vo['name'])}</td>
+				<td align="left" class="td_cc">{$vo.message}</td>
+                <td align="center">{$vo.applicant}</td>
+                <td align="center"  class="td_ff">{$vo.applicant_time|date="Y-m-d H:i:s ",###}</td>
+               <!-- <td ><eq name="vo.status" value="0">申请提交</eq></td>-->
+				<td align='center'><a href="{:U('/Admin/ProductManage/product_new_audit/',array('id'=>$vo['id'],'status'=>'1'))}"class="icon-check" title="通过"></a>
+                &nbsp;&nbsp;
+					 <a href="{:U('/Admin/ProductManage/product_new_audit/',array('id'=>$vo['id'],'status'=>'9'))}" class="icon-times" title="不通过"></a>
+				</td>
+			</tr>
+	    </volist>
+		</table>
+</div>

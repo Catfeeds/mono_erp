@@ -1,0 +1,108 @@
+<script >
+function open_ul(id,current)
+{
+	if( $("#li_ul_"+id).css("display")=="none" )
+	{
+		$('#li_ul_'+id).fadeIn(500);
+		$("#more_"+id).removeClass("icon-chevron-down");
+		$("#more_"+id).addClass("icon-chevron-up");
+	}
+	else
+	{
+		$('#li_ul_'+id).fadeOut(500);
+		$("#more_"+id).removeClass("icon-chevron-up");
+		$("#more_"+id).addClass("icon-chevron-down");
+	}
+}
+
+</script>
+
+
+<style>
+.right{ height:100%; width:20%;float:left; background:#BEBEBE;}
+
+.messages_top{ width:100%;}
+.messages_top ul{list-style:none; margin:0; padding:0;}
+.messages_top ul li{width:100%; line-height:38px; float:left; text-align:center; background:#999; font-weight:bold;background:#CCC;}
+.messages_top ul li a{ display:block;}
+.messages_top ul li:hover{ background:#CCC; cursor:pointer;}
+
+.messages_list{ top:40px; width:100% ;}
+.ul,.ul ul{list-style:none; margin:0; padding:0;}
+.ul li{ line-height:30px; width:100%; background:#eee; border:1px #CCCCCC solid;}
+.one{ padding-left:5px;}
+.li_ul{ display:none;}
+.branch{ padding-left:35px;}
+.per_name{ padding-left:25px;}
+.per_name_2{padding-left:50px;}
+.branch_2{padding-left:70px;}
+
+
+
+</style>
+
+    <div class="right">
+        <div class="messages_top">
+            <ul><!--
+                <li ><a href="__APP__/Admin/Index/messages_instant.html" style="font-family:'宋体', '仿宋_GB2312', '汉仪旗黑-55S', '楷体_GB2312', '宋体-PUA'" >消息</a></li>-->
+                <li ><a href="#">联系人</a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="messages_list" >
+        
+            <ul class="ul">
+                <volist name="branch_list"  id="vo"><!--第一层-->
+                
+                  <li class='one icon-group cur' onclick="open_ul('{$vo.id}',$(this))"> 
+                        {$vo.branch_name} [{$vo.coun}] <span id="more_{$vo.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                  </li>
+                    
+                        <ul class="li_ul" id="li_ul_{$vo.id}">
+                            <volist name="vo.personnel" id="voper">
+                            
+                                <li class="per_name icon-user cur" onClick="chat_open('{$voper.name}','{:ACTION_NAME}')"> {$voper.name} </li>
+                                
+                           </volist>
+                            <volist name="vo.detail" id="vodet" ><!--第二层-->
+                            
+                                <li class="branch icon-group cur" onclick="open_ul('{$vodet.id}')"> 
+                                
+                                    {$vodet.branch_name} [{$vodet.coun}] <span id="more_{$vodet.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                                    
+                                </li>
+                                
+                                    <ul class="li_ul" id="li_ul_{$vodet.id}">
+                                    
+                                        <volist name="vodet.personnel" id="vo2per">
+                                        
+                                            <li class="per_name_2 icon-user cur" onClick="chat_open('{$vo2per.name}','{:ACTION_NAME}')"> {$vo2per.name} </li>
+                                            
+                                        </volist>
+                                        <!--
+                                        <volist name="vodet.detail" id="vo2det">第三层
+                                        
+                                            <li class="branch_2 icon-group cur" onclick="open_ul('{$vo2det.id}')"> 
+                                            
+                                                {$vo2det.branch_name} <span id="more_{$vo2det.id}" class="icon-chevron-down fr" style="color:#ccc;"></span>
+                                                
+                                            </li>
+                                            
+                                        </volist>
+                                        -->
+                                        
+                                    </ul>
+                                    
+                          </volist>
+                            
+                  </ul>
+                        
+                </volist>
+                
+            </ul>
+        
+        </div>    	     
+    
+    </div>
+
+</div>

@@ -1,0 +1,46 @@
+<div class="admin">
+<gt name="info.id" value="0">
+    <form action="{:U('/Admin/Rbac/roleEdit')}" method="post" name="form" id="myform">
+    <input type="hidden" name="id" value="{$info.id}">
+<else />
+    <form action="{:U('/Admin/Rbac/roleAdd')}" method="post" name="form" id="myform">
+</gt>
+<table width="98%" border="0" cellpadding="4" cellspacing="1" class="table">
+
+				<tr class="table_title">
+					<td colspan="4">{$tpltitle}后台角色</td>
+				</tr>
+
+				<tr class="tr rt">
+					<td width="100">角色名称：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="name" id="name" style="width:200px" value="{$info.name}">
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >角色状态：</td>
+					<td colspan="3" class="lt">
+						<input type="radio" class="radio" value="1" name="status" <if condition="($info.status eq 1) OR ($info['status'] eq '') ">checked=""</if> >
+							启用
+							<input type="radio" class="radio" value="0" name="status" <eq name="info.status" value="0">checked=""</eq> >
+							关闭
+					</td>
+				</tr>
+				<tr class="tr rt">
+					<td >备注说明：</td>
+					<td colspan="3" class="lt">
+						<input type="text" name="remark" id="remark" style="width:400px" value="{$info.remark}">
+					</td>
+				</tr>
+	<tr class="tr lt">
+		<td colspan="4">
+			<gt name="info.id" value="0">
+				<input class="bginput" type="submit" name="dosubmit" value="修 改" >
+				<else />
+				<input class="bginput" type="submit" name="dosubmit" value="添 加"></gt>
+			&nbsp;
+			<input class="bginput" type="button" onclick="javascript:history.back(-1);" value="返 回" ></td>
+	</tr>
+</table>
+</form>
+</div>

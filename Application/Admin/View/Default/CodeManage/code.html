@@ -1,0 +1,97 @@
+<script src="__JS__/CodeManage/main.js"></script>
+<if condition='$catalog_id neq ""'>
+<script>
+window.onload=function()
+{
+    get_code_of_code('',{$catalog_id});
+	}
+</script>
+<if condition='$product_id neq ""'>
+<script>
+window.onload=function()
+{
+	get_code_of_code({$product_id})
+}
+</script>
+</if>
+<div class="admin">
+<form  method="post" name="myform_screening" id="myform_screening">
+<table class="table table-hover margin-large-top" style="border-bottom:none;">
+    <tr>
+		<td colspan="9" class="table_title" style="font-size:14px;padding:10px;">
+			<span class="fl icon-users"> 产品Code列表</span>
+			<from action="" method="post"><span style="margin-left:50px;">code: &nbsp;&nbsp;<input type="text" name="code" style="width:150px;">&nbsp;&nbsp;<input type="submit" name="sub" value="code查询"></from></span>
+			<span class="fr" style="margin:5px;font-size:14px;"><a href="__CONTROLLER__/code_edit" class="icon-plus-circle"> 添加Code</a></span>
+		</td>
+	</tr>
+    <tr> <td class="table_title" colspan="13" style=" border-bottom:none;">
+    <div class="remark">
+        <span class="remark_span">分类：</span>
+            <select name="catalog"  onchange="get_product_of_catalog(this.value) , get_code_of_code('',this.value)">
+              <option value="">全部</option>
+              <volist name="catalog" id="vo">
+                 <option value='{$key}' <eq name="catalog_id" value="$key">selected=""</eq>>{$vo}</option>
+              </volist>
+            </select>
+         <span class="remark_span">产品：</span>    
+            <select  name="product_id" id="product_id" onchange="get_code_of_code(this.value)">
+              <option value="">全部</option>
+              <volist name="product_list" id="vo">
+                 <option value='{$vo.id}' <eq name="product_id" value="$vo.id">selected=""</eq>>{$vo.name}</option>
+              </volist>
+            </select>
+         <span  style=" margin-left:30px;"> 
+             <span style="font-size:14px;"><input class="plcz" type="button"  onclick="code_screening_form_submit()" value="导出筛选code" /> </span>  
+             <span style="font-size:14px;"><a onclick="select_all()" class="icon-arrows-v margin-left" href="#"> 全选 </a></span>
+             <span style="font-size:14px;"><input class="plcz" type="button"  onclick="code_form_submit()" value="导出选中code" /> </span> 
+         </span>
+    </div>
+    </tr>
+</table>
+</form>
+    
+<div class="clear"></div> 
+<form  method="post" name="form" id="myform">
+<div class="panel admin-panel">
+    <table class="table table-hover update">
+   	<tr><th width="45"></th>
+   		<th width="100">分类</th>
+   		<th width="100">产品</th>
+   		<th width="100">尺寸</th>
+   		<th width="100">颜色</th>
+   		<th width="100">Code</th>
+   		<th width="100">名称</th>
+   		<th width="100">重量</th>
+   		<th width="100">价格</th>
+   		<th width="100">工厂</th>
+   		<th width="100">排序</th>
+   		<th width="100">生效</th>
+   		<th width="200" style="text-align:center">操作</th></tr>
+    	<volist name="code_list" id="code_vo">
+        <tr>
+        	<td><input class="check" name="check[]" type="checkbox" value="{$code_vo.id}" ></td>
+        	<td style="color: #f60">{$code_vo.catalog_name}</td>
+        	<td style="color:#03c">{$code_vo.product_name}</td>
+        	<td>{$code_vo.size_name}</td>
+        	<td>{$code_vo.color_name}</td>
+        	<td>{$code_vo.code}</td>
+        	<td style="color:#03c">{$code_vo.name}</td>
+        	<td>{$code_vo.weight}</td>
+        	<td>{$code_vo.price}</td>
+        	<td>{:get_factory_name($code_vo['factory_id'])}</td>
+        	<td>{$code_vo.sort_id}</td>
+        	<td><eq name="code_vo.is_work" value="1"><font color="red" class="icon-check"></font><else/><font color="blue" class="icon-times"></font></eq></td>
+        	<td style="text-align:center">
+	        	<a class="icon-link" title="查看相关sku" href="__CONTROLLER__/code_have_sku/id/{$code_vo.id}"></a>&nbsp;&nbsp;
+        		<a class="icon-pencil" title="修改" href="__CONTROLLER__/code_edit/id/{$code_vo.id}"></a>&nbsp;&nbsp;
+        		<a class="icon-trash-o" title="删除" href="__CONTROLLER__/code_delete/id/{$code_vo.id}" onclick="{if(confirm('确认删除?')){return true;}return false;}"></a>&nbsp;&nbsp;
+                <a class="icon-plus" title="关联SKU" href="__CONTROLLER__/code_sku/id/{$code_vo.id}"></a>
+        	</td>
+       	</tr>
+        </volist>
+       </table>
+       <div class="list-page">{$page}</div> 
+</div>
+</form>
+
+</div>

@@ -1,0 +1,47 @@
+<script src="__JS__/AdwordsManage/adwords.js"></script>
+<div class="admin">
+	<div style="margin-bottom:20px;margin-left:0px;">
+		<select name="filter" onchange="adwords_fee(this);" class="admin_input">
+			<option value="all">所有</option>
+			<option value="google" <if condition="$_GET['come_from'] eq 'google'">selected</if>>google</option>
+			<option value="bing" <if condition="$_GET['come_from'] eq 'bing'">selected</if>>bing</option>
+			<option value="yahoo" <if condition="$_GET['come_from'] eq 'yahoo'">selected</if>>yahoo</option>
+		</select>
+	</div>
+	<div style="margin-bottom:20px;">
+	<form action="{:U('/Admin/AdwordsManage/adwords_fee',array('come_from'=>$_GET['come_from']))}" method="post" name="form" id="myform">日期：<input type="text" style="cursor:pointer;" name="begin_time" id="btime" class="admin_input" onClick="WdatePicker()" value=""> TO <input type="text" style="cursor:pointer;" name="end_time" id="btime" class="admin_input" onClick="WdatePicker()" value=""> <input type="submit" name="sub" value="查询" class="button border-main"></form>
+	</div>
+	<table class="table table-bordered table-striped table-hover table-condensed" width="98%" border="0" cellpadding="5" cellspacing="1" class="table">
+		<tr>
+			<td colspan="9" class="table_title">
+				<span class="fl">广告费管理</span>
+				<span class="fr">
+					<a href="{:U('/Admin/AdwordsManage/adwords_fee_add')}">广告费添加</a>
+				</span>
+			</td>
+		</tr>
+		<tr class="list_head ct">
+			<td>广告费来源</td>
+			<td>广告费费用</td>
+            <td>广告费添加人</td>
+            <td>国家（平台）来源</td>
+            <td>日期</td>
+			<td>操作</td>
+		</tr>
+	<volist name="adwords_fee_list" id="vo">
+		<tr>
+			<td>{$vo.come_from}</td>
+			<td>{$vo.fee}</td>
+			<td>{$vo.operate}</td>
+			<td>{$vo.country}</td>
+			<td>{$vo.fee_date}</td>
+			<td><a onclick="return confirm('确定要删除吗?')" href="{:U('/Admin/AdwordsManage/adwords_fee_del/',array('id'=>$vo['id'],'come_from'=>$_GET['come_from']))}">删除</a></td>	
+		</tr>
+	</volist>
+		<tr class="tr">
+	          <td colspan="9" class="pages" align="center">
+	            {$page}
+	          </td>
+	    </tr>
+	</table>
+</div>

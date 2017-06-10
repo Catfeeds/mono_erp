@@ -1,0 +1,96 @@
+{__NOLAYOUT__}
+<switch name="style">
+
+<case value="fetch">
+<div style="padding-left:14px;padding-right:14px;">
+
+	<p>
+		<span>SKU:　</span>
+		<span style="font-weight:bold;">{$sku}</span>
+		<input type="hidden" id="sku_id" name="sku_id" value="{$sku_id}"/>
+		<input type="hidden" id="order_id" name="order_id" value="{$order_id}"/>
+		<span id="sku_name_container" style="margin-left:20px;display:none;">
+			<span>套件名称: </span>
+			<input id="sku_name" name="sku_name" value="{$sku_name}"/>
+			<span style="color:red;font-weight:bold;">*</span>
+		</span>
+	</p>
+	<p>
+		<span>分类：</span>
+		<select onchange="relate_select_change(this.value,'catalog')" name="relate_catalog" id="relate_catalog">
+			<option value="0">--请选择--</option>
+			<volist name="catalog_list" id="catalog_vo"> 
+				<option value="{$key}">{$catalog_vo}</option>
+			</volist>
+		</select>
+		
+		<span style="margin-left:5px;">产品：</span>
+		<select onchange="relate_select_change(this.value,'product')" name="relate_product" id="relate_product">
+			<option value="0">--请选择--</option>
+		</select>
+	</p>
+	<p>
+		<span>颜色：</span>
+		<select onchange="relate_select_change(this.value,'color')" name="relate_color" id="relate_color">
+			<option value="0">--请选择--</option>
+		</select>
+		
+		<span style="margin-left:5px;">尺码：</span>
+		<select onchange="relate_select_change(this.value,'size')" name="relate_size" id="relate_size">
+			<option value="0">--请选择--</option>
+		</select>
+		
+		<span style="margin-left:5px;">数量：</span>
+		<span class="icon-minus" style="cursor:pointer;" onclick="relate_num_minus()"></span>
+		<span style="margin:0 5px 0 5px;" id="relate_num_text">1</span>
+		<input type="hidden" name="relate_num" id="relate_num" value="1"/>
+		<span class="icon-plus" style="cursor:pointer;" onclick="relate_num_plus()"></span>
+		<script>
+			function relate_num_minus()
+			{
+				var relate_num = parseInt($("#relate_num").val());
+				if( relate_num>1 )
+				{
+					$("#relate_num").val( relate_num-1 );
+					$("#relate_num_text").html( relate_num-1 );
+				}
+			}
+			function relate_num_plus()
+			{
+				var relate_num = parseInt($("#relate_num").val());
+				$("#relate_num").val( relate_num+1 );
+				$("#relate_num_text").html( relate_num+1 );
+			}
+		</script>
+	</p>
+	
+	<p>
+		<span>code：</span>
+		<span id="relate_code"> - </span>
+		<button onclick="return relate_add_one();" style="float:right;margin-right:15px;">添加</button>
+	</p>
+	
+	<p style="margin-top:10px;margin-bottom:0px;">
+		<span style="font-weight:bold;">已添加code :</span>
+		<div id="relate_added_container"></div>
+		<button onclick="return web_relate_submit();" style="float:right;margin-right:15px;">提交</button>
+	</p>
+</div>
+</case>
+
+<case value="select">
+	<option value="0">--请选择--</option>
+	<volist name="list" id="vo">
+		<option <eq name="old_value" value="$key">selected="selected"</eq> value="{$key}">{$vo}</option>
+	</volist>
+</case>
+
+<case value="radio">
+	<volist name="list" id="vo">
+		<span style="display:inline-block;">
+			<input type="radio" name="relate_code" value="{$key}" code_name="{$vo}" style="margin-left:5px;"/>{$vo}
+		</span>
+	</volist>
+</case>
+
+</switch>

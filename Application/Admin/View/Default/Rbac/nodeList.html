@@ -1,0 +1,28 @@
+<div class="admin">
+<form action="{:U('/Admin/Rbac/nodeSort')}" method="post" name="form">
+  <table class="table  table-striped table-hover table-condensed" >
+      <tr>
+        <td colspan="7" class="table_title" style="font-size:14px;padding:10px;">
+          <span class="fl icon-th"> 菜单(节点)管理</span>
+          <span class="fr">
+            <a href="{:U('/Admin/Rbac/nodeAdd')}" class="icon-th-large"> 添加菜单(节点)</a>
+          </span>
+        </td>
+        <tr class="list_head">
+          <td width="70">排序权重</td>
+          <td width="70">ID</td>
+          <td >菜单名称</td>
+          <td width="70">类型</td>
+          <td width="70">状态</td>
+          <td width="70">显示</td>
+          <td width="100">管理操作</td>
+        </tr>
+        {$html_tree}
+        <tr class="tr">
+          <td colspan="7" valign="middle">
+            <input type="submit" value="排序" class="bginput" />
+          </td>
+        </tr>
+    </table>
+  </form>
+</div>
